@@ -6,8 +6,8 @@ import (
 	"strconv"
 
 	mapset "github.com/deckarep/golang-set"
-	"github.com/trustwallet/golibs/asset"
-	"github.com/trustwallet/golibs/coin"
+	"github.com/trustwallet/go-primitives/asset"
+	"github.com/trustwallet/go-primitives/coin"
 )
 
 const (

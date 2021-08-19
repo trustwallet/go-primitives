@@ -4,7 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/trustwallet/golibs/coin"
+	"github.com/trustwallet/go-primitives/coin"
 )
 
 func TestEIP55Checksum(t *testing.T) {

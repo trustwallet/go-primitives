@@ -1,6 +1,6 @@
 package types
 
-import "github.com/trustwallet/golibs/coin"
+import "github.com/trustwallet/go-primitives/coin"
 
 type (
 	TokenType string

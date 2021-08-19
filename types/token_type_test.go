@@ -3,7 +3,7 @@ package types
 import (
 	"testing"
 
-	"github.com/trustwallet/golibs/coin"
+	"github.com/trustwallet/go-primitives/coin"
 )
 
 func TestGetEthereumTokenTypeByIndex(t *testing.T) {
