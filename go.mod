@@ -1,4 +1,4 @@
-module go-primitives
+module github.com/trustwallet/go-primitives
 
 go 1.16
 
