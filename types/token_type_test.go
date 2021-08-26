@@ -35,6 +35,21 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args{coinIndex: coin.WANCHAIN},
 			WAN20,
 		},
+		{
+			"Optimism ERC20",
+			args{coinIndex: coin.OPTIMISM},
+			OPTIMISM,
+		},
+		{
+			"xDAI ERC20",
+			args{coinIndex: coin.XDAI},
+			XDAI,
+		},
+		{
+			"Avalanche ERC20",
+			args{coinIndex: coin.AVALANCHEC},
+			AVALANCHE,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
