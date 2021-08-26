@@ -494,3 +494,24 @@
   name: THORChain
   decimals: 8
   sampleAddress: 'bnb1czhptncu9uhhlrlrk9q0rmy459gae2ua79mapn'
+
+- id: 10000070
+  symbol: OETH
+  handle: optimism
+  name: Optimism Ethereum
+  decimals: 18
+  sampleAddress: '0x720E1fa107A1Df39Db4E78A3633121ac36Bec132'
+
+- id: 10000100
+  symbol: xDAI
+  handle: xdai
+  name: xDai
+  decimals: 18
+  sampleAddress: '0x720E1fa107A1Df39Db4E78A3633121ac36Bec132'
+
+- id: 10009000
+  symbol: AVAX
+  handle: avalanchec
+  name: Avalanche C-Chain
+  decimals: 18
+  sampleAddress: '0x720E1fa107A1Df39Db4E78A3633121ac36Bec132'
