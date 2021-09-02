@@ -515,3 +515,24 @@
   name: Avalanche C-Chain
   decimals: 18
   sampleAddress: '0x720E1fa107A1Df39Db4E78A3633121ac36Bec132'
+
+- id: 10000553
+  symbol: HT
+  handle: heco
+  name: ECO Chain
+  decimals: 18
+  sampleAddress: '0x720E1fa107A1Df39Db4E78A3633121ac36Bec132'
+
+- id: 10000250
+  symbol: FTM
+  handle: fantom
+  name: Fantom
+  decimals: 18
+  sampleAddress: '0x720E1fa107A1Df39Db4E78A3633121ac36Bec132'
+
+- id: 10042221
+  symbol: ARETH
+  handle: arbitrum
+  name: Arbitrum
+  decimals: 18
+  sampleAddress: '0x720E1fa107A1Df39Db4E78A3633121ac36Bec132'
