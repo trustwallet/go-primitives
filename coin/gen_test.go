@@ -68,7 +68,6 @@ func TestCoinFile(t *testing.T) {
 		assert.Equal(t, got.Decimals, want.Decimals)
 		assert.Equal(t, got.BlockTime, want.BlockTime)
 		assert.Equal(t, got.MinConfirmations, want.MinConfirmations)
-		assert.Equal(t, got.SampleAddr, want.SampleAddr)
 
 		s := strings.Title(want.Handle)
 		method := fmt.Sprintf("func %s() Coin", s)
