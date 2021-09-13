@@ -469,9 +469,3 @@
   handle: arbitrum
   name: Arbitrum
   decimals: 18
-
-- id: 330
-  symbol: LUNA
-  handle: terra
-  name: Terra
-  decimals: 6
