@@ -39,7 +39,6 @@ type Coin struct {
 	Decimals         uint
 	BlockTime        int
 	MinConfirmations int64
-	SampleAddr       string
 }
 
 type AssetID string
@@ -77,7 +76,6 @@ var Coins = map[uint]Coin{
 		Decimals:         {{.Decimals}},
 		BlockTime:        {{.BlockTime}},
 		MinConfirmations: {{.MinConfirmations}},
-		SampleAddr:       "{{.SampleAddr}}",
 	},
 {{- end }}
 }
@@ -99,7 +97,6 @@ type Coin struct {
 	Decimals         uint   `yaml:"decimals"`
 	BlockTime        int    `yaml:"blockTime"`
 	MinConfirmations int64  `yaml:"minConfirmations"`
-	SampleAddr       string `yaml:"sampleAddress"`
 }
 
 func main() {
