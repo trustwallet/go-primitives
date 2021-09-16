@@ -33,6 +33,7 @@ const (
 	FANTOM 	  TokenType = "FANTOM"
 	HRC20     TokenType = "HRC20"
 	ARBITRUM  TokenType = "ARBITRUM"
+	TERRA     TokenType = "TERRA"
 )
 
 func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
