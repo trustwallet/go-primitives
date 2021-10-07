@@ -59,9 +59,9 @@ func GetCoinExploreURL(chain, addr string) (string, error) {
 		return fmt.Sprintf("https://wavesexplorer.com/assets/%s", addr), nil
 	case Coins[XDAI].Handle:
 		return fmt.Sprintf("https://blockscout.com/xdai/mainnet/tokens/%s", addr), nil
-	case Coins[POA].Handle, "poa":
+	case Coins[POA].Handle:
 		return fmt.Sprintf("https://blockscout.com/poa/core/tokens/%s", addr), nil
-	case Coins[POLYGON].Handle, "polygon":
+	case Coins[POLYGON].Handle:
 		return fmt.Sprintf("https://polygonscan.com/token/%s", addr), nil
 	case Coins[OPTIMISM].Handle:
 		return fmt.Sprintf("https://blockscout.com/xdai/mainnet/tokens/%s", addr), nil
