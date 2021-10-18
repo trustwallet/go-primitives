@@ -41,7 +41,7 @@ func TestGetCoinForId(t *testing.T) {
 func TestGetCoinExploreURL(t *testing.T) {
 	type args struct {
 		addr  string
-		chain string
+		chain Coin
 	}
 
 	tests := []struct {
@@ -54,7 +54,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 			name: "Test ethereum",
 			args: args{
 				addr:  "token",
-				chain: "ethereum",
+				chain: Ethereum(),
 			},
 			want:    "https://etherscan.io/token/token",
 			wantErr: false,
@@ -63,10 +63,28 @@ func TestGetCoinExploreURL(t *testing.T) {
 			name: "Test custom chain",
 			args: args{
 				addr:  "token",
-				chain: "customchain",
+				chain: Coin{Name: "Custom Coin"},
 			},
 			want:    "",
 			wantErr: true,
+		},
+		{
+			name: "Test Tron TRC10",
+			args: args{
+				addr:  "10token",
+				chain: Tron(),
+			},
+			want:    "https://tronscan.io/#/token/10token",
+			wantErr: false,
+		},
+		{
+			name: "Test Tron TRC20",
+			args: args{
+				addr:  "token",
+				chain: Tron(),
+			},
+			want:    "https://tronscan.io/#/token20/token",
+			wantErr: false,
 		},
 	}
 	for _, tt := range tests {

@@ -30,10 +30,19 @@ const (
 	OPTIMISM  TokenType = "OPTIMISM"
 	XDAI      TokenType = "XDAI"
 	AVALANCHE TokenType = "AVALANCHE"
-	FANTOM 	  TokenType = "FANTOM"
+	FANTOM    TokenType = "FANTOM"
 	HRC20     TokenType = "HRC20"
 	ARBITRUM  TokenType = "ARBITRUM"
 	TERRA     TokenType = "TERRA"
+	EOS       TokenType = "EOS"
+	NEP5      TokenType = "NEP5"
+	NRC20     TokenType = "NRC20"
+	VET       TokenType = "VET"
+	ONTOLOGY  TokenType = "ONTOLOGY"
+	THETA     TokenType = "THETA"
+	TOMO      TokenType = "TOMO"
+	WAVES     TokenType = "WAVES"
+	POA       TokenType = "POA"
 )
 
 func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
