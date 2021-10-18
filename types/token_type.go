@@ -1,6 +1,10 @@
 package types
 
-import "github.com/trustwallet/go-primitives/coin"
+import (
+	"strconv"
+
+	"github.com/trustwallet/go-primitives/coin"
+)
 
 type (
 	TokenType string
@@ -30,11 +34,43 @@ const (
 	OPTIMISM  TokenType = "OPTIMISM"
 	XDAI      TokenType = "XDAI"
 	AVALANCHE TokenType = "AVALANCHE"
-	FANTOM 	  TokenType = "FANTOM"
+	FANTOM    TokenType = "FANTOM"
 	HRC20     TokenType = "HRC20"
 	ARBITRUM  TokenType = "ARBITRUM"
 	TERRA     TokenType = "TERRA"
 )
+
+func GetTokenType(c uint, tokenID string) (string, bool) {
+	switch c {
+	case coin.Ethereum().ID,
+		coin.Classic().ID,
+		coin.Poa().ID,
+		coin.Callisto().ID,
+		coin.Wanchain().ID,
+		coin.Thundertoken().ID,
+		coin.Gochain().ID,
+		coin.Tomochain().ID,
+		coin.Smartchain().ID,
+		coin.Solana().ID,
+		coin.Polygon().ID,
+		coin.Optimism().ID,
+		coin.Xdai().ID,
+		coin.Avalanchec().ID,
+		coin.Fantom().ID,
+		coin.Heco().ID:
+		return string(GetEthereumTokenTypeByIndex(c)), true
+	case coin.Tron().ID:
+		_, err := strconv.Atoi(tokenID)
+		if err != nil {
+			return string(TRC20), true
+		}
+		return string(TRC10), true
+	case coin.Binance().ID:
+		return string(BEP2), true
+	default:
+		return "", false
+	}
+}
 
 func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 	var tokenType TokenType
@@ -67,6 +103,10 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 		tokenType = XDAI
 	case coin.Avalanchec().ID:
 		tokenType = AVALANCHE
+	case coin.Fantom().ID:
+		tokenType = FANTOM
+	case coin.Heco().ID:
+		tokenType = HRC20
 	default:
 		tokenType = ERC20
 	}

@@ -409,22 +409,3 @@ func IsTxTypeAmong(txType TransactionType, types []TransactionType) bool {
 func (t Token) AssetId() string {
 	return asset.BuildID(t.Coin, t.TokenID)
 }
-
-func GetTokenType(c uint, tokenID string) (string, bool) {
-	switch c {
-	case coin.Ethereum().ID:
-		return string(ERC20), true
-	case coin.Tron().ID:
-		_, err := strconv.Atoi(tokenID)
-		if err != nil {
-			return string(TRC20), true
-		}
-		return string(TRC10), true
-	case coin.Smartchain().ID:
-		return string(BEP20), true
-	case coin.Binance().ID:
-		return string(BEP2), true
-	default:
-		return "", false
-	}
-}
