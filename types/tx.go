@@ -297,6 +297,20 @@ func (t *Tx) GetDirection(address string) Direction {
 	return t.determineTransactionDirection(address, t.From, t.To)
 }
 
+func (t *Tx) GetAssetID() *coin.AssetID {
+	if t.Metadata == nil {
+		return nil
+	}
+
+	assetHolder, ok := t.Metadata.(AssetHolder)
+	if !ok {
+		return nil
+	}
+
+	assetID := assetHolder.GetAsset()
+	return &assetID
+}
+
 func (t *Tx) determineTransactionDirection(address, from, to string) Direction {
 	if t.Type == TxStakeUndelegate || t.Type == TxStakeClaimRewards {
 		return DirectionIncoming
