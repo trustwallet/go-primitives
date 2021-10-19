@@ -130,17 +130,6 @@ type (
 		Input string       `json:"input"`
 	}
 
-	// Token describes the non-native tokens.
-	// Examples: ERC-20, TRC-20, BEP-2
-	Token struct {
-		Name     string    `json:"name"`
-		Symbol   string    `json:"symbol"`
-		Decimals uint      `json:"decimals"`
-		TokenID  string    `json:"token_id"`
-		Coin     uint      `json:"coin"`
-		Type     TokenType `json:"type"`
-	}
-
 	Txs []Tx
 
 	AssetHolder interface {
@@ -326,6 +315,24 @@ func (t *Tx) IsUTXO() bool {
 	return t.Type == TxTransfer && len(t.Outputs) > 0
 }
 
+func (t *Tx) IsEVM() (bool, error) {
+	if t.Metadata == nil {
+		return false, nil
+	}
+
+	assetHolder, ok := t.Metadata.(AssetHolder)
+	if !ok {
+		return false, nil
+	}
+
+	coinID, _, err := asset.ParseID(string(assetHolder.GetAsset()))
+	if err != nil {
+		return false, err
+	}
+
+	return coin.IsEVM(coinID), nil
+}
+
 func (t *Tx) GetUTXOValueFor(address string) (Amount, error) {
 	isTransferOut := false
 	isSelf := true
@@ -404,8 +411,4 @@ func IsTxTypeAmong(txType TransactionType, types []TransactionType) bool {
 	}
 
 	return result
-}
-
-func (t Token) AssetId() string {
-	return asset.BuildID(t.Coin, t.TokenID)
 }

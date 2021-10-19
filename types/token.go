@@ -3,11 +3,23 @@ package types
 import (
 	"strconv"
 
+	"github.com/trustwallet/go-primitives/asset"
 	"github.com/trustwallet/go-primitives/coin"
 )
 
 type (
 	TokenType string
+
+	// Token describes the non-native tokens.
+	// Examples: ERC-20, TRC-20, BEP-2
+	Token struct {
+		Name     string    `json:"name"`
+		Symbol   string    `json:"symbol"`
+		Decimals uint      `json:"decimals"`
+		TokenID  string    `json:"token_id"`
+		Coin     uint      `json:"coin"`
+		Type     TokenType `json:"type"`
+	}
 )
 
 const (
@@ -40,75 +52,81 @@ const (
 	TERRA     TokenType = "TERRA"
 )
 
+// todo test
 func GetTokenType(c uint, tokenID string) (string, bool) {
 	switch c {
-	case coin.Ethereum().ID,
-		coin.Classic().ID,
-		coin.Poa().ID,
-		coin.Callisto().ID,
-		coin.Wanchain().ID,
-		coin.Thundertoken().ID,
-		coin.Gochain().ID,
-		coin.Tomochain().ID,
-		coin.Smartchain().ID,
-		coin.Solana().ID,
-		coin.Polygon().ID,
-		coin.Optimism().ID,
-		coin.Xdai().ID,
-		coin.Avalanchec().ID,
-		coin.Fantom().ID,
-		coin.Heco().ID:
+	case coin.ETHEREUM,
+		coin.CLASSIC,
+		coin.POA,
+		coin.CALLISTO,
+		coin.WANCHAIN,
+		coin.THUNDERTOKEN,
+		coin.GOCHAIN,
+		coin.TOMOCHAIN,
+		coin.SMARTCHAIN,
+		coin.SOLANA,
+		coin.POLYGON,
+		coin.OPTIMISM,
+		coin.XDAI,
+		coin.AVALANCHEC,
+		coin.FANTOM,
+		coin.HECO:
 		return string(GetEthereumTokenTypeByIndex(c)), true
-	case coin.Tron().ID:
+	case coin.TRON:
 		_, err := strconv.Atoi(tokenID)
 		if err != nil {
 			return string(TRC20), true
 		}
 		return string(TRC10), true
-	case coin.Binance().ID:
+	case coin.BINANCE:
 		return string(BEP2), true
 	default:
 		return "", false
 	}
 }
 
+// todo test
 func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 	var tokenType TokenType
 	switch coinIndex {
-	case coin.Ethereum().ID:
+	case coin.ETHEREUM:
 		tokenType = ERC20
-	case coin.Classic().ID:
+	case coin.CLASSIC:
 		tokenType = ETC20
-	case coin.Poa().ID:
+	case coin.POA:
 		tokenType = POA20
-	case coin.Callisto().ID:
+	case coin.CALLISTO:
 		tokenType = CLO20
-	case coin.Wanchain().ID:
+	case coin.WANCHAIN:
 		tokenType = WAN20
-	case coin.Thundertoken().ID:
+	case coin.THUNDERTOKEN:
 		tokenType = TT20
-	case coin.Gochain().ID:
+	case coin.GOCHAIN:
 		tokenType = GO20
-	case coin.Tomochain().ID:
+	case coin.TOMOCHAIN:
 		tokenType = TRC21
-	case coin.Smartchain().ID:
+	case coin.SMARTCHAIN:
 		tokenType = BEP20
-	case coin.Solana().ID:
+	case coin.SOLANA:
 		tokenType = SPL
-	case coin.Polygon().ID:
+	case coin.POLYGON:
 		tokenType = POLYGON
-	case coin.Optimism().ID:
+	case coin.OPTIMISM:
 		tokenType = OPTIMISM
-	case coin.Xdai().ID:
+	case coin.XDAI:
 		tokenType = XDAI
-	case coin.Avalanchec().ID:
+	case coin.AVALANCHEC:
 		tokenType = AVALANCHE
-	case coin.Fantom().ID:
+	case coin.FANTOM:
 		tokenType = FANTOM
-	case coin.Heco().ID:
+	case coin.HECO:
 		tokenType = HRC20
 	default:
 		tokenType = ERC20
 	}
 	return tokenType
+}
+
+func (t Token) AssetId() string {
+	return asset.BuildID(t.Coin, t.TokenID)
 }
