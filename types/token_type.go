@@ -43,7 +43,6 @@ const (
 	TOMO      TokenType = "TOMO"
 	WAVES     TokenType = "WAVES"
 	POA       TokenType = "POA"
-	RONIN     TokenType = "RONIN"
 )
 
 func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
