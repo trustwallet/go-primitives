@@ -21,7 +21,7 @@ const (
 	TRC20     TokenType = "TRC20"
 	TRC21     TokenType = "TRC21"
 	CLO20     TokenType = "CLO20"
-	GO20      TokenType = "G020"
+	GO20      TokenType = "GO20"
 	WAN20     TokenType = "WAN20"
 	TT20      TokenType = "TT20"
 	KAVA      TokenType = "KAVA"
@@ -43,6 +43,7 @@ const (
 	TOMO      TokenType = "TOMO"
 	WAVES     TokenType = "WAVES"
 	POA       TokenType = "POA"
+	RONIN     TokenType = "RONIN"
 )
 
 func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {

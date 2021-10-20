@@ -2,11 +2,12 @@ package types
 
 import (
 	"errors"
+
 	"github.com/trustwallet/go-primitives/coin"
 )
 
-func GetChainFromAssetType(type_ string) (coin.Coin, error) {
-	switch TokenType(type_) {
+func GetChainFromAssetType(assetType string) (coin.Coin, error) {
+	switch TokenType(assetType) {
 	case ERC20:
 		return coin.Ethereum(), nil
 	case BEP2:
@@ -61,5 +62,5 @@ func GetChainFromAssetType(type_ string) (coin.Coin, error) {
 		return coin.Terra(), nil
 	}
 
-	return coin.Coin{}, errors.New("unknown asset type: " + type_)
+	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
 }
