@@ -469,3 +469,15 @@
   handle: arbitrum
   name: Arbitrum
   decimals: 18
+
+- id: 52752
+  symbol: CELO
+  handle: celo
+  name: Celo
+  decimals: 18
+
+- id: 10002020
+  symbol: RON
+  handle: ronin
+  name: Ronin
+  decimals: 18
