@@ -1,8 +1,9 @@
 package numbers
 
 import (
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMin(t *testing.T) {

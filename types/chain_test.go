@@ -1,9 +1,10 @@
 package types
 
 import (
-	"github.com/trustwallet/go-primitives/coin"
 	"reflect"
 	"testing"
+
+	"github.com/trustwallet/go-primitives/coin"
 )
 
 func TestGetChainFromAssetType(t *testing.T) {

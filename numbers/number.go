@@ -1,11 +1,12 @@
 package numbers
 
 import (
-	"github.com/shopspring/decimal"
 	"math"
 	"math/big"
 	"strconv"
 	"strings"
+
+	"github.com/shopspring/decimal"
 )
 
 func Min(x, y int) int {
