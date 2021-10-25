@@ -71,10 +71,10 @@ func TestGetCoinExploreURL(t *testing.T) {
 		{
 			name: "Test Tron TRC10",
 			args: args{
-				addr:  "10token",
+				addr:  "10001",
 				chain: Tron(),
 			},
-			want:    "https://tronscan.io/#/token/10token",
+			want:    "https://tronscan.io/#/token/10001",
 			wantErr: false,
 		},
 		{
