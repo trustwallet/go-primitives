@@ -73,6 +73,8 @@ func GetCoinExploreURL(c Coin, tokenID string) (string, error) {
 		return fmt.Sprintf("https://ftmscan.com/token/%s", tokenID), nil
 	case TERRA:
 		return fmt.Sprintf("https://finder.terra.money/columbus-4/%s", tokenID), nil
+	case RONIN:
+		return fmt.Sprintf("https://explorer.roninchain.com/token/ronin:%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
