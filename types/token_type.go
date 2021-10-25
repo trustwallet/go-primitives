@@ -34,6 +34,7 @@ const (
 	HRC20     TokenType = "HRC20"
 	ARBITRUM  TokenType = "ARBITRUM"
 	TERRA     TokenType = "TERRA"
+	RONIN 	  TokenType = "RONIN"
 	EOS       TokenType = "EOS"
 	NEP5      TokenType = "NEP5"
 	NRC20     TokenType = "NRC20"
@@ -76,6 +77,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 		tokenType = XDAI
 	case coin.Avalanchec().ID:
 		tokenType = AVALANCHE
+	case coin.Ronin().ID:
+		tokenType = RONIN
 	default:
 		tokenType = ERC20
 	}
