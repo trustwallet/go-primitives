@@ -53,6 +53,13 @@ type (
 		TransferFee       *CollectibleTransferFee `json:"transfer_fee,omitempty"`
 		PreviewImageURL   *CollectibleMedia       `json:"preview_image_url,omitempty"`
 		OriginalSourceURL CollectibleMedia        `json:"original_source_url"`
+		Properties        []CollectibleProperty   `json:"properties"`
+	}
+
+	CollectibleProperty struct {
+		Key    string  `json:"key"`
+		Value  string  `json:"value"`
+		Rarity float32 `json:"rarity,omitempty"`
 	}
 
 	CollectiblePage []Collectible
