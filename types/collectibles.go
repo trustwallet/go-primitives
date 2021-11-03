@@ -54,6 +54,7 @@ type (
 		PreviewImageURL   *CollectibleMedia       `json:"preview_image_url,omitempty"`
 		OriginalSourceURL CollectibleMedia        `json:"original_source_url"`
 		Properties        []CollectibleProperty   `json:"properties"`
+		About             string                  `json:"about"`
 	}
 
 	CollectibleProperty struct {
