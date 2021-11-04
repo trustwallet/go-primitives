@@ -32,7 +32,8 @@ func IsEVM(coinID uint) bool {
 		XDAI,
 		AVALANCHEC,
 		FANTOM,
-		HECO:
+		HECO,
+		RONIN:
 		return true
 	}
 

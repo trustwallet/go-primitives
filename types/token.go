@@ -64,22 +64,11 @@ const (
 
 // todo test
 func GetTokenType(c uint, tokenID string) (string, bool) {
-	switch c {
-	case coin.ETHEREUM,
-		coin.CLASSIC,
-		coin.CALLISTO,
-		coin.WANCHAIN,
-		coin.THUNDERTOKEN,
-		coin.GOCHAIN,
-		coin.SMARTCHAIN,
-		coin.SOLANA,
-		coin.POLYGON,
-		coin.OPTIMISM,
-		coin.XDAI,
-		coin.AVALANCHEC,
-		coin.FANTOM,
-		coin.HECO:
+	if coin.IsEVM(c) {
 		return string(GetEthereumTokenTypeByIndex(c)), true
+	}
+
+	switch c {
 	case coin.TRON:
 		_, err := strconv.Atoi(tokenID)
 		if err != nil {
@@ -88,12 +77,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(TRC10), true
 	case coin.BINANCE:
 		return string(BEP2), true
-	case coin.POA:
-		return string(POA), true
 	case coin.WAVES:
 		return string(WAVES), true
-	case coin.TOMOCHAIN:
-		return string(TOMO), true
 	case coin.THETA:
 		return string(THETA), true
 	case coin.ONTOLOGY:
@@ -106,14 +91,13 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(NEP5), true
 	case coin.EOS:
 		return string(EOS), true
-	case coin.RONIN:
-		return string(RONIN), true
+	case coin.SOLANA:
+		return string(SPL), true
 	default:
 		return "", false
 	}
 }
 
-// todo test
 func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 	var tokenType TokenType
 	switch coinIndex {
