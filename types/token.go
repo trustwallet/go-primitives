@@ -50,6 +50,16 @@ const (
 	HRC20     TokenType = "HRC20"
 	ARBITRUM  TokenType = "ARBITRUM"
 	TERRA     TokenType = "TERRA"
+	RONIN     TokenType = "RONIN"
+	EOS       TokenType = "EOS"
+	NEP5      TokenType = "NEP5"
+	NRC20     TokenType = "NRC20"
+	VET       TokenType = "VET"
+	ONTOLOGY  TokenType = "ONTOLOGY"
+	THETA     TokenType = "THETA"
+	TOMO      TokenType = "TOMO"
+	WAVES     TokenType = "WAVES"
+	POA       TokenType = "POA"
 )
 
 // todo test
@@ -57,12 +67,10 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	switch c {
 	case coin.ETHEREUM,
 		coin.CLASSIC,
-		coin.POA,
 		coin.CALLISTO,
 		coin.WANCHAIN,
 		coin.THUNDERTOKEN,
 		coin.GOCHAIN,
-		coin.TOMOCHAIN,
 		coin.SMARTCHAIN,
 		coin.SOLANA,
 		coin.POLYGON,
@@ -80,6 +88,26 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(TRC10), true
 	case coin.BINANCE:
 		return string(BEP2), true
+	case coin.POA:
+		return string(POA), true
+	case coin.WAVES:
+		return string(WAVES), true
+	case coin.TOMOCHAIN:
+		return string(TOMO), true
+	case coin.THETA:
+		return string(THETA), true
+	case coin.ONTOLOGY:
+		return string(ONTOLOGY), true
+	case coin.NULS:
+		return string(NRC20), true
+	case coin.VECHAIN:
+		return string(VET), true
+	case coin.NEO:
+		return string(NEP5), true
+	case coin.EOS:
+		return string(EOS), true
+	case coin.RONIN:
+		return string(RONIN), true
 	default:
 		return "", false
 	}
@@ -121,6 +149,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 		tokenType = FANTOM
 	case coin.HECO:
 		tokenType = HRC20
+	case coin.RONIN:
+		tokenType = RONIN
 	default:
 		tokenType = ERC20
 	}
