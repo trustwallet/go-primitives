@@ -130,17 +130,6 @@ type (
 		Input string       `json:"input"`
 	}
 
-	// Token describes the non-native tokens.
-	// Examples: ERC-20, TRC-20, BEP-2
-	Token struct {
-		Name     string    `json:"name"`
-		Symbol   string    `json:"symbol"`
-		Decimals uint      `json:"decimals"`
-		TokenID  string    `json:"token_id"`
-		Coin     uint      `json:"coin"`
-		Type     TokenType `json:"type"`
-	}
-
 	Txs []Tx
 
 	AssetHolder interface {
@@ -308,6 +297,20 @@ func (t *Tx) GetDirection(address string) Direction {
 	return t.determineTransactionDirection(address, t.From, t.To)
 }
 
+func (t *Tx) GetAssetID() *coin.AssetID {
+	if t.Metadata == nil {
+		return nil
+	}
+
+	assetHolder, ok := t.Metadata.(AssetHolder)
+	if !ok {
+		return nil
+	}
+
+	assetID := assetHolder.GetAsset()
+	return &assetID
+}
+
 func (t *Tx) determineTransactionDirection(address, from, to string) Direction {
 	if t.Type == TxStakeUndelegate || t.Type == TxStakeClaimRewards {
 		return DirectionIncoming
@@ -324,6 +327,24 @@ func (t *Tx) determineTransactionDirection(address, from, to string) Direction {
 
 func (t *Tx) IsUTXO() bool {
 	return t.Type == TxTransfer && len(t.Outputs) > 0
+}
+
+func (t *Tx) IsEVM() (bool, error) {
+	if t.Metadata == nil {
+		return false, nil
+	}
+
+	assetHolder, ok := t.Metadata.(AssetHolder)
+	if !ok {
+		return false, nil
+	}
+
+	coinID, _, err := asset.ParseID(string(assetHolder.GetAsset()))
+	if err != nil {
+		return false, err
+	}
+
+	return coin.IsEVM(coinID), nil
 }
 
 func (t *Tx) GetUTXOValueFor(address string) (Amount, error) {
@@ -404,27 +425,4 @@ func IsTxTypeAmong(txType TransactionType, types []TransactionType) bool {
 	}
 
 	return result
-}
-
-func (t Token) AssetId() string {
-	return asset.BuildID(t.Coin, t.TokenID)
-}
-
-func GetTokenType(c uint, tokenID string) (string, bool) {
-	switch c {
-	case coin.Ethereum().ID:
-		return string(ERC20), true
-	case coin.Tron().ID:
-		_, err := strconv.Atoi(tokenID)
-		if err != nil {
-			return string(TRC20), true
-		}
-		return string(TRC10), true
-	case coin.Smartchain().ID:
-		return string(BEP20), true
-	case coin.Binance().ID:
-		return string(BEP2), true
-	default:
-		return "", false
-	}
 }
