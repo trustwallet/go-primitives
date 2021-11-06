@@ -1,6 +1,7 @@
 package types
 
 import (
+	"fmt"
 	"strconv"
 
 	"github.com/trustwallet/go-primitives/asset"
@@ -62,10 +63,13 @@ const (
 	POA       TokenType = "POA"
 )
 
-// todo test
 func GetTokenType(c uint, tokenID string) (string, bool) {
 	if coin.IsEVM(c) {
-		return string(GetEthereumTokenTypeByIndex(c)), true
+		tokenType, err := GetEthereumTokenTypeByIndex(c)
+		if err != nil {
+			return "", false
+		}
+		return string(tokenType), true
 	}
 
 	switch c {
@@ -98,7 +102,7 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	}
 }
 
-func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
+func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 	var tokenType TokenType
 	switch coinIndex {
 	case coin.ETHEREUM:
@@ -119,8 +123,6 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 		tokenType = TRC21
 	case coin.SMARTCHAIN:
 		tokenType = BEP20
-	case coin.SOLANA:
-		tokenType = SPL
 	case coin.POLYGON:
 		tokenType = POLYGON
 	case coin.OPTIMISM:
@@ -135,10 +137,13 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) TokenType {
 		tokenType = HRC20
 	case coin.RONIN:
 		tokenType = RONIN
-	default:
-		tokenType = ERC20
 	}
-	return tokenType
+
+	if tokenType == "" {
+		return "", fmt.Errorf("not evm coin %d", coinIndex)
+	}
+
+	return tokenType, nil
 }
 
 func (t Token) AssetId() string {
