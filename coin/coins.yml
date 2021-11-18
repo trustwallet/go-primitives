@@ -481,3 +481,9 @@
   handle: ronin
   name: Ronin
   decimals: 18
+
+- id: 10000118
+  symbol: OSMO
+  handle: osmosis
+  name: Osmosis
+  decimals: 6
