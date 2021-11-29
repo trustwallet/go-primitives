@@ -63,6 +63,46 @@ const (
 	POA       TokenType = "POA"
 )
 
+func GetTokenTypes() []TokenType {
+	return []TokenType{
+		ERC20,
+		ERC721,
+		ERC1155,
+		BEP2,
+		BEP8,
+		BEP20,
+		TRC10,
+		ETC20,
+		POA20,
+		TRC20,
+		TRC21,
+		CLO20,
+		GO20,
+		WAN20,
+		TT20,
+		KAVA,
+		SPL,
+		POLYGON,
+		OPTIMISM,
+		XDAI,
+		AVALANCHE,
+		FANTOM,
+		HRC20,
+		ARBITRUM,
+		TERRA,
+		RONIN,
+		EOS,
+		NEP5,
+		NRC20,
+		VET,
+		ONTOLOGY,
+		THETA,
+		TOMO,
+		WAVES,
+		POA,
+	}
+}
+
 func GetTokenType(c uint, tokenID string) (string, bool) {
 	if coin.IsEVM(c) {
 		tokenType, err := GetEthereumTokenTypeByIndex(c)
