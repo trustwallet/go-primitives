@@ -61,6 +61,7 @@ const (
 	TOMO      TokenType = "TOMO"
 	WAVES     TokenType = "WAVES"
 	POA       TokenType = "POA"
+	CELO      TokenType = "CELO"
 )
 
 func GetTokenTypes() []TokenType {
@@ -177,6 +178,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = HRC20
 	case coin.RONIN:
 		tokenType = RONIN
+	case coin.CELO:
+		tokenType = CELO
 	}
 
 	if tokenType == "" {
