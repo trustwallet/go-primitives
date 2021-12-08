@@ -88,3 +88,16 @@ func TestGetChainFromAssetType(t *testing.T) {
 		})
 	}
 }
+
+func TestGetChainFromAssetTypeFullness(t *testing.T) {
+	for _, tokenType := range GetTokenTypes() {
+		if tokenType == ERC721 || tokenType == ERC1155 {
+			continue
+		}
+
+		_, err := GetChainFromAssetType(string(tokenType))
+		if err != nil {
+			t.Error(err)
+		}
+	}
+}

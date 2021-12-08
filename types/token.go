@@ -101,6 +101,7 @@ func GetTokenTypes() []TokenType {
 		TOMO,
 		WAVES,
 		POA,
+		CELO,
 	}
 }
 
