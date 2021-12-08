@@ -10,7 +10,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 	switch TokenType(assetType) {
 	case ERC20:
 		return coin.Ethereum(), nil
-	case BEP2:
+	case BEP2, BEP8:
 		return coin.Binance(), nil
 	case BEP20:
 		return coin.Smartchain(), nil
@@ -46,7 +46,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Xdai(), nil
 	case WAVES:
 		return coin.Waves(), nil
-	case POA:
+	case POA, POA20:
 		return coin.Poa(), nil
 	case POLYGON:
 		return coin.Polygon(), nil
@@ -64,6 +64,10 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Ronin(), nil
 	case CELO:
 		return coin.Celo(), nil
+	case HRC20:
+		return coin.Harmony(), nil
+	case CLO20:
+		return coin.Callisto(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
