@@ -45,6 +45,13 @@ func TestParseID(t *testing.T) {
 			Coin,
 			nil,
 		},
+		{
+			givenID: "c60_",
+			wantedCoin: 60,
+			wantedToken: "",
+			wantedType: Coin,
+			wantedError: nil,
+		},
 	}
 
 	for _, tt := range testStruct {

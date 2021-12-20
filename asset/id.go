@@ -65,7 +65,7 @@ func FindCoinID(words []string) (uint, error) {
 
 func FindTokenID(words []string) string {
 	for _, w := range words {
-		if w[0] == tokenPrefix {
+		if len(w) > 0 && w[0] == tokenPrefix {
 			token := removeFirstChar(w)
 			if len(token) > 0 {
 				return token
