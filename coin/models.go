@@ -63,7 +63,7 @@ func GetCoinExploreURL(c Coin, tokenID string) (string, error) {
 	case WANCHAIN:
 		return fmt.Sprintf("https://www.wanscan.org/token/%s", tokenID), nil
 	case SOLANA:
-		return fmt.Sprintf("https://explorer.solana.com/address/%s", tokenID), nil
+		return fmt.Sprintf("https://solscan.io/token/%s", tokenID), nil
 	case TOMOCHAIN:
 		return fmt.Sprintf("https://scan.tomochain.com/address/%s", tokenID), nil
 	case KAVA:
