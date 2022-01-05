@@ -295,7 +295,7 @@
   blockTime: 20000
 
 - id: 165
-  symbol: NANO
+  symbol: XNO
   handle: nano
   name: Nano
   decimals: 30
