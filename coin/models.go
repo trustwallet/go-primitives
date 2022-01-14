@@ -97,7 +97,7 @@ func GetCoinExploreURL(c Coin, tokenID string) (string, error) {
 	case FANTOM:
 		return fmt.Sprintf("https://ftmscan.com/token/%s", tokenID), nil
 	case TERRA:
-		return fmt.Sprintf("https://finder.terra.money/columbus-4/%s", tokenID), nil
+		return fmt.Sprintf("https://finder.terra.money/mainnet/address/%s", tokenID), nil
 	case RONIN:
 		return fmt.Sprintf("https://explorer.roninchain.com/token/ronin:%s", tokenID), nil
 	case CELO:
