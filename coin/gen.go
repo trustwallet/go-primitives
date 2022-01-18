@@ -1,3 +1,4 @@
+//go:build coins
 // +build coins
 
 package main
@@ -79,6 +80,21 @@ var Coins = map[uint]Coin{
 	},
 {{- end }}
 }
+
+var Chains = map[string]Coin{
+{{- range .Coins }}
+	{{ .Handle | Capitalize }}().Handle: {
+		ID:               {{.ID}},
+		Handle:           "{{.Handle}}",
+		Symbol:           "{{.Symbol}}",
+		Name:             "{{.Name}}",
+		Decimals:         {{.Decimals}},
+		BlockTime:        {{.BlockTime}},
+		MinConfirmations: {{.MinConfirmations}},
+	},
+{{- end }}
+}
+
 {{- range .Coins }}
 
 func {{ .Handle | Capitalize }}() Coin {
