@@ -49,7 +49,8 @@ func TestCoinFile(t *testing.T) {
 	if err != nil {
 		t.Error(err)
 	}
-	defer f.Close()
+	defer func() { _ = f.Close() }()
+
 	b, err := ioutil.ReadAll(f)
 	if err != nil {
 		t.Error(err)
@@ -103,4 +104,35 @@ func TestBinance(t *testing.T) {
 	assert.Equal(t, uint(18), c.Decimals)
 	assert.Equal(t, 3000, c.BlockTime)
 	assert.Equal(t, int64(0), c.MinConfirmations)
+}
+
+func TestPublicVariables(t *testing.T) {
+	want := []Coin{
+		{
+			ID:               20000714,
+			Handle:           "smartchain",
+			Symbol:           "BNB",
+			Name:             "Smart Chain",
+			Decimals:         18,
+			BlockTime:        3000,
+			MinConfirmations: 0,
+		},
+		{
+			ID:               60,
+			Handle:           "ethereum",
+			Symbol:           "ETH",
+			Name:             "Ethereum",
+			Decimals:         18,
+			BlockTime:        10000,
+			MinConfirmations: 0,
+		},
+	}
+
+	for _, c := range want {
+		coin := Coins[c.ID]
+		assert.Equal(t, c, coin)
+
+		chain := Chains[c.Handle]
+		assert.Equal(t, c, chain)
+	}
 }
