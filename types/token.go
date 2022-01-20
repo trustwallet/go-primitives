@@ -62,6 +62,8 @@ const (
 	WAVES     TokenType = "WAVES"
 	POA       TokenType = "POA"
 	CELO      TokenType = "CELO"
+	ESDT      TokenType = "ESDT"
+	SFT       TokenType = "SFT"
 )
 
 func GetTokenTypes() []TokenType {
@@ -102,6 +104,8 @@ func GetTokenTypes() []TokenType {
 		WAVES,
 		POA,
 		CELO,
+		ESDT,
+		SFT,
 	}
 }
 
