@@ -40,7 +40,7 @@ func IsEVM(coinID uint) bool {
 	return false
 }
 
-func GetCoinExploreURL(c Coin, tokenID string) (string, error) {
+func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	switch c.ID {
 	case ETHEREUM:
 		return fmt.Sprintf("https://etherscan.io/token/%s", tokenID), nil
@@ -102,6 +102,12 @@ func GetCoinExploreURL(c Coin, tokenID string) (string, error) {
 		return fmt.Sprintf("https://explorer.roninchain.com/token/ronin:%s", tokenID), nil
 	case CELO:
 		return fmt.Sprintf("https://explorer.bitquery.io/celo_rc1/token/%s", tokenID), nil
+	case ELROND:
+		if tokenType == "ESDT" {
+			return fmt.Sprintf("https://explorer.elrond.com/tokens/%s", tokenID), nil
+		}
+
+		return fmt.Sprintf("https://explorer.elrond.com/collections/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
