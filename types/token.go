@@ -63,7 +63,7 @@ const (
 	POA       TokenType = "POA"
 	CELO      TokenType = "CELO"
 	ESDT      TokenType = "ESDT"
-	ESFT      TokenType = "ESFT"
+	ESDTSFT   TokenType = "ESDTSFT"
 )
 
 func GetTokenTypes() []TokenType {
@@ -105,7 +105,7 @@ func GetTokenTypes() []TokenType {
 		POA,
 		CELO,
 		ESDT,
-		ESFT,
+		ESDTSFT,
 	}
 }
 
