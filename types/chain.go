@@ -68,7 +68,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Harmony(), nil
 	case CLO20:
 		return coin.Callisto(), nil
-	case ESDT, ESFT:
+	case ESDT, ESDTSFT:
 		return coin.Elrond(), nil
 	}
 

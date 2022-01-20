@@ -102,10 +102,10 @@ func TestGetCoinExploreURL(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "Test Elrond SFT",
+			name: "Test Elrond ESDTSFT",
 			args: args{
 				addr:      "EGLDUSDCF-8600f8",
-				tokenType: "SFT",
+				tokenType: "ESDTSFT",
 				chain:     Elrond(),
 			},
 			want:    "https://explorer.elrond.com/collections/EGLDUSDCF-8600f8",
