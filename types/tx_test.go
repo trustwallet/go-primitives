@@ -482,6 +482,18 @@ func TestUTXOValueByAddress(t *testing.T) {
 			expected:             "800",
 			expectedErrAssertion: assert.NoError,
 		},
+		{
+			name: "uint64 overflow",
+			tx: Tx{
+				Outputs: []TxOutput{{
+					Address: "addr",
+					Value:   "58446744073709551620",
+				}},
+			},
+			address:              "addr",
+			expected:             "58446744073709551620",
+			expectedErrAssertion: assert.NoError,
+		},
 	}
 
 	for _, tc := range tests {

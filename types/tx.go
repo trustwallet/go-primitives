@@ -2,6 +2,7 @@ package types
 
 import (
 	"fmt"
+	"math/big"
 	"sort"
 	"strconv"
 
@@ -351,15 +352,15 @@ func (t *Tx) GetUTXOValueFor(address string) (Amount, error) {
 	isTransferOut := false
 	isSelf := true
 
-	var totalInputValue uint64
-	var addressInputValue uint64
+	totalInputValue := big.NewInt(0)
+	addressInputValue := big.NewInt(0)
 	for _, input := range t.Inputs {
-		value, err := strconv.ParseUint(string(input.Value), 10, 64)
-		if err != nil {
-			return "0", fmt.Errorf("input value for address %s: %v", input.Address, err)
+		value, ok := big.NewInt(0).SetString(string(input.Value), 10)
+		if !ok {
+			return "0", fmt.Errorf("invalid input value for address %s: %s", input.Address, input.Value)
 		}
 
-		totalInputValue += value
+		totalInputValue = totalInputValue.Add(totalInputValue, value)
 
 		if input.Address == address {
 			addressInputValue = value
@@ -367,27 +368,34 @@ func (t *Tx) GetUTXOValueFor(address string) (Amount, error) {
 		}
 	}
 
-	var addressOutputValue uint64
-	var totalOutputValue uint64
+	addressOutputValue := big.NewInt(0)
+	totalOutputValue := big.NewInt(0)
 	for _, output := range t.Outputs {
-		value, err := strconv.ParseUint(string(output.Value), 10, 64)
-		if err != nil {
-			return "0", fmt.Errorf("output value for address %s: %v", output.Address, err)
+		value, ok := big.NewInt(0).SetString(string(output.Value), 10)
+		if !ok {
+			return "0", fmt.Errorf("invalid output value for address %s: %s", output.Address, output.Value)
 		}
-		totalOutputValue += value
+		totalOutputValue = totalOutputValue.Add(totalOutputValue, value)
 		if output.Address == address {
-			addressOutputValue += value
+			addressOutputValue = addressOutputValue.Add(addressOutputValue, value)
 		} else {
 			isSelf = false
 		}
 	}
 
-	var result uint64
+	var result *big.Int
 	if isTransferOut && !isSelf {
-		if addressInputValue < addressOutputValue {
-			result = 0 // address received more than sent although it's an outgoing tx
+		if addressInputValue.Cmp(addressOutputValue) < 0 {
+			result = big.NewInt(0) // address received more than sent, although it's an outgoing tx
 		} else {
-			result = addressInputValue - (totalInputValue-totalOutputValue)/uint64(len(t.Inputs)) - addressOutputValue
+			//addressInputValue - (totalInputValue-totalOutputValue)/uint64(len(t.Inputs)) - addressOutputValue
+			totalTransferred := totalInputValue.Sub(totalInputValue, totalOutputValue)
+			avgSent := totalTransferred.Div(totalTransferred, big.NewInt(int64(len(t.Inputs))))
+			output := addressInputValue.Sub(addressInputValue, addressOutputValue)
+
+			// for utxo there is no way to define the exact amount sent
+			// because there is many senders and many recipients
+			result = output.Sub(output, avgSent)
 		}
 	} else {
 		result = addressOutputValue
