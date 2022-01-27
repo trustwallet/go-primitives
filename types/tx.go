@@ -392,6 +392,9 @@ func (t *Tx) GetUTXOValueFor(address string) (Amount, error) {
 			totalTransferred := totalInputValue.Sub(totalInputValue, totalOutputValue)
 			avgSent := totalTransferred.Div(totalTransferred, big.NewInt(int64(len(t.Inputs))))
 			output := addressInputValue.Sub(addressInputValue, addressOutputValue)
+
+			// for utxo there is no way to define the exact amount sent
+			// because there is many senders and many recipients
 			result = output.Sub(output, avgSent)
 		}
 	} else {
