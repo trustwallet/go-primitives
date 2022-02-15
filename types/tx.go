@@ -21,6 +21,7 @@ const (
 	DirectionSelf     Direction = "yourself"
 
 	TxTransfer          TransactionType = "transfer"
+	TxSwap              TransactionType = "swap"
 	TxContractCall      TransactionType = "contract_call"
 	TxStakeClaimRewards TransactionType = "stake_claim_rewards"
 	TxStakeDelegate     TransactionType = "stake_delegate"
@@ -29,7 +30,7 @@ const (
 )
 
 var SupportedTypes = []TransactionType{
-	TxTransfer, TxContractCall, TxStakeClaimRewards, TxStakeDelegate, TxStakeUndelegate, TxStakeRedelegate,
+	TxTransfer, TxSwap, TxContractCall, TxStakeClaimRewards, TxStakeDelegate, TxStakeUndelegate, TxStakeRedelegate,
 }
 
 // Transaction fields
@@ -122,6 +123,11 @@ type (
 	Transfer struct {
 		Asset coin.AssetID `json:"asset"`
 		Value Amount       `json:"value"`
+	}
+
+	Swap struct {
+		From Transfer `json:"from"`
+		To   Transfer `json:"to"`
 	}
 
 	// ContractCall describes a
@@ -262,6 +268,8 @@ func (t *Tx) GetAddresses() []string {
 
 		return append(addresses, t.From, t.To)
 	case TxContractCall:
+		return append(addresses, t.From, t.To)
+	case TxSwap:
 		return append(addresses, t.From, t.To)
 	case TxStakeDelegate, TxStakeRedelegate, TxStakeUndelegate, TxStakeClaimRewards:
 		return append(addresses, t.From)

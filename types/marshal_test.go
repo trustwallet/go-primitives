@@ -30,6 +30,13 @@ func TestTxMarshalling(t *testing.T) {
 			unmarshalErr: assert.NoError,
 		},
 		{
+			Name:         "swap",
+			Type:         TxSwap,
+			Metadata:     &Swap{},
+			marshalErr:   assert.NoError,
+			unmarshalErr: assert.NoError,
+		},
+		{
 			Name:         "claim_rewards",
 			Type:         TxStakeClaimRewards,
 			Metadata:     &Transfer{},
