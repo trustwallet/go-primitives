@@ -5,6 +5,7 @@ import (
 	"math/big"
 	"sort"
 	"strconv"
+	"strings"
 
 	mapset "github.com/deckarep/golang-set"
 	"github.com/trustwallet/go-primitives/asset"
@@ -230,6 +231,10 @@ func (cc *ContractCall) Validate() error {
 	}
 
 	return nil
+}
+
+func (s *Swap) GetAsset() coin.AssetID {
+	return coin.AssetID(strings.Split(string(s.From.Asset), "_")[0])
 }
 
 func cleanMemo(memo string) string {
