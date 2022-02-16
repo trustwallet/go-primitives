@@ -247,7 +247,7 @@
 
 - id: 136
   symbol: FIRO
-  handle: zcoin
+  handle: firo
   name: Firo
   decimals: 8
   blockTime: 300000
