@@ -152,7 +152,6 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(SPL), true
 	case coin.HECO, coin.HARMONY:
 		return string(HRC20), true
-	
 	default:
 		return "", false
 	}
