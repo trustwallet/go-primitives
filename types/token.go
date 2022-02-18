@@ -128,7 +128,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		}
 		return string(TRC10), true
 	case coin.TERRA:
-		if len(tokenID) == 44 {
+	    const idSize := len(tokenID)
+		if idSize == 44 {
 			return string(CW20), true
 		}
 		return string(TERRA), true
