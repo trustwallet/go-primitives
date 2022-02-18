@@ -204,18 +204,12 @@ func TestGetTokenType(t *testing.T) {
 			args:     args{coin.BITCOIN, ""},
 			wantBool: false,
 		},
-            {
-            	name:     "TERRA",
-            	args:     args{coin.TERRA, "uust"},
-            	want:     string(TERRA),
-            	wantBool: true,
-            },
-            {
-            	name:     "TERRA CW20",
-            	args:     args{coin.TERRA, "terra14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76"},
-            	want:     string(CW20),
-            	wantBool: true,
-            },
+            	{
+            		name:     "TERRA CW20",
+            		args:     args{coin.TERRA, "terra14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76"},
+            		want:     string(CW20),
+            		wantBool: true,
+            	},
 	}
 
 	for _, tt := range tests {
