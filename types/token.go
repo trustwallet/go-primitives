@@ -127,7 +127,7 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 			return string(TRC20), true
 		}
 		return string(TRC10), true
-	case coin.TRON:
+	case coin.TERRA:
 		if len(tokenID) == 44 {
 			return string(CW20), true
 		}
