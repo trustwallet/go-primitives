@@ -58,7 +58,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Arbitrum(), nil
 	case FANTOM:
 		return coin.Fantom(), nil
-	case TERRA:
+	case TERRA, CW20:
 		return coin.Terra(), nil
 	case RONIN:
 		return coin.Ronin(), nil
