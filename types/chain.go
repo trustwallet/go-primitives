@@ -70,6 +70,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Callisto(), nil
 	case ESDT, ESDTSFT:
 		return coin.Elrond(), nil
+	case OASIS:
+		return coin.Oasis(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
