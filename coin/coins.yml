@@ -487,3 +487,27 @@
   handle: osmosis
   name: Osmosis
   decimals: 6
+
+- id: 899
+  symbol: XEC
+  handle: ecash
+  name: ECash
+  decimals: 2
+
+- id: 10000025
+  symbol: CRO
+  handle: cronos
+  name: Cronos Chain
+  decimals: 18
+
+- id: 10000145
+  symbol: BCH
+  handle: smartbch
+  name: Smart Bitcoin Cash
+  decimals: 18
+
+- id: 10000321
+  symbol: KCS
+  handle: kcc
+  name: KuCoin Community Chain
+  decimals: 18

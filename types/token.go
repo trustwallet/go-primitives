@@ -66,6 +66,7 @@ const (
 	ESDTSFT   TokenType = "ESDTSFT"
 	CW20      TokenType = "CW20"
 	OASIS     TokenType = "OASIS"
+	CRC20     TokenType = "CRC20"
 )
 
 func GetTokenTypes() []TokenType {
@@ -110,6 +111,7 @@ func GetTokenTypes() []TokenType {
 		ESDT,
 		ESDTSFT,
 		OASIS,
+		CRC20,
 	}
 }
 
@@ -157,6 +159,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(HRC20), true
 	case coin.OASIS:
 		return string(OASIS), true
+	case coin.CRONOS:
+		return string(CRC20), true
 	default:
 		return "", false
 	}
@@ -199,6 +203,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = RONIN
 	case coin.CELO:
 		tokenType = CELO
+	case coin.CRONOS:
+		tokenType = CRC20
 	}
 
 	if tokenType == "" {
