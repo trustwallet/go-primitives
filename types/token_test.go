@@ -210,6 +210,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(CW20),
 			wantBool: true,
 		},
+		{
+			name:     "OASIS",
+			args:     args{coin.OASIS, ""},
+			want:     string(OASIS),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {

@@ -79,7 +79,7 @@ const (
 	VIACOIN      = 14
 	GROESTLCOIN  = 17
 	ZCASH        = 133
-	ZCOIN        = 136
+	FIRO         = 136
 	BITCOINCASH  = 145
 	RAVENCOIN    = 175
 	QTUM         = 2301
@@ -435,9 +435,9 @@ var Coins = map[uint]Coin{
 		BlockTime:        150000,
 		MinConfirmations: 0,
 	},
-	ZCOIN: {
+	FIRO: {
 		ID:               136,
-		Handle:           "zcoin",
+		Handle:           "firo",
 		Symbol:           "FIRO",
 		Name:             "Firo",
 		Decimals:         8,
@@ -1095,9 +1095,9 @@ var Chains = map[string]Coin{
 		BlockTime:        150000,
 		MinConfirmations: 0,
 	},
-	Zcoin().Handle: {
+	Firo().Handle: {
 		ID:               136,
-		Handle:           "zcoin",
+		Handle:           "firo",
 		Symbol:           "FIRO",
 		Name:             "Firo",
 		Decimals:         8,
@@ -1579,8 +1579,8 @@ func Zcash() Coin {
 	return Coins[ZCASH]
 }
 
-func Zcoin() Coin {
-	return Coins[ZCOIN]
+func Firo() Coin {
+	return Coins[FIRO]
 }
 
 func Bitcoincash() Coin {
