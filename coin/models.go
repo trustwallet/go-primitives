@@ -33,7 +33,8 @@ func IsEVM(coinID uint) bool {
 		AVALANCHEC,
 		FANTOM,
 		HECO,
-		RONIN:
+		RONIN,
+		CRONOS:
 		return true
 	}
 
@@ -112,6 +113,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://hecoinfo.com/token/%s", tokenID), nil
 	case OASIS:
 		return fmt.Sprintf("https://explorer.oasis.updev.si/token/%s", tokenID), nil
+	case CRONOS:
+		return fmt.Sprintf("https://cronos.org/explorer/token/%s/token-transfers", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
