@@ -487,3 +487,9 @@
   handle: osmosis
   name: Osmosis
   decimals: 6
+
+- id: 10000025
+  symbol: CRO
+  handle: cronos
+  name: Cronos
+  decimals: 18
