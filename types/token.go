@@ -63,7 +63,6 @@ const (
 	POA       TokenType = "POA"
 	CELO      TokenType = "CELO"
 	ESDT      TokenType = "ESDT"
-	ESDTSFT   TokenType = "ESDTSFT"
 	CW20      TokenType = "CW20"
 	OASIS     TokenType = "OASIS"
 	CRC20     TokenType = "CRC20"
@@ -109,7 +108,6 @@ func GetTokenTypes() []TokenType {
 		POA,
 		CELO,
 		ESDT,
-		ESDTSFT,
 		OASIS,
 		CRC20,
 	}
