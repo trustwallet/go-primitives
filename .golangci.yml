@@ -237,10 +237,8 @@ linters:
     - gocognit
     - gofmt
     - goimports
-    - gosimple
     - lll
     - govet
-    - unused
   fast: false
 
 severity:
