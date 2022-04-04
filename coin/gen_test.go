@@ -9,6 +9,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"gopkg.in/yaml.v2"
 )
 
@@ -70,7 +72,7 @@ func TestCoinFile(t *testing.T) {
 		assert.Equal(t, got.BlockTime, want.BlockTime)
 		assert.Equal(t, got.MinConfirmations, want.MinConfirmations)
 
-		s := strings.Title(want.Handle)
+		s := cases.Title(language.English).String(want.Handle)
 		method := fmt.Sprintf("func %s() Coin", s)
 		assert.True(t, strings.Contains(code, method), "Coin method not found")
 
