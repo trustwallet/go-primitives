@@ -1,6 +1,7 @@
 package types
 
 import (
+	"sort"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -231,6 +232,8 @@ func TestTx_GetAddresses(t *testing.T) {
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
 			result := tc.tx.GetAddresses()
+			sort.Strings(tc.expected)
+			sort.Strings(result)
 			assert.EqualValues(t, tc.expected, result)
 		})
 	}
