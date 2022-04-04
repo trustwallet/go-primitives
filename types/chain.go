@@ -6,6 +6,7 @@ import (
 	"github.com/trustwallet/go-primitives/coin"
 )
 
+// nolint:cyclop
 func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 	switch TokenType(assetType) {
 	case ERC20:

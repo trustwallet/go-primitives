@@ -41,6 +41,7 @@ func IsEVM(coinID uint) bool {
 	return false
 }
 
+// nolint:cyclop
 func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	switch c.ID {
 	case ETHEREUM:
