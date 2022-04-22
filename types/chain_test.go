@@ -75,13 +75,13 @@ func TestGetChainFromAssetType(t *testing.T) {
 			wantErr: false,
 		},
 		{
-        	name: "Test STELLAR",
-        	args: args{
-        		type_: "STELLAR",
-        	},
-        	want:    coin.Stellar(),
-        	wantErr: false,
-        },
+			name: "Test STELLAR",
+			args: args{
+				type_: "STELLAR",
+			},
+			want:    coin.Stellar(),
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
