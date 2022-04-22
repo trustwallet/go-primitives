@@ -109,11 +109,6 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.CRONOS},
 			want: CRC20,
 		},
-		{
-			name: "Stellar STELLAR",
-			args: args{coinIndex: coin.STELLAR},
-			want: STELLAR,
-		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
