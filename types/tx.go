@@ -8,6 +8,7 @@ import (
 	"strings"
 
 	mapset "github.com/deckarep/golang-set"
+
 	"github.com/trustwallet/go-primitives/asset"
 	"github.com/trustwallet/go-primitives/coin"
 )

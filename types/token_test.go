@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+
 	"github.com/trustwallet/go-primitives/coin"
 )
 
@@ -103,6 +104,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.RONIN},
 			want: RONIN,
 		},
+		{
+			name: "Cronos CRC20",
+			args: args{coinIndex: coin.CRONOS},
+			want: CRC20,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -131,6 +137,12 @@ func TestGetTokenType(t *testing.T) {
 			name:     "Ethereum",
 			args:     args{coin.ETHEREUM, ""},
 			want:     string(ERC20),
+			wantBool: true,
+		},
+		{
+			name:     "Cronos",
+			args:     args{coin.CRONOS, ""},
+			want:     string(CRC20),
 			wantBool: true,
 		},
 		{
@@ -203,6 +215,18 @@ func TestGetTokenType(t *testing.T) {
 			name:     "Bitcoin",
 			args:     args{coin.BITCOIN, ""},
 			wantBool: false,
+		},
+		{
+			name:     "TERRA CW20",
+			args:     args{coin.TERRA, "terra14z56l0fp2lsf86zy3hty2z47ezkhnthtr9yq76"},
+			want:     string(CW20),
+			wantBool: true,
+		},
+		{
+			name:     "OASIS",
+			args:     args{coin.OASIS, ""},
+			want:     string(OASIS),
+			wantBool: true,
 		},
 	}
 

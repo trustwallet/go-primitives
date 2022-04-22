@@ -247,7 +247,7 @@
 
 - id: 136
   symbol: FIRO
-  handle: zcoin
+  handle: firo
   name: Firo
   decimals: 8
   blockTime: 300000
@@ -487,3 +487,9 @@
   handle: osmosis
   name: Osmosis
   decimals: 6
+
+- id: 10000025
+  symbol: CRO
+  handle: cronos
+  name: Cronos
+  decimals: 18

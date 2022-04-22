@@ -6,6 +6,7 @@ import (
 	"github.com/trustwallet/go-primitives/coin"
 )
 
+// nolint:cyclop
 func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 	switch TokenType(assetType) {
 	case ERC20:
@@ -58,7 +59,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Arbitrum(), nil
 	case FANTOM:
 		return coin.Fantom(), nil
-	case TERRA:
+	case TERRA, CW20:
 		return coin.Terra(), nil
 	case RONIN:
 		return coin.Ronin(), nil
@@ -68,8 +69,12 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Heco(), nil
 	case CLO20:
 		return coin.Callisto(), nil
-	case ESDT, ESDTSFT:
+	case ESDT:
 		return coin.Elrond(), nil
+	case OASIS:
+		return coin.Oasis(), nil
+	case CRC20:
+		return coin.Cronos(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)

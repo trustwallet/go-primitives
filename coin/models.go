@@ -33,13 +33,15 @@ func IsEVM(coinID uint) bool {
 		AVALANCHEC,
 		FANTOM,
 		HECO,
-		RONIN:
+		RONIN,
+		CRONOS:
 		return true
 	}
 
 	return false
 }
 
+// nolint:cyclop
 func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	switch c.ID {
 	case ETHEREUM:
@@ -110,6 +112,10 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://explorer.elrond.com/collections/%s", tokenID), nil
 	case HECO:
 		return fmt.Sprintf("https://hecoinfo.com/token/%s", tokenID), nil
+	case OASIS:
+		return fmt.Sprintf("https://explorer.oasis.updev.si/token/%s", tokenID), nil
+	case CRONOS:
+		return fmt.Sprintf("https://cronos.org/explorer/token/%s/token-transfers", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

@@ -16,7 +16,7 @@ jobs:
     - name: Set up Go 1.x
       uses: actions/setup-go@v2
       with:
-        go-version: ^1.16
+        go-version: ^1.18
       id: go
 
     - name: Check out code into the Go module directory
@@ -29,5 +29,12 @@ jobs:
     - name: Test
       run: go test -v ./...
 
-    - name: Lint
-      run: make lint
+  golangci:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.45.2

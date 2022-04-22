@@ -4,8 +4,9 @@ import (
 	"encoding/hex"
 	"strings"
 
-	"github.com/trustwallet/go-primitives/coin"
 	"golang.org/x/crypto/sha3"
+
+	"github.com/trustwallet/go-primitives/coin"
 )
 
 // Decode decodes a hex string with 0x prefix.
@@ -50,7 +51,8 @@ func EIP55Checksum(unchecksummed string) (string, error) {
 
 func ToEIP55ByCoinID(str string, coinID uint) (string, error) {
 	switch coinID {
-	case coin.ETHEREUM, coin.POA, coin.CLASSIC, coin.TOMOCHAIN, coin.CALLISTO, coin.THUNDERTOKEN, coin.GOCHAIN, coin.WANCHAIN:
+	case coin.ETHEREUM, coin.POA, coin.CLASSIC, coin.TOMOCHAIN, coin.CALLISTO,
+		coin.THUNDERTOKEN, coin.GOCHAIN, coin.WANCHAIN:
 		return EIP55Checksum(str)
 	default:
 		return str, nil
