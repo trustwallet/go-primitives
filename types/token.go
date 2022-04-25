@@ -66,6 +66,7 @@ const (
 	CW20      TokenType = "CW20"
 	OASIS     TokenType = "OASIS"
 	CRC20     TokenType = "CRC20"
+	STELLAR   TokenType = "STELLAR"
 )
 
 func GetTokenTypes() []TokenType {
@@ -110,6 +111,7 @@ func GetTokenTypes() []TokenType {
 		ESDT,
 		OASIS,
 		CRC20,
+		STELLAR,
 	}
 }
 
@@ -157,6 +159,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(HRC20), true
 	case coin.OASIS:
 		return string(OASIS), true
+	case coin.STELLAR:
+		return string(STELLAR), true
 	default:
 		return "", false
 	}
