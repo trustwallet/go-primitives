@@ -101,6 +101,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.elrond.com/tokens/EGLDUSDC-594e5e",
 			wantErr: false,
 		},
+		{
+			name: "Test STELLAR",
+			args: args{
+				addr:      "yXLM-GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55",
+				tokenType: "STELLAR",
+				chain:     Stellar(),
+			},
+			want:    "https://stellar.expert/explorer/public/asset/yXLM-GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
