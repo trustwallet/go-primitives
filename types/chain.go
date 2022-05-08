@@ -77,6 +77,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Cronos(), nil
 	case STELLAR:
 		return coin.Stellar(), nil
+	case KRC20:
+		return coin.Kcc(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)

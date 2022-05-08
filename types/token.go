@@ -67,7 +67,7 @@ const (
 	OASIS     TokenType = "OASIS"
 	CRC20     TokenType = "CRC20"
 	STELLAR   TokenType = "STELLAR"
-	KRC20     TokenType = "STELLAR"
+	KRC20     TokenType = "KRC20"
 )
 
 func GetTokenTypes() []TokenType {
