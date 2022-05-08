@@ -109,6 +109,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.CRONOS},
 			want: CRC20,
 		},
+		{
+			name: "KuCoin KRC20",
+			args: args{coinIndex: coin.KCC},
+			want: KRC20,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -143,6 +148,12 @@ func TestGetTokenType(t *testing.T) {
 			name:     "Cronos",
 			args:     args{coin.CRONOS, ""},
 			want:     string(CRC20),
+			wantBool: true,
+		},
+		{
+			name:     "KuCoin",
+			args:     args{coin.KCC, ""},
+			want:     string(KRC20),
 			wantBool: true,
 		},
 		{

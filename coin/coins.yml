@@ -493,3 +493,9 @@
   handle: cronos
   name: Cronos
   decimals: 18
+
+- id: 10000321
+  symbol: KCS
+  handle: kcc
+  name: KuCoin Community Chain
+  decimals: 18

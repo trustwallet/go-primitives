@@ -67,6 +67,7 @@ const (
 	OASIS     TokenType = "OASIS"
 	CRC20     TokenType = "CRC20"
 	STELLAR   TokenType = "STELLAR"
+	KRC20     TokenType = "KRC20"
 )
 
 func GetTokenTypes() []TokenType {
@@ -112,6 +113,7 @@ func GetTokenTypes() []TokenType {
 		OASIS,
 		CRC20,
 		STELLAR,
+		KRC20,
 	}
 }
 
@@ -205,6 +207,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = CELO
 	case coin.CRONOS:
 		tokenType = CRC20
+	case coin.KCC:
+		tokenType = KRC20
 	}
 
 	if tokenType == "" {
