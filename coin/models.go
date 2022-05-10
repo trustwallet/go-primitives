@@ -35,7 +35,8 @@ func IsEVM(coinID uint) bool {
 		HECO,
 		RONIN,
 		CRONOS,
-		KCC:
+		KCC,
+		AURORA:
 		return true
 	}
 
