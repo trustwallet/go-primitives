@@ -499,3 +499,9 @@
   handle: kcc
   name: KuCoin Community Chain
   decimals: 18
+
+- id: 1323161554
+  symbol: AURORAETH
+  handle: aurora
+  name: Aurora
+  decimals: 18
