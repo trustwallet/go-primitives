@@ -65,8 +65,8 @@ func TestTxMarshalling(t *testing.T) {
 			unmarshalErr: assert.NoError,
 		},
 		{
-			Name:         "redelegate",
-			Type:         TxStakeRedelegate,
+			Name:         "compound",
+			Type:         TxStakeCompound,
 			Metadata:     &Transfer{},
 			marshalErr:   assert.NoError,
 			unmarshalErr: assert.NoError,

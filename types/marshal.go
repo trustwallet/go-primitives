@@ -24,7 +24,7 @@ func (t *Tx) UnmarshalJSON(data []byte) error {
 	*t = Tx(wrapped)
 
 	switch t.Type {
-	case TxTransfer, TxStakeDelegate, TxStakeUndelegate, TxStakeRedelegate, TxStakeClaimRewards:
+	case TxTransfer, TxStakeDelegate, TxStakeUndelegate, TxStakeRedelegate, TxStakeClaimRewards, TxStakeCompound:
 		t.Metadata = new(Transfer)
 	case TxContractCall:
 		t.Metadata = new(ContractCall)
