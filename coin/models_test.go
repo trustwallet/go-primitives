@@ -134,11 +134,11 @@ func TestGetCoinExploreURL(t *testing.T) {
 		{
 			name: "Test KuCoin",
 			args: args{
-				addr:      "0x3db85383ab912c9d9c003bd2ec09107e0f37b8a0",
+				addr:      "0x980a5afef3d17ad98635f6c5aebcbaeded3c3430",
 				tokenType: "KRC20",
 				chain:     Kcc(),
 			},
-			want:    "https://explorer.kcc.io/address/0x3db85383ab912c9d9c003bd2ec09107e0f37b8a0",
+			want:    "https://explorer.kcc.io/token/0x980a5afef3d17ad98635f6c5aebcbaeded3c3430",
 			wantErr: false,
 		},
 	}

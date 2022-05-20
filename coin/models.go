@@ -121,7 +121,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case STELLAR:
 		return fmt.Sprintf("https://stellar.expert/explorer/public/asset/%s", tokenID), nil
 	case KCC:
-		return fmt.Sprintf("https://explorer.kcc.io/address/%s", tokenID), nil
+		return fmt.Sprintf("https://explorer.kcc.io/token/%s", tokenID), nil
 	case AURORA:
 		return fmt.Sprintf("https://aurorascan.dev/address/%s", tokenID), nil
 	}
