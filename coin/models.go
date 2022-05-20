@@ -103,7 +103,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case TERRA:
 		return fmt.Sprintf("https://finder.terra.money/mainnet/address/%s", tokenID), nil
 	case RONIN:
-		return fmt.Sprintf("https://explorer.roninchain.com/token/ronin:%s", tokenID), nil
+		return fmt.Sprintf("https://explorer.roninchain.com/token/%s", tokenID), nil
 	case CELO:
 		return fmt.Sprintf("https://explorer.bitquery.io/celo_rc1/token/%s", tokenID), nil
 	case ELROND:
@@ -117,9 +117,13 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case OASIS:
 		return fmt.Sprintf("https://explorer.oasis.updev.si/token/%s", tokenID), nil
 	case CRONOS:
-		return fmt.Sprintf("https://cronos.org/explorer/token/%s/token-transfers", tokenID), nil
+		return fmt.Sprintf("https://cronos.org/explorer/address/%s/token-transfers", tokenID), nil
 	case STELLAR:
 		return fmt.Sprintf("https://stellar.expert/explorer/public/asset/%s", tokenID), nil
+	case KCC:
+		return fmt.Sprintf("https://explorer.kcc.io/address/%s", tokenID), nil
+	case AURORA:
+		return fmt.Sprintf("https://aurorascan.dev/address/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
