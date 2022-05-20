@@ -111,6 +111,36 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://stellar.expert/explorer/public/asset/yXLM-GARDNV3Q7YGT4AKSDF25LT32YSCCW4EV22Y2TV3I2PU2MMXJTEDL5T55",
 			wantErr: false,
 		},
+		{
+			name: "Test CRONOS",
+			args: args{
+				addr:      "0x145677FC4d9b8F19B5D56d1820c48e0443049a30",
+				tokenType: "CRC20",
+				chain:     Cronos(),
+			},
+			want:    "https://cronos.org/explorer/address/0x145677FC4d9b8F19B5D56d1820c48e0443049a30/token-transfers",
+			wantErr: false,
+		},
+		{
+			name: "Test Aurora",
+			args: args{
+				addr:      "0x7b37ABAe99A560Aec9497DBbe1741204bd439AC0",
+				tokenType: "AURORA",
+				chain:     Aurora(),
+			},
+			want:    "https://aurorascan.dev/address/0x7b37ABAe99A560Aec9497DBbe1741204bd439AC0",
+			wantErr: false,
+		},
+		{
+			name: "Test KuCoin",
+			args: args{
+				addr:      "0x3db85383ab912c9d9c003bd2ec09107e0f37b8a0",
+				tokenType: "KRC20",
+				chain:     Kcc(),
+			},
+			want:    "https://explorer.kcc.io/address/0x3db85383ab912c9d9c003bd2ec09107e0f37b8a0",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
