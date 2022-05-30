@@ -279,7 +279,7 @@ func (t *Tx) GetAddresses() []string {
 		return append(addresses, t.From, t.To)
 	case TxSwap:
 		return append(addresses, t.From, t.To)
-	case TxStakeDelegate, TxStakeRedelegate, TxStakeUndelegate, TxStakeClaimRewards:
+	case TxStakeDelegate, TxStakeRedelegate, TxStakeUndelegate, TxStakeClaimRewards, TxStakeCompound:
 		return append(addresses, t.From)
 	default:
 		return addresses
