@@ -227,6 +227,16 @@ func TestTx_GetAddresses(t *testing.T) {
 			},
 			expected: []string{"from_utxo", "to_utxo"},
 		},
+		{
+			name: "stake_compound",
+			tx: Tx{
+				Type:     TxStakeCompound,
+				From:     "from",
+				To:       "to",
+				Metadata: &Transfer{},
+			},
+			expected: []string{"from"},
+		},
 	}
 
 	for _, tc := range tests {
@@ -238,6 +248,19 @@ func TestTx_GetAddresses(t *testing.T) {
 		})
 	}
 
+	// make sure all supported types have a test
+	supportedTypesMap := map[TransactionType]struct{}{}
+	for _, supportedType := range SupportedTypes {
+		supportedTypesMap[supportedType] = struct{}{}
+	}
+
+	testedTypesMap := map[TransactionType]struct{}{}
+	for _, tc := range tests {
+		if _, supported := supportedTypesMap[tc.tx.Type]; supported {
+			testedTypesMap[tc.tx.Type] = struct{}{}
+		}
+	}
+	assert.Equal(t, len(supportedTypesMap), len(testedTypesMap))
 }
 
 func TestTx_GetDirection(t *testing.T) {
