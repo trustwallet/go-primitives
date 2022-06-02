@@ -9,7 +9,8 @@ import (
 )
 
 type (
-	TokenType string
+	TokenType    string
+	TokenVersion int
 
 	// Token describes the non-native tokens.
 	// Examples: ERC-20, TRC-20, BEP-2
@@ -69,6 +70,18 @@ const (
 	STELLAR   TokenType = "STELLAR"
 	KRC20     TokenType = "KRC20"
 	AURORA    TokenType = "AURORA"
+
+	TokenVersionV0     TokenVersion = 0
+	TokenVersionV1     TokenVersion = 1
+	TokenVersionV3     TokenVersion = 3
+	TokenVersionV4     TokenVersion = 4
+	TokenVersionV5     TokenVersion = 5
+	TokenVersionV6     TokenVersion = 6
+	TokenVersionV7     TokenVersion = 7
+	TokenVersionV8     TokenVersion = 8
+	TokenVersionV9     TokenVersion = 9
+	TokenVersionLatest              = TokenVersionV9
+	TokenVersionNext                = TokenVersionLatest + 1
 )
 
 func GetTokenTypes() []TokenType {
@@ -167,6 +180,41 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(STELLAR), true
 	default:
 		return "", false
+	}
+}
+
+func GetTokenVersion(t TokenType) TokenVersion {
+	switch t {
+	case ERC20,
+		BEP2,
+		BEP20,
+		ETC20,
+		POA20,
+		CLO20,
+		TRC10,
+		TRC21,
+		WAN20,
+		GO20,
+		TT20:
+		return TokenVersionV0
+	case TRC20:
+		return TokenVersionV1
+	case SPL, KAVA:
+		return TokenVersionV3
+	case POLYGON:
+		return TokenVersionV4
+	case AVALANCHE, ARBITRUM, FANTOM, HRC20, OPTIMISM, XDAI:
+		return TokenVersionV5
+	case TERRA:
+		return TokenVersionV6
+	case CELO:
+		return TokenVersionV7
+	case CW20:
+		return TokenVersionV8
+	case ESDT, CRC20:
+		return TokenVersionV9
+	default:
+		return TokenVersionNext
 	}
 }
 

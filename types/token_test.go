@@ -267,3 +267,72 @@ func TestGetTokenType(t *testing.T) {
 		})
 	}
 }
+
+func TestGetTokenVersion(t *testing.T) {
+	type args struct {
+		t TokenType
+	}
+	tests := []struct {
+		name string
+		args args
+		want TokenVersion
+	}{
+		{
+			"ERC20 token version",
+			args{t: ERC20},
+			TokenVersionV0,
+		},
+		{
+			"SPL token version",
+			args{t: SPL},
+			TokenVersionV3,
+		},
+		{
+			"Polygon token version",
+			args{t: POLYGON},
+			TokenVersionV4,
+		},
+		{
+			"Fantom token version",
+			args{t: FANTOM},
+			TokenVersionV5,
+		},
+		{
+			"Terra token version",
+			args{t: "TERRA"},
+			TokenVersionV6,
+		},
+		{
+			"CELO token version",
+			args{t: "CELO"},
+			TokenVersionV7,
+		},
+		{
+			"CW20 token version",
+			args{t: "CW20"},
+			TokenVersionV8,
+		},
+		{
+			"CRC20 token version",
+			args{t: "CRC20"},
+			TokenVersionV9,
+		},
+		{
+			"ESDT token version",
+			args{t: "ESDT"},
+			TokenVersionV9,
+		},
+		{
+			"Random token version",
+			args{t: "Random"},
+			TokenVersionNext,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := GetTokenVersion(tt.args.t); got != tt.want {
+				t.Errorf("GetTokenVersion() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
