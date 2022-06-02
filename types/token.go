@@ -71,17 +71,17 @@ const (
 	KRC20     TokenType = "KRC20"
 	AURORA    TokenType = "AURORA"
 
-	TokenVersionV0     TokenVersion = 0
-	TokenVersionV1     TokenVersion = 1
-	TokenVersionV3     TokenVersion = 3
-	TokenVersionV4     TokenVersion = 4
-	TokenVersionV5     TokenVersion = 5
-	TokenVersionV6     TokenVersion = 6
-	TokenVersionV7     TokenVersion = 7
-	TokenVersionV8     TokenVersion = 8
-	TokenVersionV9     TokenVersion = 9
-	TokenVersionLatest              = TokenVersionV9
-	TokenVersionNext                = TokenVersionLatest + 1
+	TokenVersionV0        TokenVersion = 0
+	TokenVersionV1        TokenVersion = 1
+	TokenVersionV3        TokenVersion = 3
+	TokenVersionV4        TokenVersion = 4
+	TokenVersionV5        TokenVersion = 5
+	TokenVersionV6        TokenVersion = 6
+	TokenVersionV7        TokenVersion = 7
+	TokenVersionV8        TokenVersion = 8
+	TokenVersionV9        TokenVersion = 9
+	TokenVersionLatest                 = TokenVersionV9
+	TokenVersionUndefined TokenVersion = -1
 )
 
 func GetTokenTypes() []TokenType {
@@ -214,7 +214,7 @@ func GetTokenVersion(t TokenType) TokenVersion {
 	case ESDT, CRC20:
 		return TokenVersionV9
 	default:
-		return TokenVersionNext
+		return TokenVersionUndefined
 	}
 }
 

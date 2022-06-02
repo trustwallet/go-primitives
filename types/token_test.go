@@ -325,7 +325,7 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Random token version",
 			args{t: "Random"},
-			TokenVersionNext,
+			TokenVersionUndefined,
 		},
 	}
 	for _, tt := range tests {
@@ -334,5 +334,12 @@ func TestGetTokenVersion(t *testing.T) {
 				t.Errorf("GetTokenVersion() = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+func TestGetTokenVersionImplementEverySupportedTokenTypes(t *testing.T) {
+	for _, tokenType := range GetTokenTypes() {
+		tokenVersion := GetTokenVersion(tokenType)
+		assert.NotEqual(t, TokenVersionUndefined, tokenVersion, tokenType)
 	}
 }
