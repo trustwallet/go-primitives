@@ -86,7 +86,6 @@ const (
 	TokenVersionV9        TokenVersion = 9
 	TokenVersionV10       TokenVersion = 10
 	TokenVersionV11       TokenVersion = 11
-	TokenVersionLatest                 = TokenVersionV11
 	TokenVersionUndefined TokenVersion = -1
 )
 
