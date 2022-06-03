@@ -1,6 +1,7 @@
 package types
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -273,73 +274,89 @@ func TestGetTokenVersion(t *testing.T) {
 		t TokenType
 	}
 	tests := []struct {
-		name string
-		args args
-		want TokenVersion
+		name        string
+		args        args
+		wantVersion TokenVersion
+		wantErr     error
 	}{
 		{
 			"ERC20 token version",
 			args{t: ERC20},
 			TokenVersionV0,
+			nil,
 		},
 		{
 			"SPL token version",
 			args{t: SPL},
 			TokenVersionV3,
+			nil,
 		},
 		{
 			"Polygon token version",
 			args{t: POLYGON},
 			TokenVersionV4,
+			nil,
 		},
 		{
 			"Fantom token version",
 			args{t: FANTOM},
 			TokenVersionV5,
+			nil,
 		},
 		{
 			"Terra token version",
 			args{t: "TERRA"},
 			TokenVersionV6,
+			nil,
 		},
 		{
 			"CELO token version",
 			args{t: "CELO"},
 			TokenVersionV7,
+			nil,
 		},
 		{
 			"CW20 token version",
 			args{t: "CW20"},
 			TokenVersionV8,
+			nil,
 		},
 		{
 			"CRC20 token version",
 			args{t: "CRC20"},
 			TokenVersionV9,
+			nil,
 		},
 		{
 			"ESDT token version",
 			args{t: "ESDT"},
 			TokenVersionV9,
+			nil,
+		},
+		{
+			"KRC20 token version",
+			args{t: "KRC20"},
+			TokenVersionV10,
+			nil,
+		},
+		{
+			"RONIN token version",
+			args{t: "RONIN"},
+			TokenVersionV11,
+			nil,
 		},
 		{
 			"Random token version",
 			args{t: "Random"},
 			TokenVersionUndefined,
+			ErrUnknownTokenVersion,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := GetTokenVersion(tt.args.t); got != tt.want {
-				t.Errorf("GetTokenVersion() = %v, want %v", got, tt.want)
-			}
+			got, gotErr := GetTokenVersion(tt.args.t)
+			assert.Equal(t, tt.wantVersion, got)
+			assert.True(t, errors.Is(gotErr, tt.wantErr))
 		})
-	}
-}
-
-func TestGetTokenVersionImplementEverySupportedTokenTypes(t *testing.T) {
-	for _, tokenType := range GetTokenTypes() {
-		tokenVersion := GetTokenVersion(tokenType)
-		assert.NotEqual(t, TokenVersionUndefined, tokenVersion, tokenType)
 	}
 }

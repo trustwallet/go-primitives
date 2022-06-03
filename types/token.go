@@ -1,12 +1,15 @@
 package types
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 
 	"github.com/trustwallet/go-primitives/asset"
 	"github.com/trustwallet/go-primitives/coin"
 )
+
+var ErrUnknownTokenVersion = errors.New("unknown token version")
 
 type (
 	TokenType    string
@@ -80,7 +83,9 @@ const (
 	TokenVersionV7        TokenVersion = 7
 	TokenVersionV8        TokenVersion = 8
 	TokenVersionV9        TokenVersion = 9
-	TokenVersionLatest                 = TokenVersionV9
+	TokenVersionV10       TokenVersion = 10
+	TokenVersionV11       TokenVersion = 11
+	TokenVersionLatest                 = TokenVersionV11
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -183,11 +188,12 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	}
 }
 
-func GetTokenVersion(t TokenType) TokenVersion {
+func GetTokenVersion(t TokenType) (TokenVersion, error) {
 	switch t {
 	case ERC20,
 		BEP2,
 		BEP20,
+		BEP8,
 		ETC20,
 		POA20,
 		CLO20,
@@ -195,26 +201,31 @@ func GetTokenVersion(t TokenType) TokenVersion {
 		TRC21,
 		WAN20,
 		GO20,
-		TT20:
-		return TokenVersionV0
+		TT20,
+		WAVES:
+		return TokenVersionV0, nil
 	case TRC20:
-		return TokenVersionV1
+		return TokenVersionV1, nil
 	case SPL, KAVA:
-		return TokenVersionV3
+		return TokenVersionV3, nil
 	case POLYGON:
-		return TokenVersionV4
+		return TokenVersionV4, nil
 	case AVALANCHE, ARBITRUM, FANTOM, HRC20, OPTIMISM, XDAI:
-		return TokenVersionV5
+		return TokenVersionV5, nil
 	case TERRA:
-		return TokenVersionV6
-	case CELO:
-		return TokenVersionV7
+		return TokenVersionV6, nil
+	case CELO, NRC20:
+		return TokenVersionV7, nil
 	case CW20:
-		return TokenVersionV8
+		return TokenVersionV8, nil
 	case ESDT, CRC20:
-		return TokenVersionV9
+		return TokenVersionV9, nil
+	case KRC20, STELLAR:
+		return TokenVersionV10, nil
+	case RONIN:
+		return TokenVersionV11, nil
 	default:
-		return TokenVersionUndefined
+		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", t, ErrUnknownTokenVersion)
 	}
 }
 
