@@ -9,7 +9,8 @@ import (
 	"github.com/trustwallet/go-primitives/coin"
 )
 
-var ErrUnknownTokenVersion = errors.New("unknown token version")
+var ErrUnknownTokenType = errors.New("unknown token type")
+var errTokenVersionNotImplemented = errors.New("token version not implemented")
 
 type (
 	TokenType    string
@@ -188,8 +189,12 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	}
 }
 
-func GetTokenVersion(t TokenType) (TokenVersion, error) {
-	switch t {
+func GetTokenVersion(tokenType string) (TokenVersion, error) {
+	parsedTokenType, err := ParseTokenTypeFromString(tokenType)
+	if err != nil {
+		return TokenVersionUndefined, err
+	}
+	switch parsedTokenType {
 	case ERC20,
 		BEP2,
 		BEP20,
@@ -224,9 +229,21 @@ func GetTokenVersion(t TokenType) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN:
 		return TokenVersionV11, nil
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, AURORA:
+		return TokenVersionUndefined, nil
 	default:
-		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", t, ErrUnknownTokenVersion)
+		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
+		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)
 	}
+}
+
+func ParseTokenTypeFromString(t string) (TokenType, error) {
+	for _, knownTokenType := range GetTokenTypes() {
+		if string(knownTokenType) == t {
+			return knownTokenType, nil
+		}
+	}
+	return "", fmt.Errorf("%s: %w", t, ErrUnknownTokenType)
 }
 
 func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {

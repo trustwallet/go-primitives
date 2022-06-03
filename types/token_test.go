@@ -271,7 +271,7 @@ func TestGetTokenType(t *testing.T) {
 
 func TestGetTokenVersion(t *testing.T) {
 	type args struct {
-		t TokenType
+		t string
 	}
 	tests := []struct {
 		name        string
@@ -281,25 +281,25 @@ func TestGetTokenVersion(t *testing.T) {
 	}{
 		{
 			"ERC20 token version",
-			args{t: ERC20},
+			args{t: string(ERC20)},
 			TokenVersionV0,
 			nil,
 		},
 		{
 			"SPL token version",
-			args{t: SPL},
+			args{t: string(SPL)},
 			TokenVersionV3,
 			nil,
 		},
 		{
 			"Polygon token version",
-			args{t: POLYGON},
+			args{t: string(POLYGON)},
 			TokenVersionV4,
 			nil,
 		},
 		{
 			"Fantom token version",
-			args{t: FANTOM},
+			args{t: string(FANTOM)},
 			TokenVersionV5,
 			nil,
 		},
@@ -346,10 +346,16 @@ func TestGetTokenVersion(t *testing.T) {
 			nil,
 		},
 		{
+			"OASIS token version",
+			args{t: "OASIS"},
+			TokenVersionUndefined,
+			nil,
+		},
+		{
 			"Random token version",
 			args{t: "Random"},
 			TokenVersionUndefined,
-			ErrUnknownTokenVersion,
+			ErrUnknownTokenType,
 		},
 	}
 	for _, tt := range tests {
@@ -358,5 +364,14 @@ func TestGetTokenVersion(t *testing.T) {
 			assert.Equal(t, tt.wantVersion, got)
 			assert.True(t, errors.Is(gotErr, tt.wantErr))
 		})
+	}
+}
+
+// TestGetTokenVersionImplementEverySupportedTokenTypes makes sure every supported token type has a version.
+// This also makes sure when we add new token type, we remember to add a version for it
+func TestGetTokenVersionImplementEverySupportedTokenTypes(t *testing.T) {
+	for _, tokenType := range GetTokenTypes() {
+		_, err := GetTokenVersion(string(tokenType))
+		assert.NoError(t, err)
 	}
 }
