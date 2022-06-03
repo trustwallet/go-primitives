@@ -1,6 +1,7 @@
 package types
 
 import (
+	"errors"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -265,5 +266,112 @@ func TestGetTokenType(t *testing.T) {
 			assert.Equal(t, tt.wantBool, gotBool)
 
 		})
+	}
+}
+
+func TestGetTokenVersion(t *testing.T) {
+	type args struct {
+		t string
+	}
+	tests := []struct {
+		name        string
+		args        args
+		wantVersion TokenVersion
+		wantErr     error
+	}{
+		{
+			"ERC20 token version",
+			args{t: string(ERC20)},
+			TokenVersionV0,
+			nil,
+		},
+		{
+			"SPL token version",
+			args{t: string(SPL)},
+			TokenVersionV3,
+			nil,
+		},
+		{
+			"Polygon token version",
+			args{t: string(POLYGON)},
+			TokenVersionV4,
+			nil,
+		},
+		{
+			"Fantom token version",
+			args{t: string(FANTOM)},
+			TokenVersionV5,
+			nil,
+		},
+		{
+			"Terra token version",
+			args{t: "TERRA"},
+			TokenVersionV6,
+			nil,
+		},
+		{
+			"CELO token version",
+			args{t: "CELO"},
+			TokenVersionV7,
+			nil,
+		},
+		{
+			"CW20 token version",
+			args{t: "CW20"},
+			TokenVersionV8,
+			nil,
+		},
+		{
+			"CRC20 token version",
+			args{t: "CRC20"},
+			TokenVersionV9,
+			nil,
+		},
+		{
+			"ESDT token version",
+			args{t: "ESDT"},
+			TokenVersionV9,
+			nil,
+		},
+		{
+			"KRC20 token version",
+			args{t: "KRC20"},
+			TokenVersionV10,
+			nil,
+		},
+		{
+			"RONIN token version",
+			args{t: "RONIN"},
+			TokenVersionV11,
+			nil,
+		},
+		{
+			"OASIS token version",
+			args{t: "OASIS"},
+			TokenVersionUndefined,
+			nil,
+		},
+		{
+			"Random token version",
+			args{t: "Random"},
+			TokenVersionUndefined,
+			ErrUnknownTokenType,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, gotErr := GetTokenVersion(tt.args.t)
+			assert.Equal(t, tt.wantVersion, got)
+			assert.True(t, errors.Is(gotErr, tt.wantErr))
+		})
+	}
+}
+
+// TestGetTokenVersionImplementEverySupportedTokenTypes makes sure every supported token type has a version.
+// This also makes sure when we add new token type, we remember to add a version for it
+func TestGetTokenVersionImplementEverySupportedTokenTypes(t *testing.T) {
+	for _, tokenType := range GetTokenTypes() {
+		_, err := GetTokenVersion(string(tokenType))
+		assert.NoError(t, err)
 	}
 }

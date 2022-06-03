@@ -1,6 +1,7 @@
 package types
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 
@@ -8,8 +9,12 @@ import (
 	"github.com/trustwallet/go-primitives/coin"
 )
 
+var ErrUnknownTokenType = errors.New("unknown token type")
+var errTokenVersionNotImplemented = errors.New("token version not implemented")
+
 type (
-	TokenType string
+	TokenType    string
+	TokenVersion int
 
 	// Token describes the non-native tokens.
 	// Examples: ERC-20, TRC-20, BEP-2
@@ -69,6 +74,19 @@ const (
 	STELLAR   TokenType = "STELLAR"
 	KRC20     TokenType = "KRC20"
 	AURORA    TokenType = "AURORA"
+
+	TokenVersionV0        TokenVersion = 0
+	TokenVersionV1        TokenVersion = 1
+	TokenVersionV3        TokenVersion = 3
+	TokenVersionV4        TokenVersion = 4
+	TokenVersionV5        TokenVersion = 5
+	TokenVersionV6        TokenVersion = 6
+	TokenVersionV7        TokenVersion = 7
+	TokenVersionV8        TokenVersion = 8
+	TokenVersionV9        TokenVersion = 9
+	TokenVersionV10       TokenVersion = 10
+	TokenVersionV11       TokenVersion = 11
+	TokenVersionUndefined TokenVersion = -1
 )
 
 func GetTokenTypes() []TokenType {
@@ -168,6 +186,63 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	default:
 		return "", false
 	}
+}
+
+func GetTokenVersion(tokenType string) (TokenVersion, error) {
+	parsedTokenType, err := ParseTokenTypeFromString(tokenType)
+	if err != nil {
+		return TokenVersionUndefined, err
+	}
+	switch parsedTokenType {
+	case ERC20,
+		BEP2,
+		BEP20,
+		BEP8,
+		ETC20,
+		POA20,
+		CLO20,
+		TRC10,
+		TRC21,
+		WAN20,
+		GO20,
+		TT20,
+		WAVES:
+		return TokenVersionV0, nil
+	case TRC20:
+		return TokenVersionV1, nil
+	case SPL, KAVA:
+		return TokenVersionV3, nil
+	case POLYGON:
+		return TokenVersionV4, nil
+	case AVALANCHE, ARBITRUM, FANTOM, HRC20, OPTIMISM, XDAI:
+		return TokenVersionV5, nil
+	case TERRA:
+		return TokenVersionV6, nil
+	case CELO, NRC20:
+		return TokenVersionV7, nil
+	case CW20:
+		return TokenVersionV8, nil
+	case ESDT, CRC20:
+		return TokenVersionV9, nil
+	case KRC20, STELLAR:
+		return TokenVersionV10, nil
+	case RONIN:
+		return TokenVersionV11, nil
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, AURORA:
+		return TokenVersionUndefined, nil
+	default:
+		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
+		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)
+	}
+}
+
+func ParseTokenTypeFromString(t string) (TokenType, error) {
+	for _, knownTokenType := range GetTokenTypes() {
+		if string(knownTokenType) == t {
+			return knownTokenType, nil
+		}
+	}
+	return "", fmt.Errorf("%s: %w", t, ErrUnknownTokenType)
 }
 
 func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
