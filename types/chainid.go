@@ -8,4 +8,5 @@ const (
 	ChainIDArbitrum   = 42161
 	ChainIDGnosis     = 100
 	ChainIDAvalanche  = 43114
+	ChainIDFantom     = 250
 )
