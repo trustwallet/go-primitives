@@ -74,7 +74,9 @@ const (
 	STELLAR   TokenType = "STELLAR"
 	KRC20     TokenType = "KRC20"
 	AURORA    TokenType = "AURORA"
+)
 
+const (
 	TokenVersionV0        TokenVersion = 0
 	TokenVersionV1        TokenVersion = 1
 	TokenVersionV3        TokenVersion = 3
@@ -226,9 +228,9 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV9, nil
 	case KRC20, STELLAR:
 		return TokenVersionV10, nil
-	case RONIN:
+	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, AURORA:
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
