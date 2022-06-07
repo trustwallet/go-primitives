@@ -346,6 +346,12 @@ func TestGetTokenVersion(t *testing.T) {
 			nil,
 		},
 		{
+			"AURORA token version",
+			args{t: "AURORA"},
+			TokenVersionV11,
+			nil,
+		},
+		{
 			"OASIS token version",
 			args{t: "OASIS"},
 			TokenVersionUndefined,
