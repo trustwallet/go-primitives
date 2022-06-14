@@ -141,6 +141,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.kcc.io/token/0x2cA48b4eeA5A731c2B54e7C3944DBDB87c0CFB6F",
 			wantErr: false,
 		},
+		{
+			name: "Test Algorand",
+			args: args{
+				addr:      "test",
+				tokenType: "ALGORAND",
+				chain:     Algorand(),
+			},
+			want:    "https://algoexplorer.io/asset/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
