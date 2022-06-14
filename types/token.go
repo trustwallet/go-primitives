@@ -74,6 +74,7 @@ const (
 	STELLAR   TokenType = "STELLAR"
 	KRC20     TokenType = "KRC20"
 	AURORA    TokenType = "AURORA"
+	ALGORAND  TokenType = "ALGORAND"
 )
 
 const (
@@ -136,6 +137,7 @@ func GetTokenTypes() []TokenType {
 		STELLAR,
 		KRC20,
 		AURORA,
+		ALGORAND,
 	}
 }
 
@@ -185,6 +187,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(OASIS), true
 	case coin.STELLAR:
 		return string(STELLAR), true
+	case coin.ALGORAND:
+		return string(ALGORAND), true
 	default:
 		return "", false
 	}
@@ -230,7 +234,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS:
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
