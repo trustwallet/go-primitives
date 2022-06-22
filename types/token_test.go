@@ -120,6 +120,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.AURORA},
 			want: AURORA,
 		},
+		{
+			name: "Arbitrum ARBITRUM",
+			args: args{coinIndex: coin.ARBITRUM},
+			want: ARBITRUM,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -385,5 +390,21 @@ func TestGetTokenVersionImplementEverySupportedTokenTypes(t *testing.T) {
 	for _, tokenType := range GetTokenTypes() {
 		_, err := GetTokenVersion(string(tokenType))
 		assert.NoError(t, err)
+	}
+}
+
+func TestGetCheckTokenTypes(t *testing.T) {
+	for _, tokenType := range GetTokenTypes() {
+		if tokenType == ERC721 || tokenType == ERC1155 {
+			continue
+		}
+
+		c, err := GetChainFromAssetType(string(tokenType))
+		assert.NoErrorf(t, err, "Missing chain for token type")
+
+		result, ok := GetTokenType(c.ID, "")
+		assert.Truef(t, ok, "Missing token type for coin %d", c.ID)
+
+		assert.Truef(t, len(result) > 0, "Empty token type for coin %d", c.ID)
 	}
 }
