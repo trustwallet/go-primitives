@@ -189,6 +189,12 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(STELLAR), true
 	case coin.ALGORAND:
 		return string(ALGORAND), true
+	case coin.KAVA:
+		return string(KAVA), true
+	case coin.CELO:
+		return string(CELO), true
+	case coin.ELROND:
+		return string(ESDT), true
 	default:
 		return "", false
 	}
@@ -294,6 +300,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = KRC20
 	case coin.AURORA:
 		tokenType = AURORA
+	case coin.ARBITRUM:
+		tokenType = ARBITRUM
 	}
 
 	if tokenType == "" {
