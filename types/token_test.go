@@ -393,6 +393,9 @@ func TestGetTokenVersionImplementEverySupportedTokenTypes(t *testing.T) {
 	}
 }
 
+// TestGetCheckTokenTypes makes sure that for every supported token type there is corresponding entry in:
+// - GetChainFromAssetType function, that returns coin by asset type
+// - GetTokenType function, that return token type by coin
 func TestGetCheckTokenTypes(t *testing.T) {
 	for _, tokenType := range GetTokenTypes() {
 		if tokenType == ERC721 || tokenType == ERC1155 {
