@@ -75,6 +75,7 @@ const (
 	KRC20     TokenType = "KRC20"
 	AURORA    TokenType = "AURORA"
 	ALGORAND  TokenType = "ALGORAND"
+	KAVAERC20 TokenType = "KAVAERC20"
 )
 
 const (
@@ -138,6 +139,7 @@ func GetTokenTypes() []TokenType {
 		KRC20,
 		AURORA,
 		ALGORAND,
+		KAVAERC20,
 	}
 }
 
@@ -240,7 +242,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND:
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, KAVAERC20:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -302,6 +304,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = AURORA
 	case coin.ARBITRUM:
 		tokenType = ARBITRUM
+	case coin.KAVAEVM:
+		tokenType = KAVAERC20
 	}
 
 	if tokenType == "" {

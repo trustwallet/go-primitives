@@ -505,3 +505,9 @@
   handle: aurora
   name: Aurora
   decimals: 18
+
+- id: 10002222
+  symbol: KAVA
+  handle: kavaevm
+  name: KavaEvm
+  decimals: 18

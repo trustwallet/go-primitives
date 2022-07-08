@@ -151,6 +151,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://algoexplorer.io/asset/test",
 			wantErr: false,
 		},
+		{
+			name: "Test KavaEvm",
+			args: args{
+				addr:      "test",
+				tokenType: "KAVA",
+				chain:     Kavaevm(),
+			},
+			want:    "https://explorer.kava.io/token/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

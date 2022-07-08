@@ -37,7 +37,8 @@ func IsEVM(coinID uint) bool {
 		CRONOS,
 		KCC,
 		AURORA,
-		ARBITRUM:
+		ARBITRUM,
+		KAVAEVM:
 		return true
 	}
 
@@ -127,6 +128,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://aurorascan.dev/address/%s", tokenID), nil
 	case ALGORAND:
 		return fmt.Sprintf("https://algoexplorer.io/asset/%s", tokenID), nil
+	case KAVAEVM:
+		return fmt.Sprintf("https://explorer.kava.io/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
