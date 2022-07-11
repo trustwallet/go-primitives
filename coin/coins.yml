@@ -511,3 +511,9 @@
   handle: kavaevm
   name: KavaEvm
   decimals: 18
+
+- id: 18000
+  symbol: MTR
+  handle: meter
+  name: Meter
+  decimals: 18

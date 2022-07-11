@@ -161,6 +161,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.kava.io/token/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Meter",
+			args: args{
+				addr:      "test",
+				tokenType: "METER",
+				chain:     Meter(),
+			},
+			want:    "https://scan.meter.io/address/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
