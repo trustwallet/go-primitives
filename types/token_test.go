@@ -374,6 +374,12 @@ func TestGetTokenVersion(t *testing.T) {
 			TokenVersionUndefined,
 			ErrUnknownTokenType,
 		},
+		{
+			"Meter token version",
+			args{t: string(METER)},
+			TokenVersionUndefined,
+			nil,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

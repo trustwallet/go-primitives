@@ -85,6 +85,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Algorand(), nil
 	case KAVAERC20:
 		return coin.Kavaevm(), nil
+	case METER:
+		return coin.Meter(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
