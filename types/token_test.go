@@ -380,6 +380,18 @@ func TestGetTokenVersion(t *testing.T) {
 			TokenVersionUndefined,
 			nil,
 		},
+		{
+			"Evmos token version",
+			args{t: string(EVMOS)},
+			TokenVersionUndefined,
+			nil,
+		},
+		{
+			"NativeEvmos token version",
+			args{t: string(NATIVEEVMOS)},
+			TokenVersionUndefined,
+			nil,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

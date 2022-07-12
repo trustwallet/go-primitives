@@ -39,7 +39,8 @@ func IsEVM(coinID uint) bool {
 		AURORA,
 		ARBITRUM,
 		KAVAEVM,
-		METER:
+		METER,
+		EVMOS:
 		return true
 	}
 

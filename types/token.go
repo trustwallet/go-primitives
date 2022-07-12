@@ -29,54 +29,56 @@ type (
 )
 
 const (
-	Coin      TokenType = "coin"
-	Gas       TokenType = "gas"
-	ERC20     TokenType = "ERC20"
-	ERC721    TokenType = "ERC721"
-	ERC1155   TokenType = "ERC1155"
-	BEP2      TokenType = "BEP2"
-	BEP8      TokenType = "BEP8"
-	BEP20     TokenType = "BEP20"
-	TRC10     TokenType = "TRC10"
-	ETC20     TokenType = "ETC20"
-	POA20     TokenType = "POA20"
-	TRC20     TokenType = "TRC20"
-	TRC21     TokenType = "TRC21"
-	CLO20     TokenType = "CLO20"
-	GO20      TokenType = "GO20"
-	WAN20     TokenType = "WAN20"
-	TT20      TokenType = "TT20"
-	KAVA      TokenType = "KAVA"
-	SPL       TokenType = "SPL"
-	POLYGON   TokenType = "POLYGON"
-	OPTIMISM  TokenType = "OPTIMISM"
-	XDAI      TokenType = "XDAI"
-	AVALANCHE TokenType = "AVALANCHE"
-	FANTOM    TokenType = "FANTOM"
-	HRC20     TokenType = "HRC20"
-	ARBITRUM  TokenType = "ARBITRUM"
-	TERRA     TokenType = "TERRA"
-	RONIN     TokenType = "RONIN"
-	EOS       TokenType = "EOS"
-	NEP5      TokenType = "NEP5"
-	NRC20     TokenType = "NRC20"
-	VET       TokenType = "VET"
-	ONTOLOGY  TokenType = "ONTOLOGY"
-	THETA     TokenType = "THETA"
-	TOMO      TokenType = "TOMO"
-	WAVES     TokenType = "WAVES"
-	POA       TokenType = "POA"
-	CELO      TokenType = "CELO"
-	ESDT      TokenType = "ESDT"
-	CW20      TokenType = "CW20"
-	OASIS     TokenType = "OASIS"
-	CRC20     TokenType = "CRC20"
-	STELLAR   TokenType = "STELLAR"
-	KRC20     TokenType = "KRC20"
-	AURORA    TokenType = "AURORA"
-	ALGORAND  TokenType = "ALGORAND"
-	KAVAERC20 TokenType = "KAVAERC20"
-	METER     TokenType = "METER"
+	Coin        TokenType = "coin"
+	Gas         TokenType = "gas"
+	ERC20       TokenType = "ERC20"
+	ERC721      TokenType = "ERC721"
+	ERC1155     TokenType = "ERC1155"
+	BEP2        TokenType = "BEP2"
+	BEP8        TokenType = "BEP8"
+	BEP20       TokenType = "BEP20"
+	TRC10       TokenType = "TRC10"
+	ETC20       TokenType = "ETC20"
+	POA20       TokenType = "POA20"
+	TRC20       TokenType = "TRC20"
+	TRC21       TokenType = "TRC21"
+	CLO20       TokenType = "CLO20"
+	GO20        TokenType = "GO20"
+	WAN20       TokenType = "WAN20"
+	TT20        TokenType = "TT20"
+	KAVA        TokenType = "KAVA"
+	SPL         TokenType = "SPL"
+	POLYGON     TokenType = "POLYGON"
+	OPTIMISM    TokenType = "OPTIMISM"
+	XDAI        TokenType = "XDAI"
+	AVALANCHE   TokenType = "AVALANCHE"
+	FANTOM      TokenType = "FANTOM"
+	HRC20       TokenType = "HRC20"
+	ARBITRUM    TokenType = "ARBITRUM"
+	TERRA       TokenType = "TERRA"
+	RONIN       TokenType = "RONIN"
+	EOS         TokenType = "EOS"
+	NEP5        TokenType = "NEP5"
+	NRC20       TokenType = "NRC20"
+	VET         TokenType = "VET"
+	ONTOLOGY    TokenType = "ONTOLOGY"
+	THETA       TokenType = "THETA"
+	TOMO        TokenType = "TOMO"
+	WAVES       TokenType = "WAVES"
+	POA         TokenType = "POA"
+	CELO        TokenType = "CELO"
+	ESDT        TokenType = "ESDT"
+	CW20        TokenType = "CW20"
+	OASIS       TokenType = "OASIS"
+	CRC20       TokenType = "CRC20"
+	STELLAR     TokenType = "STELLAR"
+	KRC20       TokenType = "KRC20"
+	AURORA      TokenType = "AURORA"
+	ALGORAND    TokenType = "ALGORAND"
+	KAVAERC20   TokenType = "KAVAERC20"
+	METER       TokenType = "METER"
+	EVMOS       TokenType = "EVMOS"       //todo adjust value
+	NATIVEEVMOS TokenType = "NATIVEEVMOS" //todo adjust value
 )
 
 const (
@@ -142,6 +144,8 @@ func GetTokenTypes() []TokenType {
 		ALGORAND,
 		KAVAERC20,
 		METER,
+		EVMOS,
+		NATIVEEVMOS,
 	}
 }
 
@@ -199,6 +203,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(CELO), true
 	case coin.ELROND:
 		return string(ESDT), true
+	case coin.NATIVEEVMOS:
+		return string(NATIVEEVMOS), true
 	default:
 		return "", false
 	}
@@ -244,7 +250,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, KAVAERC20, METER:
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, KAVAERC20, METER, EVMOS,
+		NATIVEEVMOS:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -310,6 +317,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = KAVAERC20
 	case coin.METER:
 		tokenType = METER
+	case coin.EVMOS:
+		tokenType = EVMOS
 	}
 
 	if tokenType == "" {
