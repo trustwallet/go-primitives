@@ -40,6 +40,7 @@ type Coin struct {
 	Decimals         uint
 	BlockTime        int
 	MinConfirmations int64
+	Blockchain       string // Name of the Blockchain which core is used for this network
 }
 
 type AssetID string
@@ -77,6 +78,7 @@ var Coins = map[uint]Coin{
 		Decimals:         {{.Decimals}},
 		BlockTime:        {{.BlockTime}},
 		MinConfirmations: {{.MinConfirmations}},
+		Blockchain:       "{{.Blockchain}}",
 	},
 {{- end }}
 }
@@ -91,6 +93,7 @@ var Chains = map[string]Coin{
 		Decimals:         {{.Decimals}},
 		BlockTime:        {{.BlockTime}},
 		MinConfirmations: {{.MinConfirmations}},
+		Blockchain:       "{{.Blockchain}}",
 	},
 {{- end }}
 }
@@ -113,6 +116,7 @@ type Coin struct {
 	Decimals         uint   `yaml:"decimals"`
 	BlockTime        int    `yaml:"blockTime"`
 	MinConfirmations int64  `yaml:"minConfirmations"`
+	Blockchain       string `yaml:"blockchain"`
 }
 
 func main() {

@@ -118,6 +118,7 @@ func TestPublicVariables(t *testing.T) {
 			Decimals:         18,
 			BlockTime:        3000,
 			MinConfirmations: 0,
+			Blockchain:       "Ethereum",
 		},
 		{
 			ID:               60,
@@ -127,6 +128,7 @@ func TestPublicVariables(t *testing.T) {
 			Decimals:         18,
 			BlockTime:        10000,
 			MinConfirmations: 0,
+			Blockchain:       "Ethereum",
 		},
 	}
 

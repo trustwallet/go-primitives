@@ -6,6 +6,8 @@ import (
 	"strconv"
 )
 
+const BlockchainEthereum = "Ethereum"
+
 func GetCoinForId(id string) (Coin, error) {
 	for _, c := range Coins {
 		if c.Handle == id {
@@ -15,36 +17,8 @@ func GetCoinForId(id string) (Coin, error) {
 	return Coin{}, errors.New("unknown id " + id)
 }
 
-// todo test
 func IsEVM(coinID uint) bool {
-	switch coinID {
-	case ETHEREUM,
-		CLASSIC,
-		POA,
-		CALLISTO,
-		WANCHAIN,
-		THUNDERTOKEN,
-		GOCHAIN,
-		TOMOCHAIN,
-		SMARTCHAIN,
-		POLYGON,
-		OPTIMISM,
-		XDAI,
-		AVALANCHEC,
-		FANTOM,
-		HECO,
-		RONIN,
-		CRONOS,
-		KCC,
-		AURORA,
-		ARBITRUM,
-		KAVAEVM,
-		METER,
-		EVMOS:
-		return true
-	}
-
-	return false
+	return Coins[coinID].Blockchain == BlockchainEthereum
 }
 
 // nolint:cyclop
