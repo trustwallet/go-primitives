@@ -4,7 +4,7 @@
   name: Ethereum
   decimals: 18
   blockTime: 10000
-  type: true
+  isEvm: true
 
 - id: 61
   symbol: ETC
