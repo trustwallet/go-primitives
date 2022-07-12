@@ -171,6 +171,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://scan.meter.io/address/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Evmos",
+			args: args{
+				addr:      "test",
+				tokenType: "EVMOS_ERC20",
+				chain:     Evmos(),
+			},
+			want:    "https://evm.evmos.org/address/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

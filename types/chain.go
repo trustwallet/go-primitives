@@ -87,6 +87,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Kavaevm(), nil
 	case METER:
 		return coin.Meter(), nil
+	case EVMOS_ERC20:
+		return coin.Evmos(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)

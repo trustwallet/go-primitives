@@ -39,7 +39,8 @@ func IsEVM(coinID uint) bool {
 		AURORA,
 		ARBITRUM,
 		KAVAEVM,
-		METER:
+		METER,
+		EVMOS:
 		return true
 	}
 
@@ -133,6 +134,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://explorer.kava.io/token/%s", tokenID), nil
 	case METER:
 		return fmt.Sprintf("https://scan.meter.io/address/%s", tokenID), nil
+	case EVMOS:
+		return fmt.Sprintf("https://evm.evmos.org/address/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
