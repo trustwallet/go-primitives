@@ -77,8 +77,7 @@ const (
 	ALGORAND    TokenType = "ALGORAND"
 	KAVAERC20   TokenType = "KAVAERC20"
 	METER       TokenType = "METER"
-	EVMOS       TokenType = "EVMOS"       //todo adjust value
-	NATIVEEVMOS TokenType = "NATIVEEVMOS" //todo adjust value
+	EVMOS_ERC20 TokenType = "EVMOS_ERC20"
 )
 
 const (
@@ -144,8 +143,7 @@ func GetTokenTypes() []TokenType {
 		ALGORAND,
 		KAVAERC20,
 		METER,
-		EVMOS,
-		NATIVEEVMOS,
+		EVMOS_ERC20,
 	}
 }
 
@@ -203,8 +201,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(CELO), true
 	case coin.ELROND:
 		return string(ESDT), true
-	case coin.NATIVEEVMOS:
-		return string(NATIVEEVMOS), true
+	case coin.EVMOS:
+		return string(EVMOS_ERC20), true
 	default:
 		return "", false
 	}
@@ -250,8 +248,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, KAVAERC20, METER, EVMOS,
-		NATIVEEVMOS:
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, KAVAERC20, METER, EVMOS_ERC20:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -318,7 +315,7 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 	case coin.METER:
 		tokenType = METER
 	case coin.EVMOS:
-		tokenType = EVMOS
+		tokenType = EVMOS_ERC20
 	}
 
 	if tokenType == "" {

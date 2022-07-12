@@ -382,13 +382,7 @@ func TestGetTokenVersion(t *testing.T) {
 		},
 		{
 			"Evmos token version",
-			args{t: string(EVMOS)},
-			TokenVersionUndefined,
-			nil,
-		},
-		{
-			"NativeEvmos token version",
-			args{t: string(NATIVEEVMOS)},
+			args{t: string(EVMOS_ERC20)},
 			TokenVersionUndefined,
 			nil,
 		},
