@@ -4,6 +4,7 @@
   name: Ethereum
   decimals: 18
   blockTime: 10000
+  type: true
 
 - id: 61
   symbol: ETC
@@ -11,6 +12,7 @@
   name: Ethereum Classic
   decimals: 18
   blockTime: 30000
+  isEvm: true
 
 - id: 74
   symbol: ICX
@@ -46,6 +48,7 @@
   name: Poa
   decimals: 18
   blockTime: 5000
+  isEvm: true
 
 - id: 195
   symbol: TRX
@@ -131,6 +134,7 @@
   name: Callisto
   decimals: 18
   blockTime: 10000
+  isEvm: true
 
 - id: 889
   symbol: TOMO
@@ -138,6 +142,7 @@
   name: TOMO
   blockTime: 4000
   decimals: 18
+  isEvm: true
 
 - id: 1001
   symbol: TT
@@ -145,6 +150,7 @@
   name: ThunderCore
   decimals: 18
   blockTime: 10000
+  isEvm: true
 
 - id: 1024
   symbol: ONT
@@ -180,6 +186,7 @@
   name: GoChain GO
   decimals: 18
   blockTime: 20000
+  isEvm: true
 
 - id: 5718350
   symbol: WAN
@@ -187,6 +194,7 @@
   name: Wanchain
   decimals: 18
   blockTime: 30000
+  isEvm: true
 
 - id: 5741564
   symbol: WAVES
@@ -355,6 +363,7 @@
   name: 'Smart Chain'
   decimals: 18
   blockTime: 3000
+  isEvm: true
 
 - id: 461
   symbol: FIL
@@ -427,6 +436,7 @@
   handle: polygon
   name: Polygon
   decimals: 18
+  isEvm: true
 
 - id: 931
   symbol: RUNE
@@ -439,36 +449,42 @@
   handle: optimism
   name: Optimism Ethereum
   decimals: 18
+  isEvm: true
 
 - id: 10000100
   symbol: xDAI
   handle: xdai
   name: xDai
   decimals: 18
+  isEvm: true
 
 - id: 10009000
   symbol: AVAX
   handle: avalanchec
   name: Avalanche C-Chain
   decimals: 18
+  isEvm: true
 
 - id: 10000553
   symbol: HT
   handle: heco
   name: Huobi ECO Chain
   decimals: 18
+  isEvm: true
 
 - id: 10000250
   symbol: FTM
   handle: fantom
   name: Fantom
   decimals: 18
+  isEvm: true
 
 - id: 10042221
   symbol: ARETH
   handle: arbitrum
   name: Arbitrum
   decimals: 18
+  isEvm: true
 
 - id: 52752
   symbol: CELO
@@ -481,6 +497,7 @@
   handle: ronin
   name: Ronin
   decimals: 18
+  isEvm: true
 
 - id: 10000118
   symbol: OSMO
@@ -493,27 +510,32 @@
   handle: cronos
   name: Cronos
   decimals: 18
+  isEvm: true
 
 - id: 10000321
   symbol: KCS
   handle: kcc
   name: KuCoin Community Chain
   decimals: 18
+  isEvm: true
 
 - id: 1323161554
   symbol: AURORAETH
   handle: aurora
   name: Aurora
   decimals: 18
+  isEvm: true
 
 - id: 10002222
   symbol: KAVA
   handle: kavaevm
   name: KavaEvm
   decimals: 18
+  isEvm: true
 
 - id: 18000
   symbol: MTR
   handle: meter
   name: Meter
   decimals: 18
+  isEvm: true
