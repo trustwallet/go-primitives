@@ -517,3 +517,15 @@
   handle: meter
   name: Meter
   decimals: 18
+
+- id: 10009001
+  symbol: EVMOS
+  handle: evmos
+  name: Evmos
+  decimals: 18
+
+- id: 20009001
+  symbol: EVMOS
+  handle: nativeevmos
+  name: NativeEvmos
+  decimals: 18
