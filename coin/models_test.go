@@ -1,8 +1,11 @@
 package coin
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestGetCoinForId(t *testing.T) {
@@ -193,5 +196,50 @@ func TestGetCoinExploreURL(t *testing.T) {
 				t.Errorf("GetCoinForId() got = %v, want %v", got, tt.want)
 			}
 		})
+	}
+}
+
+var evmCoinsTestSet = map[uint]struct{}{
+	ETHEREUM:     {},
+	CLASSIC:      {},
+	POA:          {},
+	CALLISTO:     {},
+	WANCHAIN:     {},
+	THUNDERTOKEN: {},
+	GOCHAIN:      {},
+	TOMOCHAIN:    {},
+	SMARTCHAIN:   {},
+	POLYGON:      {},
+	OPTIMISM:     {},
+	XDAI:         {},
+	AVALANCHEC:   {},
+	FANTOM:       {},
+	HECO:         {},
+	RONIN:        {},
+	CRONOS:       {},
+	KCC:          {},
+	AURORA:       {},
+	ARBITRUM:     {},
+	KAVAEVM:      {},
+	METER:        {},
+	EVMOS:        {},
+	CELO:         {},
+}
+
+// TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
+// To fix it, extend evmCoinsTestSet with that new chain
+func TestEvmCoinsList(t *testing.T) {
+	for _, c := range Coins {
+		_, ok := evmCoinsTestSet[c.ID]
+		assert.Equalf(t, c.Blockchain == BlockchainEthereum, ok, fmt.Sprintf("chain: %s", c.Handle))
+	}
+}
+
+func TestIsEVM(t *testing.T) {
+	for _, c := range Coins {
+		_, ok := evmCoinsTestSet[c.ID]
+		if ok {
+			assert.Truef(t, IsEVM(c.ID), fmt.Sprintf("chain: %s", c.Handle))
+		}
 	}
 }

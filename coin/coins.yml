@@ -4,7 +4,7 @@
   name: Ethereum
   decimals: 18
   blockTime: 10000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 61
   symbol: ETC
@@ -12,7 +12,7 @@
   name: Ethereum Classic
   decimals: 18
   blockTime: 30000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 74
   symbol: ICX
@@ -20,6 +20,7 @@
   name: ICON
   decimals: 18
   blockTime: 10000
+  blockchain: Icon
 
 - id: 118
   symbol: ATOM
@@ -27,6 +28,7 @@
   name: Cosmos
   decimals: 6
   blockTime: 5000
+  blockchain: Cosmos
 
 - id: 144
   symbol: XRP
@@ -34,6 +36,7 @@
   name: Ripple
   decimals: 6
   blockTime: 5000
+  blockchain: Ripple
 
 - id: 148
   symbol: XLM
@@ -41,6 +44,7 @@
   name: Stellar
   decimals: 7
   blockTime: 5000
+  blockchain: Stellar
 
 - id: 178
   symbol: POA
@@ -48,7 +52,7 @@
   name: Poa
   decimals: 18
   blockTime: 5000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 195
   symbol: TRX
@@ -56,6 +60,7 @@
   name: Tron
   decimals: 6
   blockTime: 10000
+  blockchain: Tron
 
 - id: 235
   symbol: FIO
@@ -63,6 +68,7 @@
   name: FIO
   decimals: 9
   blockTime: 5000
+  blockchain: FIO
 
 - id: 242
   symbol: NIM
@@ -70,6 +76,7 @@
   name: Nimiq
   decimals: 5
   blockTime: 60000
+  blockchain: Nimiq
 
 - id: 304
   symbol: IOTX
@@ -77,6 +84,7 @@
   name: IoTeX
   decimals: 18
   blockTime: 10000
+  blockchain: IoTeX
 
 - id: 313
   symbol: ZIL
@@ -85,6 +93,7 @@
   decimals: 12
   blockTime: 30000
   minConfirmations: 1
+  blockchain: Zilliqa
 
 - id: 425
   symbol: AION
@@ -92,6 +101,7 @@
   name: Aion
   decimals: 18
   blockTime: 10000
+  blockchain: Aion
 
 - id: 457
   symbol: AE
@@ -99,6 +109,7 @@
   name: Aeternity
   decimals: 18
   blockTime: 6000
+  blockchain: Aeternity
 
 - id: 459
   symbol: KAVA
@@ -106,12 +117,14 @@
   name: Kava
   decimals: 6
   blockTime: 5000
+  blockchain: Cosmos
 
 - id: 500
   symbol: THETA
   handle: theta
   name: Theta
   decimals: 18
+  blockchain: Theta
 
 - id: 714
   symbol: BNB
@@ -120,6 +133,7 @@
   decimals: 8
   blockTime: 1000
   minConfirmations: 2
+  blockchain: Binance
 
 - id: 818
   symbol: VET
@@ -127,6 +141,7 @@
   name: VeChain Token
   decimals: 18
   blockTime: 20000
+  blockchain: Vechain
 
 - id: 820
   symbol: CLO
@@ -134,7 +149,7 @@
   name: Callisto
   decimals: 18
   blockTime: 10000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 889
   symbol: TOMO
@@ -142,7 +157,7 @@
   name: TOMO
   blockTime: 4000
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 1001
   symbol: TT
@@ -150,7 +165,7 @@
   name: ThunderCore
   decimals: 18
   blockTime: 10000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 1024
   symbol: ONT
@@ -158,6 +173,7 @@
   name: Ontology
   decimals: 0
   blockTime: 10000
+  blockchain: Ontology
 
 - id: 1729
   symbol: XTZ
@@ -165,6 +181,7 @@
   name: Tezos
   decimals: 6
   blockTime: 20000
+  blockchain: Tezos
 
 - id: 2017
   symbol: KIN
@@ -172,6 +189,7 @@
   name: Kin
   decimals: 5
   blockTime: 5000
+  blockchain: Stellar
 
 - id: 2718
   symbol: NAS
@@ -179,6 +197,7 @@
   name: Nebulas
   decimals: 18
   blockTime: 30000
+  blockchain: Nebulas
 
 - id: 6060
   symbol: GO
@@ -186,7 +205,7 @@
   name: GoChain GO
   decimals: 18
   blockTime: 20000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 5718350
   symbol: WAN
@@ -194,7 +213,7 @@
   name: Wanchain
   decimals: 18
   blockTime: 30000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 5741564
   symbol: WAVES
@@ -203,6 +222,7 @@
   decimals: 8
   blockTime: 30000
   minConfirmations: 1
+  blockchain: Waves
 
 - id: 0
   symbol: BTC
@@ -210,6 +230,7 @@
   name: Bitcoin
   decimals: 8
   blockTime: 600000
+  blockchain: Bitcoin
 
 - id: 2
   symbol: LTC
@@ -217,6 +238,7 @@
   name: Litecoin
   decimals: 8
   blockTime: 150000
+  blockchain: Bitcoin
 
 - id: 3
   symbol: DOGE
@@ -224,6 +246,7 @@
   name: Dogecoin
   decimals: 8
   blockTime: 60000
+  blockchain: Bitcoin
 
 - id: 5
   symbol: DASH
@@ -231,6 +254,7 @@
   name: Dash
   decimals: 8
   blockTime: 180000
+  blockchain: Bitcoin
 
 - id: 14
   symbol: VIA
@@ -238,6 +262,7 @@
   name: Viacoin
   decimals: 8
   blockTime: 15000
+  blockchain: Bitcoin
 
 - id: 17
   symbol: GRS
@@ -245,6 +270,7 @@
   name: Groestlcoin
   decimals: 8
   blockTime: 60000
+  blockchain: Groestlcoin
 
 - id: 133
   symbol: ZEC
@@ -252,6 +278,7 @@
   name: Zcash
   decimals: 8
   blockTime: 150000
+  blockchain: Zcash
 
 - id: 136
   symbol: FIRO
@@ -259,6 +286,7 @@
   name: Firo
   decimals: 8
   blockTime: 300000
+  blockchain: Bitcoin
 
 - id: 145
   symbol: BCH
@@ -266,6 +294,7 @@
   name: Bitcoin Cash
   decimals: 8
   blockTime: 600000
+  blockchain: Bitcoin
 
 - id: 175
   symbol: RVN
@@ -273,6 +302,7 @@
   name: Raven
   decimals: 8
   blockTime: 60000
+  blockchain: Bitcoin
 
 - id: 2301
   symbol: QTUM
@@ -280,6 +310,7 @@
   name: Qtum
   decimals: 8
   blockTime: 60000
+  blockchain: Bitcoin
 
 - id: 19167
   symbol: ZEL
@@ -287,6 +318,7 @@
   name: Zelcash
   decimals: 8
   blockTime: 120000
+  blockchain: Zcash
 
 - id: 42
   symbol: DCR
@@ -294,6 +326,7 @@
   name: Decred
   decimals: 8
   blockTime: 300000
+  blockchain: Decred
 
 - id: 283
   symbol: ALGO
@@ -301,12 +334,14 @@
   name: Algorand
   decimals: 6
   blockTime: 20000
+  blockchain: Algorand
 
 - id: 165
   symbol: XNO
   handle: nano
   name: Nano
   decimals: 30
+  blockchain: Nano
 
 - id: 20
   symbol: DGB
@@ -314,6 +349,7 @@
   name: DigiByte
   decimals: 8
   blockTime: 15000
+  blockchain: Bitcoin
 
 - id: 1023
   symbol: ONE
@@ -321,6 +357,7 @@
   name: Harmony
   decimals: 18
   blockTime: 5000
+  blockchain: Harmony
 
 - id: 434
   symbol: KSM
@@ -328,6 +365,7 @@
   name: Kusama
   decimals: 12
   blockTime: 6000
+  blockchain: Kusama
 
 - id: 354
   symbol: DOT
@@ -335,6 +373,7 @@
   name: Polkadot
   decimals: 10
   blockTime: 6000
+  blockchain: Polkadot
 
 - id: 501
   symbol: SOL
@@ -342,6 +381,7 @@
   name: Solana
   decimals: 9
   blockTime: 500
+  blockchain: Solana
 
 - id: 397
   symbol: NEAR
@@ -349,6 +389,7 @@
   name: NEAR
   decimals: 24
   blockTime: 2000
+  blockchain: NEAR
 
 - id: 508
   symbol: eGLD
@@ -356,6 +397,7 @@
   name: Elrond
   decimals: 18
   blockTime: 6000
+  blockchain: ElrondNetwork
 
 - id: 20000714
   symbol: BNB
@@ -363,14 +405,15 @@
   name: 'Smart Chain'
   decimals: 18
   blockTime: 3000
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 461
   symbol: FIL
   handle: filecoin
-  name: 'Filecoin'
+  name: Filecoin
   decimals: 18
   blockTime: 3000
+  blockchain: Filecoin
 
 - id: 474
   symbol: ROSE
@@ -378,6 +421,7 @@
   name: Oasis
   decimals: 9
   blockTime: 6000
+  blockchain: OasisNetwork
 
 - id: 22
   symbol: MONA
@@ -385,6 +429,7 @@
   name: Monacoin
   decimals: 8
   blockTime: 90000
+  blockchain: Bitcoin
 
 - id: 156
   symbol: BTG
@@ -392,6 +437,7 @@
   name: Bitcoin Gold
   decimals: 8
   blockTime: 600000
+  blockchain: Bitcoin
 
 - id: 194
   symbol: EOS
@@ -399,12 +445,14 @@
   name: EOS
   decimals: 4
   blockTime: 500
+  blockchain: EOS
 
 - id: 330
   symbol: LUNA
   handle: terra
   name: Terra
   decimals: 6
+  blockchain: Cosmos
 
 - id: 494
   symbol: BAND
@@ -412,143 +460,151 @@
   name: BandChain
   decimals: 6
   blockTime: 2000
+  blockchain: Cosmos
 
 - id: 888
   symbol: NEO
   handle: neo
   name: NEO
   decimals: 8
+  blockchain: NEO
 
 - id: 1815
   symbol: ADA
   handle: cardano
   name: Cardano
   decimals: 6
+  blockchain: Cardano
 
 - id: 8964
   symbol: NULS
   handle: nuls
   name: NULS
   decimals: 8
+  blockchain: NULS
 
 - id: 966
   symbol: MATIC
   handle: polygon
   name: Polygon
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 931
   symbol: RUNE
   handle: thorchain
   name: THORChain
   decimals: 8
+  blockchain: Thorchain
 
 - id: 10000070
   symbol: OETH
   handle: optimism
   name: Optimism Ethereum
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10000100
   symbol: xDAI
   handle: xdai
   name: xDai
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10009000
   symbol: AVAX
   handle: avalanchec
   name: Avalanche C-Chain
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10000553
   symbol: HT
   handle: heco
   name: Huobi ECO Chain
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10000250
   symbol: FTM
   handle: fantom
   name: Fantom
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10042221
   symbol: ARETH
   handle: arbitrum
   name: Arbitrum
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 52752
   symbol: CELO
   handle: celo
   name: Celo
   decimals: 18
+  blockchain: Ethereum
 
 - id: 10002020
   symbol: RON
   handle: ronin
   name: Ronin
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10000118
   symbol: OSMO
   handle: osmosis
   name: Osmosis
   decimals: 6
+  blockchain: Cosmos
 
 - id: 10000025
   symbol: CRO
   handle: cronos
   name: Cronos
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10000321
   symbol: KCS
   handle: kcc
   name: KuCoin Community Chain
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 1323161554
   symbol: AURORAETH
   handle: aurora
   name: Aurora
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10002222
   symbol: KAVA
   handle: kavaevm
   name: KavaEvm
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 18000
   symbol: MTR
   handle: meter
   name: Meter
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 10009001
   symbol: EVMOS
   handle: evmos
   name: Evmos
   decimals: 18
-  isEvm: true
+  blockchain: Ethereum
 
 - id: 20009001
   symbol: EVMOS
   handle: nativeevmos
   name: NativeEvmos
   decimals: 18
+  blockchain: Cosmos
