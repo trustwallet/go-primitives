@@ -608,3 +608,10 @@
   name: NativeEvmos
   decimals: 18
   blockchain: Cosmos
+
+  - id: 996
+  symbol: OKT
+  handle: okc
+  name: OKX Chain
+  decimals: 18
+  blockchain: Ethereum

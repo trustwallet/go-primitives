@@ -184,6 +184,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://evm.evmos.org/address/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Okc",
+			args: args{
+				addr:      "test",
+				tokenType: "KIP20",
+				chain:     Okc(),
+			},
+			want:    "https://www.oklink.com/en/okc/address/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -224,6 +234,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	METER:        {},
 	EVMOS:        {},
 	CELO:         {},
+	OKC:          {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

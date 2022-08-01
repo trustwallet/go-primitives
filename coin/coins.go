@@ -124,6 +124,7 @@ const (
 	METER        = 18000
 	EVMOS        = 10009001
 	NATIVEEVMOS  = 20009001
+	OKC          = 996
 )
 
 var Coins = map[uint]Coin{
@@ -916,6 +917,16 @@ var Coins = map[uint]Coin{
 		BlockTime:        0,
 		MinConfirmations: 0,
 		Blockchain:       "Cosmos",
+	},
+	OKC: {
+		ID:               996,
+		Handle:           "okc",
+		Symbol:           "OKT",
+		Name:             "OKX Chain",
+		Decimals:         18,
+		BlockTime:        0,
+		MinConfirmations: 0,
+		Blockchain:       "Ethereum",
 	},
 }
 
@@ -1710,6 +1721,16 @@ var Chains = map[string]Coin{
 		MinConfirmations: 0,
 		Blockchain:       "Cosmos",
 	},
+	Okc().Handle: {
+		ID:               996,
+		Handle:           "okc",
+		Symbol:           "OKT",
+		Name:             "OKX Chain",
+		Decimals:         18,
+		BlockTime:        0,
+		MinConfirmations: 0,
+		Blockchain:       "Ethereum",
+	},
 }
 
 func Ethereum() Coin {
@@ -2026,4 +2047,8 @@ func Evmos() Coin {
 
 func Nativeevmos() Coin {
 	return Coins[NATIVEEVMOS]
+}
+
+func Okc() Coin {
+	return Coins[OKC]
 }
