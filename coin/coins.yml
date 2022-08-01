@@ -609,7 +609,7 @@
   decimals: 18
   blockchain: Cosmos
 
-  - id: 996
+- id: 996
   symbol: OKT
   handle: okc
   name: OKX Chain
