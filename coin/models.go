@@ -111,7 +111,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case EVMOS:
 		return fmt.Sprintf("https://evm.evmos.org/address/%s", tokenID), nil
 	case OKC:
-		return fmt.Sprintf("https://www.okx.com/en/okc/address/%s", tokenID), nil
+		return fmt.Sprintf("https://www.oklink.com/en/okc/address/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
