@@ -2,12 +2,15 @@ package address
 
 import (
 	"encoding/hex"
+	"errors"
 	"strings"
 
 	"golang.org/x/crypto/sha3"
 
 	"github.com/trustwallet/go-primitives/coin"
 )
+
+var ErrInvalidInput = errors.New("invalid input")
 
 // Decode decodes a hex string with 0x prefix.
 func Remove0x(input string) string {
@@ -35,6 +38,9 @@ func EIP55Checksum(unchecksummed string) (string, error) {
 
 	result := v
 	for i := 0; i < len(result); i++ {
+		if i/2 >= len(hash) {
+			return "", ErrInvalidInput
+		}
 		hashByte := hash[i/2]
 		if i%2 == 0 {
 			hashByte = hashByte >> 4
