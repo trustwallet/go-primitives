@@ -37,10 +37,11 @@ func EIP55Checksum(unchecksummed string) (string, error) {
 	hash := sha.Sum(nil)
 
 	result := v
+	if (len(result)-1)/2 >= len(hash) {
+		return "", ErrInvalidInput
+	}
+
 	for i := 0; i < len(result); i++ {
-		if i/2 >= len(hash) {
-			return "", ErrInvalidInput
-		}
 		hashByte := hash[i/2]
 		if i%2 == 0 {
 			hashByte = hashByte >> 4
