@@ -55,6 +55,7 @@ type (
 		OriginalSourceURL CollectibleMedia        `json:"original_source_url"`
 		Properties        []CollectibleProperty   `json:"properties"`
 		About             string                  `json:"about"`
+		Balance           string                  `json:"balance"`
 	}
 
 	CollectibleProperty struct {
