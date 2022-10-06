@@ -615,3 +615,10 @@
   name: OKX Chain
   decimals: 18
   blockchain: Ethereum
+
+- id: 394
+  symbol: CRO
+  handle: cryptoorg
+  name: CryptoOrg
+  decimals: 8
+  blockchain: Cosmos
