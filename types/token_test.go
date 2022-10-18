@@ -268,6 +268,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(ALGORAND),
 			wantBool: true,
 		},
+		{
+			name:     "Aptos",
+			args:     args{coin.APTOS, ""},
+			want:     string(APTOS),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {

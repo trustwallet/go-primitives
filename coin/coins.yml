@@ -622,3 +622,10 @@
   name: CryptoOrg
   decimals: 8
   blockchain: Cosmos
+
+- id: 637
+  symbol: APTOS
+  handle: aptos
+  name: Aptos
+  decimals: 8
+  blockchain: Aptos

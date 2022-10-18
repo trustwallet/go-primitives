@@ -79,6 +79,7 @@ const (
 	METER       TokenType = "METER"
 	EVMOS_ERC20 TokenType = "EVMOS_ERC20"
 	KIP20       TokenType = "KIP20"
+	APTOS       TokenType = "APTOS"
 )
 
 const (
@@ -146,6 +147,7 @@ func GetTokenTypes() []TokenType {
 		METER,
 		EVMOS_ERC20,
 		KIP20,
+		APTOS,
 	}
 }
 
@@ -207,6 +209,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(EVMOS_ERC20), true
 	case coin.OKC:
 		return string(KIP20), true
+	case coin.APTOS:
+		return string(APTOS), true
 	default:
 		return "", false
 	}
@@ -230,7 +234,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		WAN20,
 		GO20,
 		TT20,
-		WAVES:
+		WAVES,
+		APTOS:
 		return TokenVersionV0, nil
 	case TRC20:
 		return TokenVersionV1, nil
