@@ -643,3 +643,24 @@
   name: Klaytn
   decimals: 18
   blockchain: Ethereum
+
+- id: 10001088
+  symbol: METIS
+  handle: metis
+  name: Metis
+  decimals: 18
+  blockchain: Ethereum
+
+- id: 10001285
+  symbol: MOVR
+  handle: moonriver
+  name: Moonriver
+  decimals: 18
+  blockchain: Ethereum
+
+- id: 10000288
+  symbol: BOBAETH
+  handle: boba
+  name: Boba
+  decimals: 18
+  blockchain: Ethereum

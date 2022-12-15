@@ -11,4 +11,7 @@ const (
 	ChainIDFantom     = 250
 	ChainIDMoonbeam   = 1284
 	ChainIDKlaytn     = 8217
+	ChainIDMetis      = 1088
+	ChainIDMoonriver  = 1285
+	ChainIDBoba       = 288
 )

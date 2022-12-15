@@ -214,6 +214,36 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://scope.klaytn.com/token/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Metis",
+			args: args{
+				addr:      "test",
+				tokenType: "METIS",
+				chain:     Metis(),
+			},
+			want:    "https://andromeda-explorer.metis.io/token/test",
+			wantErr: false,
+		},
+		{
+			name: "Test Moonriver",
+			args: args{
+				addr:      "test",
+				tokenType: "MOONRIVER",
+				chain:     Moonriver(),
+			},
+			want:    "https://moonriver.moonscan.io/token/test",
+			wantErr: false,
+		},
+		{
+			name: "Test Boba",
+			args: args{
+				addr:      "test",
+				tokenType: "BOBA",
+				chain:     Boba(),
+			},
+			want:    "https://bobascan.com/token/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -257,6 +287,9 @@ var evmCoinsTestSet = map[uint]struct{}{
 	OKC:          {},
 	MOONBEAM:     {},
 	KLAYTN:       {},
+	METIS:        {},
+	MOONRIVER:    {},
+	BOBA:         {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
