@@ -129,6 +129,13 @@ type (
 		Value Amount       `json:"value"`
 	}
 
+	// TransferNFT describes the transfer of the NFT token
+	TransferNFT struct {
+		Asset         coin.AssetID `json:"asset"`
+		Collection    string       `json:"collection"`
+		CollectibleID string       `json:"collectible_id"`
+	}
+
 	Swap struct {
 		From Transfer `json:"from"`
 		To   Transfer `json:"to"`
