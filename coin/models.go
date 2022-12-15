@@ -116,6 +116,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return "https://explorer.aptoslabs.com/", nil
 	case MOONBEAM:
 		return fmt.Sprintf("https://moonscan.io/token/%s", tokenID), nil
+	case KLAYTN:
+		return fmt.Sprintf("https://scope.klaytn.com/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

@@ -636,3 +636,10 @@
   name: Moonbeam
   decimals: 18
   blockchain: Ethereum
+
+- id: 10008217
+  symbol: KLAY
+  handle: klaytn
+  name: Klaytn
+  decimals: 18
+  blockchain: Ethereum

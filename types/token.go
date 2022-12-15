@@ -81,6 +81,7 @@ const (
 	KIP20       TokenType = "KIP20"
 	APTOS       TokenType = "APTOS"
 	MOONBEAM    TokenType = "MOONBEAM"
+	KLAYTN      TokenType = "KLAYTN"
 )
 
 const (
@@ -150,6 +151,7 @@ func GetTokenTypes() []TokenType {
 		KIP20,
 		APTOS,
 		MOONBEAM,
+		KLAYTN,
 	}
 }
 
@@ -259,7 +261,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM:
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS,
+		ALGORAND, KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -331,6 +334,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = KIP20
 	case coin.MOONBEAM:
 		tokenType = MOONBEAM
+	case coin.KLAYTN:
+		tokenType = KLAYTN
 	}
 
 	if tokenType == "" {

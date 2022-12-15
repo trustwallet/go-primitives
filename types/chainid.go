@@ -10,4 +10,5 @@ const (
 	ChainIDAvalanche  = 43114
 	ChainIDFantom     = 250
 	ChainIDMoonbeam   = 1284
+	ChainIDKlaytn     = 8217
 )

@@ -204,6 +204,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://moonscan.io/token/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Klaytn",
+			args: args{
+				addr:      "test",
+				tokenType: "KLAYTN",
+				chain:     Klaytn(),
+			},
+			want:    "https://scope.klaytn.com/token/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -246,6 +256,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	CELO:         {},
 	OKC:          {},
 	MOONBEAM:     {},
+	KLAYTN:       {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
