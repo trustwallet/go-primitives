@@ -629,3 +629,10 @@
   name: Aptos
   decimals: 8
   blockchain: Aptos
+
+- id: 10001284
+  symbol: GLMR
+  handle: moonbeam
+  name: Moonbeam
+  decimals: 18
+  blockchain: Ethereum

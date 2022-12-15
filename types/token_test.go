@@ -125,6 +125,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.ARBITRUM},
 			want: ARBITRUM,
 		},
+		{
+			name: "Moonbeam MOONBEAM",
+			args: args{coinIndex: coin.MOONBEAM},
+			want: MOONBEAM,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -395,6 +400,12 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Okc token version",
 			args{t: string(KIP20)},
+			TokenVersionUndefined,
+			nil,
+		},
+		{
+			"Moonbeam token version",
+			args{t: string(MOONBEAM)},
 			TokenVersionUndefined,
 			nil,
 		},
