@@ -265,7 +265,7 @@ func cleanMemo(memo string) string {
 func (t *Tx) GetAddresses() []string {
 	addresses := make([]string, 0)
 	switch t.Type {
-	case TxTransfer:
+	case TxTransfer, TxTransferNFT:
 		if len(t.Inputs) > 0 || len(t.Outputs) > 0 {
 			uniqueAddresses := make(map[string]struct{})
 			for _, input := range t.Inputs {
