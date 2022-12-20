@@ -30,11 +30,13 @@ const (
 	TxStakeUndelegate   TransactionType = "stake_undelegate"
 	TxStakeRedelegate   TransactionType = "stake_redelegate"
 	TxStakeCompound     TransactionType = "stake_compound"
+	TxTransferNFT       TransactionType = "transfer_nft"
 )
 
 var SupportedTypes = []TransactionType{
 	TxTransfer, TxSwap, TxContractCall, TxStakeClaimRewards, TxStakeDelegate, TxStakeUndelegate, TxStakeRedelegate,
 	TxStakeCompound,
+	TxTransferNFT,
 }
 
 // Transaction fields
