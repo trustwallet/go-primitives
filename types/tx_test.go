@@ -138,6 +138,16 @@ func TestTx_GetAddresses(t *testing.T) {
 			expected: []string{"from", "to"},
 		},
 		{
+			name: "transfer_nft",
+			tx: Tx{
+				Type:     TxTransferNFT,
+				From:     "from",
+				To:       "to",
+				Metadata: &TransferNFT{},
+			},
+			expected: []string{"from", "to"},
+		},
+		{
 			name: "delegation",
 			tx: Tx{
 				Type:     TxStakeDelegate,
