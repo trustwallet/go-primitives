@@ -1,6 +1,6 @@
 module github.com/trustwallet/go-primitives
 
-go 1.18
+go 1.19
 
 require (
 	github.com/deckarep/golang-set v1.7.1
