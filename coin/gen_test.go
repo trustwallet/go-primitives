@@ -2,7 +2,7 @@ package coin
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"os"
 	"regexp"
 	"strings"
@@ -53,7 +53,7 @@ func TestCoinFile(t *testing.T) {
 	}
 	defer func() { _ = f.Close() }()
 
-	b, err := ioutil.ReadAll(f)
+	b, err := io.ReadAll(f)
 	if err != nil {
 		t.Error(err)
 	}
