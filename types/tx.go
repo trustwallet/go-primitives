@@ -245,6 +245,22 @@ func (cc *ContractCall) Validate() error {
 	return nil
 }
 
+func (cc *TransferNFT) GetAsset() coin.AssetID {
+	return cc.Asset
+}
+
+func (cc *TransferNFT) Validate() error {
+	if cc.CollectibleID == "" {
+		return fmt.Errorf("empty transfer NFT collectible ID value")
+	}
+
+	if cc.Asset == "" {
+		return fmt.Errorf("empty transfer NFT asset")
+	}
+
+	return nil
+}
+
 func (s *Swap) GetAsset() coin.AssetID {
 	return coin.AssetID(strings.Split(string(s.From.Asset), "_")[0])
 }
