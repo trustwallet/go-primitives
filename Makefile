@@ -17,7 +17,7 @@ lint: go-lint-install go-lint
 go-lint-install:
 ifeq (,$(wildcard test -f bin/golangci-lint))
 	@echo "  >  Installing golint"
-	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s
+	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- v1.50.1
 endif
 
 go-lint:
