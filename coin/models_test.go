@@ -101,7 +101,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 				tokenType: "ESDT",
 				chain:     Elrond(),
 			},
-			want:    "https://explorer.elrond.com/tokens/EGLDUSDC-594e5e",
+			want:    "https://explorer.multiversx.com/tokens/EGLDUSDC-594e5e",
 			wantErr: false,
 		},
 		{
