@@ -73,7 +73,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case OPTIMISM:
 		return fmt.Sprintf("https://optimistic.etherscan.io/token/%s", tokenID), nil
 	case AVALANCHEC:
-		return fmt.Sprintf("https://snowtrace.io/address/%s", tokenID), nil
+		return fmt.Sprintf("https://snowtrace.io/token/%s", tokenID), nil
 	case ARBITRUM:
 		return fmt.Sprintf("https://arbiscan.io/token/%s", tokenID), nil
 	case FANTOM:
