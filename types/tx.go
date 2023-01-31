@@ -137,6 +137,7 @@ type (
 		Collection       string       `json:"collection"`
 		CollectibleID    string       `json:"collectible_id"`
 		CollectionSymbol string       `json:"collection_symbol"`
+		Amount           Amount       `json:"amount"`
 	}
 
 	Swap struct {
