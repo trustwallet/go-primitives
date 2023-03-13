@@ -244,6 +244,17 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://bobascan.com/token/test",
 			wantErr: false,
 		},
+
+		{
+			name: "Test Ton",
+			args: args{
+				addr:      "test",
+				tokenType: "TON",
+				chain:     Ton(),
+			},
+			want:    "https://tonscan.org/address/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

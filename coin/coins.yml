@@ -664,3 +664,10 @@
   name: Boba
   decimals: 18
   blockchain: Ethereum
+
+- id: 607
+  symbol: TON
+  handle: ton
+  name: TON
+  decimals: 9
+  blockchain: The Open Network
