@@ -299,6 +299,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(APTOS),
 			wantBool: true,
 		},
+		{
+			name:     "Ton",
+			args:     args{coin.TON, ""},
+			want:     string(TON),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -451,6 +457,13 @@ func TestGetTokenVersion(t *testing.T) {
 			"Boba token version",
 			args{t: string(BOBA)},
 			TokenVersionUndefined,
+			nil,
+		},
+
+		{
+			"Ton token version",
+			args{t: string(TON)},
+			TokenVersionV12,
 			nil,
 		},
 	}

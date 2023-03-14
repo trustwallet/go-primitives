@@ -14,4 +14,5 @@ const (
 	ChainIDMetis      = 1088
 	ChainIDMoonriver  = 1285
 	ChainIDBoba       = 288
+	ChainIDTon        = 607
 )

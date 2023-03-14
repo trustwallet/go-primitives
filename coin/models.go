@@ -124,6 +124,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://moonriver.moonscan.io/token/%s", tokenID), nil
 	case BOBA:
 		return fmt.Sprintf("https://bobascan.com/token/%s", tokenID), nil
+	case TON:
+		return fmt.Sprintf("https://tonscan.org/address/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
