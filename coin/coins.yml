@@ -671,3 +671,17 @@
   name: TON
   decimals: 9
   blockchain: The Open Network
+
+- id: 10001422
+  symbol: ZKEVM
+  handle: zkevm
+  name: Polygon zkEVM
+  decimals: 18
+  blockchain: Ethereum
+
+- id: 784
+  symbol: SUI
+  handle: sui
+  name: Sui
+  decimals: 9
+  blockchain: Sui

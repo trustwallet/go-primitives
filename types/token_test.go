@@ -305,6 +305,18 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(TON),
 			wantBool: true,
 		},
+		{
+			name:     "zkEVM",
+			args:     args{coin.ZKEVM, ""},
+			want:     string(ZKEVM),
+			wantBool: true,
+		},
+		{
+			name:     "Sui",
+			args:     args{coin.SUI, ""},
+			want:     string(SUI),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
