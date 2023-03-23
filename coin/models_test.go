@@ -255,6 +255,28 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://tonscan.org/address/test",
 			wantErr: false,
 		},
+
+		{
+			name: "Test ZKEVM",
+			args: args{
+				addr:      "test",
+				tokenType: "ZKEVM",
+				chain:     Zkevm(),
+			},
+			want:    "https://explorer.public.zkevm-test.net/address/test",
+			wantErr: false,
+		},
+
+		{
+			name: "Test Sui",
+			args: args{
+				addr:      "test",
+				tokenType: "Sui",
+				chain:     Sui(),
+			},
+			want:    "https://explorer.sui.io/address/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -301,6 +323,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	METIS:        {},
 	MOONRIVER:    {},
 	BOBA:         {},
+	ZKEVM:        {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

@@ -86,6 +86,8 @@ const (
 	MOONRIVER   TokenType = "MOONRIVER"
 	BOBA        TokenType = "BOBA"
 	TON         TokenType = "TON"
+	ZKEVM       TokenType = "ZKEVM"
+	SUI         TokenType = "SUI"
 )
 
 const (
@@ -101,6 +103,7 @@ const (
 	TokenVersionV10       TokenVersion = 10
 	TokenVersionV11       TokenVersion = 11
 	TokenVersionV12       TokenVersion = 12
+	TokenVersionV13       TokenVersion = 13
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -161,6 +164,8 @@ func GetTokenTypes() []TokenType {
 		MOONRIVER,
 		BOBA,
 		TON,
+		ZKEVM,
+		SUI,
 	}
 }
 
@@ -226,6 +231,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(APTOS), true
 	case coin.TON:
 		return string(TON), true
+	case coin.SUI:
+		return string(SUI), true
 	default:
 		return "", false
 	}
@@ -274,6 +281,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON:
 		return TokenVersionV12, nil
+	case ZKEVM, SUI:
+		return TokenVersionV13, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA:
 		return TokenVersionUndefined, nil
@@ -357,6 +366,10 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = BOBA
 	case coin.TON:
 		tokenType = TON
+	case coin.ZKEVM:
+		tokenType = ZKEVM
+	case coin.SUI:
+		tokenType = SUI
 	}
 
 	if tokenType == "" {
