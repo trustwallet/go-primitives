@@ -672,7 +672,7 @@
   decimals: 9
   blockchain: The Open Network
 
-- id: 10001422
+- id: 10001101
   symbol: ZKEVM
   handle: zkevm
   name: Polygon zkEVM
