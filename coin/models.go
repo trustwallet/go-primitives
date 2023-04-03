@@ -128,6 +128,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://tonscan.org/address/%s", tokenID), nil
 	case ZKEVM:
 		return fmt.Sprintf("https://explorer.public.zkevm-test.net/address/%s", tokenID), nil
+	case ZKSYNC:
+		return fmt.Sprintf("https://explorer.zksync.io/address/%s", tokenID), nil
 	case SUI:
 		return fmt.Sprintf("https://explorer.sui.io/address/%s", tokenID), nil
 	}

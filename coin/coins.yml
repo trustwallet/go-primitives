@@ -679,6 +679,13 @@
   decimals: 18
   blockchain: Ethereum
 
+- id: 10000324
+  symbol: ZKSYNC
+  handle: zksync
+  name: Zksync
+  decimals: 18
+  blockchain: Ethereum
+
 - id: 784
   symbol: SUI
   handle: sui
