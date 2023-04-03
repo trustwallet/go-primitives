@@ -244,7 +244,6 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://bobascan.com/token/test",
 			wantErr: false,
 		},
-
 		{
 			name: "Test Ton",
 			args: args{
@@ -255,7 +254,6 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://tonscan.org/address/test",
 			wantErr: false,
 		},
-
 		{
 			name: "Test ZKEVM",
 			args: args{
@@ -266,7 +264,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.public.zkevm-test.net/address/test",
 			wantErr: false,
 		},
-
+		{
+			name: "Test ZKSync",
+			args: args{
+				addr:      "test",
+				tokenType: "ZKSYNC",
+				chain:     Zksync(),
+			},
+			want:    "https://explorer.zksync.io/address/test",
+			wantErr: false,
+		},
 		{
 			name: "Test Sui",
 			args: args{
@@ -324,6 +331,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	MOONRIVER:    {},
 	BOBA:         {},
 	ZKEVM:        {},
+	ZKSYNC:       {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

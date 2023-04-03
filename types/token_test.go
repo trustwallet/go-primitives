@@ -312,6 +312,12 @@ func TestGetTokenType(t *testing.T) {
 			wantBool: true,
 		},
 		{
+			name:     "zksync",
+			args:     args{coin.ZKSYNC, ""},
+			want:     string(ZKSYNC),
+			wantBool: true,
+		},
+		{
 			name:     "Sui",
 			args:     args{coin.SUI, ""},
 			want:     string(SUI),
