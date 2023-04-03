@@ -105,8 +105,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Boba(), nil
 	case TON:
 		return coin.Ton(), nil
-	case ZKEVM:
-		return coin.Zkevm(), nil
+	case POLYGONZKEVM:
+		return coin.Polygonzkevm(), nil
 	case ZKSYNC:
 		return coin.Zksync(), nil
 	case SUI:
