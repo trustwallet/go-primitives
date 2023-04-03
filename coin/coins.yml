@@ -674,7 +674,7 @@
 
 - id: 10001101
   symbol: ZKEVM
-  handle: zkevm
+  handle: polygonzkevm
   name: Polygon zkEVM
   decimals: 18
   blockchain: Ethereum

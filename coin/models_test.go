@@ -259,7 +259,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 			args: args{
 				addr:      "test",
 				tokenType: "ZKEVM",
-				chain:     Zkevm(),
+				chain:     Polygonzkevm(),
 			},
 			want:    "https://explorer.public.zkevm-test.net/address/test",
 			wantErr: false,
@@ -330,7 +330,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	METIS:        {},
 	MOONRIVER:    {},
 	BOBA:         {},
-	ZKEVM:        {},
+	POLYGONZKEVM: {},
 	ZKSYNC:       {},
 }
 

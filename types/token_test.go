@@ -307,8 +307,8 @@ func TestGetTokenType(t *testing.T) {
 		},
 		{
 			name:     "zkEVM",
-			args:     args{coin.ZKEVM, ""},
-			want:     string(ZKEVM),
+			args:     args{coin.POLYGONZKEVM, ""},
+			want:     string(POLYGONZKEVM),
 			wantBool: true,
 		},
 		{

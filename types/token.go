@@ -29,66 +29,66 @@ type (
 )
 
 const (
-	Coin        TokenType = "coin"
-	Gas         TokenType = "gas"
-	ERC20       TokenType = "ERC20"
-	ERC721      TokenType = "ERC721"
-	ERC1155     TokenType = "ERC1155"
-	BEP2        TokenType = "BEP2"
-	BEP8        TokenType = "BEP8"
-	BEP20       TokenType = "BEP20"
-	TRC10       TokenType = "TRC10"
-	ETC20       TokenType = "ETC20"
-	POA20       TokenType = "POA20"
-	TRC20       TokenType = "TRC20"
-	TRC21       TokenType = "TRC21"
-	CLO20       TokenType = "CLO20"
-	GO20        TokenType = "GO20"
-	WAN20       TokenType = "WAN20"
-	TT20        TokenType = "TT20"
-	KAVA        TokenType = "KAVA"
-	SPL         TokenType = "SPL"
-	POLYGON     TokenType = "POLYGON"
-	OPTIMISM    TokenType = "OPTIMISM"
-	XDAI        TokenType = "XDAI"
-	AVALANCHE   TokenType = "AVALANCHE"
-	FANTOM      TokenType = "FANTOM"
-	HRC20       TokenType = "HRC20"
-	ARBITRUM    TokenType = "ARBITRUM"
-	TERRA       TokenType = "TERRA"
-	RONIN       TokenType = "RONIN"
-	EOS         TokenType = "EOS"
-	NEP5        TokenType = "NEP5"
-	NRC20       TokenType = "NRC20"
-	VET         TokenType = "VET"
-	ONTOLOGY    TokenType = "ONTOLOGY"
-	THETA       TokenType = "THETA"
-	TOMO        TokenType = "TOMO"
-	WAVES       TokenType = "WAVES"
-	POA         TokenType = "POA"
-	CELO        TokenType = "CELO"
-	ESDT        TokenType = "ESDT"
-	CW20        TokenType = "CW20"
-	OASIS       TokenType = "OASIS"
-	CRC20       TokenType = "CRC20"
-	STELLAR     TokenType = "STELLAR"
-	KRC20       TokenType = "KRC20"
-	AURORA      TokenType = "AURORA"
-	ALGORAND    TokenType = "ALGORAND"
-	KAVAERC20   TokenType = "KAVAERC20"
-	METER       TokenType = "METER"
-	EVMOS_ERC20 TokenType = "EVMOS_ERC20"
-	KIP20       TokenType = "KIP20"
-	APTOS       TokenType = "APTOS"
-	MOONBEAM    TokenType = "MOONBEAM"
-	KLAYTN      TokenType = "KLAYTN"
-	METIS       TokenType = "METIS"
-	MOONRIVER   TokenType = "MOONRIVER"
-	BOBA        TokenType = "BOBA"
-	TON         TokenType = "TON"
-	ZKEVM       TokenType = "ZKEVM"
-	ZKSYNC      TokenType = "ZKSYNC"
-	SUI         TokenType = "SUI"
+	Coin         TokenType = "coin"
+	Gas          TokenType = "gas"
+	ERC20        TokenType = "ERC20"
+	ERC721       TokenType = "ERC721"
+	ERC1155      TokenType = "ERC1155"
+	BEP2         TokenType = "BEP2"
+	BEP8         TokenType = "BEP8"
+	BEP20        TokenType = "BEP20"
+	TRC10        TokenType = "TRC10"
+	ETC20        TokenType = "ETC20"
+	POA20        TokenType = "POA20"
+	TRC20        TokenType = "TRC20"
+	TRC21        TokenType = "TRC21"
+	CLO20        TokenType = "CLO20"
+	GO20         TokenType = "GO20"
+	WAN20        TokenType = "WAN20"
+	TT20         TokenType = "TT20"
+	KAVA         TokenType = "KAVA"
+	SPL          TokenType = "SPL"
+	POLYGON      TokenType = "POLYGON"
+	OPTIMISM     TokenType = "OPTIMISM"
+	XDAI         TokenType = "XDAI"
+	AVALANCHE    TokenType = "AVALANCHE"
+	FANTOM       TokenType = "FANTOM"
+	HRC20        TokenType = "HRC20"
+	ARBITRUM     TokenType = "ARBITRUM"
+	TERRA        TokenType = "TERRA"
+	RONIN        TokenType = "RONIN"
+	EOS          TokenType = "EOS"
+	NEP5         TokenType = "NEP5"
+	NRC20        TokenType = "NRC20"
+	VET          TokenType = "VET"
+	ONTOLOGY     TokenType = "ONTOLOGY"
+	THETA        TokenType = "THETA"
+	TOMO         TokenType = "TOMO"
+	WAVES        TokenType = "WAVES"
+	POA          TokenType = "POA"
+	CELO         TokenType = "CELO"
+	ESDT         TokenType = "ESDT"
+	CW20         TokenType = "CW20"
+	OASIS        TokenType = "OASIS"
+	CRC20        TokenType = "CRC20"
+	STELLAR      TokenType = "STELLAR"
+	KRC20        TokenType = "KRC20"
+	AURORA       TokenType = "AURORA"
+	ALGORAND     TokenType = "ALGORAND"
+	KAVAERC20    TokenType = "KAVAERC20"
+	METER        TokenType = "METER"
+	EVMOS_ERC20  TokenType = "EVMOS_ERC20"
+	KIP20        TokenType = "KIP20"
+	APTOS        TokenType = "APTOS"
+	MOONBEAM     TokenType = "MOONBEAM"
+	KLAYTN       TokenType = "KLAYTN"
+	METIS        TokenType = "METIS"
+	MOONRIVER    TokenType = "MOONRIVER"
+	BOBA         TokenType = "BOBA"
+	TON          TokenType = "TON"
+	POLYGONZKEVM TokenType = "ZKEVM"
+	ZKSYNC       TokenType = "ZKSYNC"
+	SUI          TokenType = "SUI"
 )
 
 const (
@@ -164,7 +164,7 @@ func GetTokenTypes() []TokenType {
 		MOONRIVER,
 		BOBA,
 		TON,
-		ZKEVM,
+		POLYGONZKEVM,
 		ZKSYNC,
 		SUI,
 	}
@@ -280,7 +280,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case TON, ZKEVM, ZKSYNC, SUI:
+	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA:
@@ -365,8 +365,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = BOBA
 	case coin.TON:
 		tokenType = TON
-	case coin.ZKEVM:
-		tokenType = ZKEVM
+	case coin.POLYGONZKEVM:
+		tokenType = POLYGONZKEVM
 	case coin.ZKSYNC:
 		tokenType = ZKSYNC
 	case coin.SUI:
