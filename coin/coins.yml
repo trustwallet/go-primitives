@@ -692,3 +692,10 @@
   name: Sui
   decimals: 9
   blockchain: Sui
+
+- id: 40000118
+  symbol: STRD
+  handle: stride
+  name: Stride
+  decimals: 6
+  blockchain: Cosmos
