@@ -89,6 +89,7 @@ const (
 	POLYGONZKEVM TokenType = "ZKEVM"
 	ZKSYNC       TokenType = "ZKSYNC"
 	SUI          TokenType = "SUI"
+	STRIDE       TokenType = "STRIDE"
 )
 
 const (
@@ -167,6 +168,7 @@ func GetTokenTypes() []TokenType {
 		POLYGONZKEVM,
 		ZKSYNC,
 		SUI,
+		STRIDE,
 	}
 }
 
@@ -234,6 +236,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(TON), true
 	case coin.SUI:
 		return string(SUI), true
+	case coin.STRIDE:
+		return string(STRIDE), true
 	default:
 		return "", false
 	}
@@ -283,7 +287,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
-		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA:
+		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -371,6 +375,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = ZKSYNC
 	case coin.SUI:
 		tokenType = SUI
+	case coin.STRIDE:
+		tokenType = STRIDE
 	}
 
 	if tokenType == "" {

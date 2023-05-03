@@ -284,6 +284,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.sui.io/address/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Stride",
+			args: args{
+				addr:      "test",
+				tokenType: "Stride",
+				chain:     Stride(),
+			},
+			want:    "https://www.mintscan.io/stride/account/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

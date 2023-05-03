@@ -17,4 +17,5 @@ const (
 	ChainIDTon        = 607
 	ChainIDZKEVM      = 1101
 	ChainIDZKSync     = 324
+	ChainIDStride     = "stride-1"
 )
