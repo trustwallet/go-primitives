@@ -323,6 +323,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(SUI),
 			wantBool: true,
 		},
+		{
+			name:     "Stride",
+			args:     args{coin.STRIDE, ""},
+			want:     string(STRIDE),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -482,6 +488,13 @@ func TestGetTokenVersion(t *testing.T) {
 			"Ton token version",
 			args{t: string(TON)},
 			TokenVersionV12,
+			nil,
+		},
+
+		{
+			"Stride token version",
+			args{t: string(STRIDE)},
+			TokenVersionUndefined,
 			nil,
 		},
 	}
