@@ -294,6 +294,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://www.mintscan.io/stride/account/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Neutron",
+			args: args{
+				addr:      "test",
+				tokenType: "Neutron",
+				chain:     Neutron(),
+			},
+			want:    "https://www.mintscan.io/neutron/account/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

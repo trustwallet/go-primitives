@@ -699,3 +699,10 @@
   name: Stride
   decimals: 6
   blockchain: Cosmos
+
+- id: 90000118
+  symbol: NTRN
+  handle: neutron
+  name: Neutron
+  decimals: 6
+  blockchain: Cosmos
