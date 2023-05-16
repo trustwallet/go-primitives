@@ -134,6 +134,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://explorer.sui.io/address/%s", tokenID), nil
 	case STRIDE:
 		return fmt.Sprintf("https://www.mintscan.io/stride/account/%s", tokenID), nil
+	case NEUTRON:
+		return fmt.Sprintf("https://www.mintscan.io/neutron/account/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
