@@ -17,5 +17,5 @@ const (
 	ChainIDTon        = 607
 	ChainIDZKEVM      = 1101
 	ChainIDZKSync     = 324
-	ChainIDIotexEVM   = 4689
+	ChainIDIoTeXEVM   = 4689
 )
