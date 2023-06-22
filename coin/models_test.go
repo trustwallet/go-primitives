@@ -304,6 +304,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://www.mintscan.io/neutron/account/test",
 			wantErr: false,
 		},
+		{
+			name: "Test IoTex EVM",
+			args: args{
+				addr:      "test",
+				tokenType: "",
+				chain:     Iotexevm(),
+			},
+			want:    "https://iotexscan.io/address/test#transactions",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
