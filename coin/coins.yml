@@ -86,6 +86,14 @@
   blockTime: 10000
   blockchain: IoTeX
 
+- id: 10004689
+  symbol: IOTX
+  handle: iotexevm
+  name: IoTeX Network Mainnet
+  decimals: 18
+  blockTime: 10000
+  blockchain: IoTeX Network Mainnet
+
 - id: 313
   symbol: ZIL
   handle: zilliqa
