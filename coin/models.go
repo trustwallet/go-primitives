@@ -140,6 +140,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://iotexscan.io/address/%s#transactions", tokenID), nil
 	case CRYPTOORG:
 		return fmt.Sprintf("https://crypto.org/explorer/account/%s", tokenID), nil
+	case TEZOS:
+		return fmt.Sprintf("https://tzstats.com/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
