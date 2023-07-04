@@ -714,3 +714,17 @@
   name: Neutron
   decimals: 6
   blockchain: Cosmos
+
+- id: 20000118
+  symbol: STARS
+  handle: stargaze
+  name: Stargaze
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 10000060
+  symbol: INJ
+  handle: nativeinjective
+  name: NativeInjective
+  decimals: 18
+  blockchain: Cosmos
