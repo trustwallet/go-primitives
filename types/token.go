@@ -295,7 +295,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
+	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2:
 		return TokenVersionUndefined, nil
 	default:
