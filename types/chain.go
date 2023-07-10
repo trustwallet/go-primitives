@@ -9,6 +9,8 @@ import (
 // nolint:cyclop
 func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 	switch TokenType(assetType) {
+	case BRC20:
+		return coin.Bitcoin(), nil
 	case ERC20:
 		return coin.Ethereum(), nil
 	case BEP2, BEP8:
