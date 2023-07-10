@@ -31,6 +31,7 @@ type (
 const (
 	Coin         TokenType = "coin"
 	Gas          TokenType = "gas"
+	BRC20        TokenType = "BRC20"
 	ERC20        TokenType = "ERC20"
 	ERC721       TokenType = "ERC721"
 	ERC1155      TokenType = "ERC1155"
@@ -112,6 +113,7 @@ const (
 
 func GetTokenTypes() []TokenType {
 	return []TokenType{
+		BRC20,
 		ERC20,
 		ERC721,
 		ERC1155,
@@ -185,6 +187,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	}
 
 	switch c {
+	case coin.BITCOIN:
+		return string(BRC20), true
 	case coin.TRON:
 		_, err := strconv.Atoi(tokenID)
 		if err != nil {
@@ -291,7 +295,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
+	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2:
 		return TokenVersionUndefined, nil
 	default:

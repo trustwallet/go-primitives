@@ -267,7 +267,8 @@ func TestGetTokenType(t *testing.T) {
 		{
 			name:     "Bitcoin",
 			args:     args{coin.BITCOIN, ""},
-			wantBool: false,
+			want:     string(BRC20),
+			wantBool: true,
 		},
 		{
 			name:     "TERRA CW20",
