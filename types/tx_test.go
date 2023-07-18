@@ -247,6 +247,26 @@ func TestTx_GetAddresses(t *testing.T) {
 			},
 			expected: []string{"from"},
 		},
+		{
+			name: "ics20 transfer in same sub chain",
+			tx: Tx{
+				Type:     TxTransferICS20,
+				From:     "kava123",
+				To:       "kava456",
+				Metadata: &ICS20Transfer{},
+			},
+			expected: []string{"kava123", "kava456"},
+		},
+		{
+			name: "ics20 transfer in different sub chain",
+			tx: Tx{
+				Type:     TxTransferICS20,
+				From:     "cosmos123",
+				To:       "kava123",
+				Metadata: &ICS20Transfer{},
+			},
+			expected: []string{"cosmos123"},
+		},
 	}
 
 	for _, tc := range tests {

@@ -32,6 +32,8 @@ func (t *Tx) UnmarshalJSON(data []byte) error {
 		t.Metadata = new(Swap)
 	case TxTransferNFT:
 		t.Metadata = new(TransferNFT)
+	case TxTransferICS20:
+		t.Metadata = new(ICS20Transfer)
 	default:
 		return fmt.Errorf("unsupported tx type: %s, hash: %s, metadata: %+v", t.Type, t.ID, t.Metadata)
 	}
@@ -58,7 +60,7 @@ func (t Tx) MarshalJSON() ([]byte, error) {
 
 	// validate metadata type
 	switch t.Metadata.(type) {
-	case *Transfer, *ContractCall, *Swap, *TransferNFT:
+	case *Transfer, *ContractCall, *Swap, *TransferNFT, *ICS20Transfer:
 		break
 	default:
 		return nil, errors.New("unsupported tx metadata")

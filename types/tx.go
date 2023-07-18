@@ -31,12 +31,14 @@ const (
 	TxStakeRedelegate   TransactionType = "stake_redelegate"
 	TxStakeCompound     TransactionType = "stake_compound"
 	TxTransferNFT       TransactionType = "transfer_nft"
+	TxTransferICS20     TransactionType = "transfer_ics20"
 )
 
 var SupportedTypes = []TransactionType{
 	TxTransfer, TxSwap, TxContractCall, TxStakeClaimRewards, TxStakeDelegate, TxStakeUndelegate, TxStakeRedelegate,
 	TxStakeCompound,
 	TxTransferNFT,
+	TxTransferICS20,
 }
 
 // Transaction fields
@@ -129,6 +131,14 @@ type (
 	Transfer struct {
 		Asset coin.AssetID `json:"asset"`
 		Value Amount       `json:"value"`
+	}
+
+	// ICS20Transfer describes the transfer of the ICS20 token
+	ICS20Transfer struct {
+		Transfer
+
+		SourcePort    string `json:"source_port"`
+		SourceChannel string `json:"source_channel"`
 	}
 
 	// TransferNFT describes the transfer of the NFT token
@@ -267,6 +277,10 @@ func (s *Swap) GetAsset() coin.AssetID {
 	return coin.AssetID(strings.Split(string(s.From.Asset), "_")[0])
 }
 
+func (i *ICS20Transfer) GetAsset() coin.AssetID {
+	return i.Asset
+}
+
 func cleanMemo(memo string) string {
 	if len(memo) == 0 {
 		return ""
@@ -307,6 +321,11 @@ func (t *Tx) GetAddresses() []string {
 	case TxSwap:
 		return append(addresses, t.From, t.To)
 	case TxStakeDelegate, TxStakeRedelegate, TxStakeUndelegate, TxStakeClaimRewards, TxStakeCompound:
+		return append(addresses, t.From)
+	case TxTransferICS20:
+		if t.inSameSubChain() {
+			addresses = append(addresses, t.To)
+		}
 		return append(addresses, t.From)
 	default:
 		return addresses
@@ -445,6 +464,21 @@ func (t *Tx) GetUTXOValueFor(address string) (Amount, error) {
 	}
 
 	return Amount(fmt.Sprintf("%d", result)), nil
+}
+
+func (t *Tx) inSameSubChain() bool {
+	//account address prefix coin.COSMOS:      "cosmos"
+	//account address prefix coin.OSMOSIS:     "osmo"
+	//account address prefix coin.TERRA:       "terra"
+	//account address prefix coin.KAVA:        "kava"
+	//account address prefix coin.NATIVEEVMOS: "evmos"
+	//account address prefix coin.STRIDE:      "stride"
+	//account address prefix coin.NEUTRON:     "neutron"
+	minPrefixLen := 4
+	if len(t.From) <= minPrefixLen || len(t.To) <= minPrefixLen {
+		return false
+	}
+	return t.From[:minPrefixLen] == t.To[:minPrefixLen]
 }
 
 func InferDirection(tx *Tx, addressSet mapset.Set) Direction {
