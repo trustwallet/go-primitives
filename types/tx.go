@@ -281,6 +281,18 @@ func (i *ICS20Transfer) GetAsset() coin.AssetID {
 	return i.Asset
 }
 
+func (i *ICS20Transfer) Validate() error {
+	if i.Value == "" {
+		return fmt.Errorf("empty ICS20 transfer value")
+	}
+
+	if i.Asset == "" {
+		return fmt.Errorf("empty ICS20 transfer asset")
+	}
+
+	return nil
+}
+
 func cleanMemo(memo string) string {
 	if len(memo) == 0 {
 		return ""
