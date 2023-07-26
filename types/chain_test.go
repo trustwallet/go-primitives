@@ -82,6 +82,14 @@ func TestGetChainFromAssetType(t *testing.T) {
 			want:    coin.Stellar(),
 			wantErr: false,
 		},
+		{
+			name: "Test Conflux eSpace",
+			args: args{
+				type_: "CFXEVM",
+			},
+			want:    coin.Cfxevm(),
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

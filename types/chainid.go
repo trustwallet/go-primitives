@@ -18,4 +18,5 @@ const (
 	ChainIDZKEVM      = 1101
 	ChainIDZKSync     = 324
 	ChainIDIoTeXEVM   = 4689
+	ChainIDCFXEVM     = 1030
 )
