@@ -735,3 +735,10 @@
   name: Conflux eSpace
   decimals: 18
   blockchain: Ethereum
+
+- id: 787
+  symbol: ACA
+  handle: acala
+  name: Acala
+  decimals: 12
+  blockchain: Polkadot

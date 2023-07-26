@@ -121,6 +121,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Tezos(), nil
 	case CFXEVM:
 		return coin.Cfxevm(), nil
+	case ACA:
+		return coin.Acala(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
