@@ -314,6 +314,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://iotexscan.io/address/test#transactions",
 			wantErr: false,
 		},
+		{
+			name: "Test CFXEVM",
+			args: args{
+				addr:      "test",
+				tokenType: "",
+				chain:     Cfxevm(),
+			},
+			want:    "https://evm.confluxscan.net/address/test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -362,6 +372,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	BOBA:         {},
 	POLYGONZKEVM: {},
 	ZKSYNC:       {},
+	CFXEVM:       {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

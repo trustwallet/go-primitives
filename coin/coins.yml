@@ -728,3 +728,10 @@
   name: NativeInjective
   decimals: 18
   blockchain: Cosmos
+
+- id: 1030
+  symbol: CFX
+  handle: cfxevm
+  name: Conflux eSpace
+  decimals: 18
+  blockchain: Ethereum

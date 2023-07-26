@@ -150,6 +150,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.BOBA},
 			want: BOBA,
 		},
+		{
+			name: "Conflux eSpace",
+			args: args{coinIndex: coin.CFXEVM},
+			want: CFXEVM,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -336,6 +341,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(NEUTRON),
 			wantBool: true,
 		},
+		{
+			name:     "Conflux eSpace",
+			args:     args{coin.CFXEVM, ""},
+			want:     string(CFXEVM),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -508,6 +519,13 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Neutron token version",
 			args{t: string(NEUTRON)},
+			TokenVersionUndefined,
+			nil,
+		},
+
+		{
+			"Conflux eSpace token version",
+			args{t: string(CFXEVM)},
 			TokenVersionUndefined,
 			nil,
 		},
