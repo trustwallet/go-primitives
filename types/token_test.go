@@ -347,6 +347,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(CFXEVM),
 			wantBool: true,
 		},
+		{
+			name:     "Acala",
+			args:     args{coin.ACALA, ""},
+			want:     string(ACA),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -526,6 +532,13 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Conflux eSpace token version",
 			args{t: string(CFXEVM)},
+			TokenVersionUndefined,
+			nil,
+		},
+
+		{
+			"Acala token version",
+			args{t: string(ACA)},
 			TokenVersionUndefined,
 			nil,
 		},

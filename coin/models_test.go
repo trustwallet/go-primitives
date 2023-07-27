@@ -324,6 +324,26 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://evm.confluxscan.net/address/test",
 			wantErr: false,
 		},
+		{
+			name: "Test Acala system token",
+			args: args{
+				addr:      "test",
+				tokenType: "",
+				chain:     Acala(),
+			},
+			want:    "https://acala.subscan.io/system_token_detail?unique_id=test",
+			wantErr: false,
+		},
+		{
+			name: "Test Acala custom token",
+			args: args{
+				addr:      "test",
+				tokenType: "custom_token",
+				chain:     Acala(),
+			},
+			want:    "https://acala.subscan.io/custom_token?customTokenId=test",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
