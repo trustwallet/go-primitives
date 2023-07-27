@@ -5,6 +5,34 @@ import (
 	"reflect"
 )
 
+type Batch[T any] struct {
+	values []T
+}
+
+func NewBatch[T any](values ...T) Batch[T] {
+	return Batch[T]{
+		values: values,
+	}
+}
+
+func (b Batch[T]) GetChunks(size int) [][]T {
+	if size <= 0 {
+		return nil
+	}
+
+	resultLength := (len(b.values) + size - 1) / size
+	result := make([][]T, resultLength)
+	lo, hi := 0, size
+	for i := range result {
+		if hi > len(b.values) {
+			hi = len(b.values)
+		}
+		result[i] = b.values[lo:hi:hi]
+		lo, hi = hi, hi+size
+	}
+	return result
+}
+
 func GetChunks(slice interface{}, size uint) ([][]interface{}, error) {
 	interfaceSlice, err := GetInterfaceSlice(slice)
 	if err != nil {
