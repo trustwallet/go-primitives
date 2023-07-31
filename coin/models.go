@@ -143,7 +143,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case TEZOS:
 		return fmt.Sprintf("https://tzstats.com/%s", tokenID), nil
 	case CFXEVM:
-		return fmt.Sprintf("https://evm.confluxscan.net/address/%s", tokenID), nil
+		return fmt.Sprintf("https://evm.confluxscan.net/token/%s", tokenID), nil
 	case ACALA:
 		if tokenType == "custom_token" {
 			return fmt.Sprintf("https://acala.subscan.io/custom_token?customTokenId=%s", tokenID), nil
