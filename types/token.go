@@ -95,6 +95,7 @@ const (
 	FA2          TokenType = "FA2"
 	CFXEVM       TokenType = "CFXEVM"
 	ACA          TokenType = "ACA"
+	ACALAEVM     TokenType = "ACALAEVM"
 )
 
 const (
