@@ -742,3 +742,10 @@
   name: Acala
   decimals: 12
   blockchain: Polkadot
+
+- id: 10000787
+  symbol: ACA
+  handle: acalaevm
+  name: Acala EVM
+  decimals: 18
+  blockchain: Ethereum

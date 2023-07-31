@@ -149,6 +149,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 			return fmt.Sprintf("https://acala.subscan.io/custom_token?customTokenId=%s", tokenID), nil
 		}
 		return fmt.Sprintf("https://acala.subscan.io/system_token_detail?unique_id=%s", tokenID), nil
+	case ACALAEVM:
+		return fmt.Sprintf("https://blockscout.acala.network/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
