@@ -344,6 +344,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://acala.subscan.io/custom_token?customTokenId=test",
 			wantErr: false,
 		},
+		{
+			name: "Test BASE20 token",
+			args: args{
+				addr:      "0x48bcf9455ba97cc439a2efbcfdf8f1afe692139b",
+				tokenType: "BASE20",
+				chain:     Base(),
+			},
+			want:    "https://basescan.org/token/0x48bcf9455ba97cc439a2efbcfdf8f1afe692139b",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -394,6 +404,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	ZKSYNC:       {},
 	CFXEVM:       {},
 	ACALAEVM:     {},
+	BASE:         {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

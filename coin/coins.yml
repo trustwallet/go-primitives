@@ -749,3 +749,10 @@
   name: Acala EVM
   decimals: 18
   blockchain: Ethereum
+
+- id: 8453
+  symbol: ETH
+  handle: base
+  name: Base
+  decimals: 18
+  blockchain: Ethereum
