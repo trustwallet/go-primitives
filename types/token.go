@@ -96,6 +96,7 @@ const (
 	CFXEVM       TokenType = "CFXEVM"
 	ACA          TokenType = "ACA"
 	ACALAEVM     TokenType = "ACALAEVM"
+	BASE20       TokenType = "BASE20"
 )
 
 const (
@@ -179,6 +180,7 @@ func GetTokenTypes() []TokenType {
 		NEUTRON,
 		CFXEVM,
 		ACA,
+		BASE20,
 	}
 }
 
@@ -306,7 +308,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV12, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CFXEVM,
-		ACA:
+		ACA, BASE20:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -402,6 +404,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = CFXEVM
 	case coin.ACALA:
 		tokenType = ACA
+	case coin.BASE:
+		tokenType = BASE20
 	}
 
 	if tokenType == "" {
