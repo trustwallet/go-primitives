@@ -75,7 +75,7 @@ const (
 	STELLAR      TokenType = "STELLAR"
 	KRC20        TokenType = "KRC20"
 	AURORA       TokenType = "AURORA"
-	ALGORAND     TokenType = "ALGORAND"
+	ALGORAND     TokenType = "ASA"
 	KAVAERC20    TokenType = "KAVAERC20"
 	METER        TokenType = "METER"
 	EVMOS_ERC20  TokenType = "EVMOS_ERC20"
@@ -97,6 +97,7 @@ const (
 	ACA          TokenType = "ACA"
 	ACALAEVM     TokenType = "ACALAEVM"
 	BASE20       TokenType = "BASE20"
+	CARDANO      TokenType = "CARDANO"
 )
 
 const (
@@ -181,6 +182,7 @@ func GetTokenTypes() []TokenType {
 		CFXEVM,
 		ACA,
 		BASE20,
+		CARDANO,
 	}
 }
 
@@ -258,6 +260,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(CFXEVM), true
 	case coin.ACALA:
 		return string(ACA), true
+	case coin.CARDANO:
+		return string(CARDANO), true
 	default:
 		return "", false
 	}
@@ -308,7 +312,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV12, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CFXEVM,
-		ACA, BASE20:
+		ACA, BASE20, CARDANO:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
