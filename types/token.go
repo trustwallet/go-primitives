@@ -97,6 +97,11 @@ const (
 	ACA          TokenType = "ACA"
 	ACALAEVM     TokenType = "ACALAEVM"
 	BASE20       TokenType = "BASE20"
+	AKASH        TokenType = "AKT"
+	AGORIC       TokenType = "BLD"
+	AXELAR       TokenType = "AXL"
+	JUNO         TokenType = "JUNO"
+	SEI          TokenType = "SEI"
 	CARDANO      TokenType = "CARDANO"
 )
 
@@ -113,6 +118,7 @@ const (
 	TokenVersionV10       TokenVersion = 10
 	TokenVersionV11       TokenVersion = 11
 	TokenVersionV12       TokenVersion = 12
+	TokenVersionV13       TokenVersion = 13
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -182,6 +188,11 @@ func GetTokenTypes() []TokenType {
 		CFXEVM,
 		ACA,
 		BASE20,
+		AKASH,
+		AGORIC,
+		AXELAR,
+		JUNO,
+		SEI,
 		CARDANO,
 	}
 }
@@ -260,6 +271,16 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(CFXEVM), true
 	case coin.ACALA:
 		return string(ACA), true
+	case coin.AKT:
+		return string(AKASH), true
+	case coin.BLD:
+		return string(AGORIC), true
+	case coin.AXL:
+		return string(AXELAR), true
+	case coin.JUNO:
+		return string(JUNO), true
+	case coin.SEI:
+		return string(SEI), true
 	case coin.CARDANO:
 		return string(CARDANO), true
 	default:
@@ -310,9 +331,11 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
+	case BASE20, AKASH, AGORIC, AXELAR, JUNO, SEI:
+		return TokenVersionV13, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CFXEVM,
-		ACA, BASE20, CARDANO:
+		ACA, CARDANO:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes

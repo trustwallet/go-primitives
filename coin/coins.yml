@@ -756,3 +756,38 @@
   name: Base
   decimals: 18
   blockchain: Ethereum
+
+- id: 17000118
+  symbol: AKT
+  handle: akt
+  name: Akash
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 564
+  symbol: BLD
+  handle: bld
+  name: Agoric
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 50000118
+  symbol: AXL
+  handle: axl
+  name: Axelar
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 30000118
+  symbol: JUNO
+  handle: juno
+  name: Juno
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 19000118
+  symbol: SEI
+  handle: sei
+  name: Sei
+  decimals: 6
+  blockchain: Cosmos
