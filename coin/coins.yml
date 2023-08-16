@@ -759,21 +759,21 @@
 
 - id: 17000118
   symbol: AKT
-  handle: akt
+  handle: akash
   name: Akash
   decimals: 6
   blockchain: Cosmos
 
 - id: 564
   symbol: BLD
-  handle: bld
+  handle: agoric
   name: Agoric
   decimals: 6
   blockchain: Cosmos
 
 - id: 50000118
   symbol: AXL
-  handle: axl
+  handle: axelar
   name: Axelar
   decimals: 6
   blockchain: Cosmos

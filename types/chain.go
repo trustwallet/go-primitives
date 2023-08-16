@@ -128,11 +128,11 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 	case BASE20:
 		return coin.Base(), nil
 	case AKASH:
-		return coin.Akt(), nil
+		return coin.Akash(), nil
 	case AGORIC:
-		return coin.Bld(), nil
+		return coin.Agoric(), nil
 	case AXELAR:
-		return coin.Axl(), nil
+		return coin.Axelar(), nil
 	case JUNO:
 		return coin.Juno(), nil
 	case SEI:
