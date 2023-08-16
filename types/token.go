@@ -271,11 +271,11 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(CFXEVM), true
 	case coin.ACALA:
 		return string(ACA), true
-	case coin.AKT:
+	case coin.AKASH:
 		return string(AKASH), true
-	case coin.BLD:
+	case coin.AGORIC:
 		return string(AGORIC), true
-	case coin.AXL:
+	case coin.AXELAR:
 		return string(AXELAR), true
 	case coin.JUNO:
 		return string(JUNO), true
