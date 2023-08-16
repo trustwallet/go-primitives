@@ -119,13 +119,13 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Neutron(), nil
 	case FA2:
 		return coin.Tezos(), nil
-	case CFXEVM:
+	case CONFLUX:
 		return coin.Cfxevm(), nil
 	case ACA:
 		return coin.Acala(), nil
 	case ACALAEVM:
 		return coin.Acalaevm(), nil
-	case BASE20:
+	case BASE:
 		return coin.Base(), nil
 	case AKASH:
 		return coin.Akash(), nil
