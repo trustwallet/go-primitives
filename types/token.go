@@ -93,10 +93,10 @@ const (
 	STRIDE       TokenType = "STRIDE"
 	NEUTRON      TokenType = "NEUTRON"
 	FA2          TokenType = "FA2"
-	CFXEVM       TokenType = "CFXEVM"
+	CONFLUX      TokenType = "CONFLUX"
 	ACA          TokenType = "ACA"
 	ACALAEVM     TokenType = "ACALAEVM"
-	BASE20       TokenType = "BASE20"
+	BASE         TokenType = "BASE"
 	AKASH        TokenType = "AKT"
 	AGORIC       TokenType = "BLD"
 	AXELAR       TokenType = "AXL"
@@ -185,9 +185,9 @@ func GetTokenTypes() []TokenType {
 		SUI,
 		STRIDE,
 		NEUTRON,
-		CFXEVM,
+		CONFLUX,
 		ACA,
-		BASE20,
+		BASE,
 		AKASH,
 		AGORIC,
 		AXELAR,
@@ -268,7 +268,7 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	case coin.NEUTRON:
 		return string(NEUTRON), true
 	case coin.CFXEVM:
-		return string(CFXEVM), true
+		return string(CONFLUX), true
 	case coin.ACALA:
 		return string(ACA), true
 	case coin.AKASH:
@@ -331,10 +331,10 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
-	case BASE20, AKASH, AGORIC, AXELAR, JUNO, SEI:
+	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI:
 		return TokenVersionV13, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
-		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CFXEVM,
+		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CONFLUX,
 		ACA, CARDANO:
 		return TokenVersionUndefined, nil
 	default:
@@ -428,11 +428,11 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 	case coin.NEUTRON:
 		tokenType = NEUTRON
 	case coin.CFXEVM:
-		tokenType = CFXEVM
+		tokenType = CONFLUX
 	case coin.ACALA:
 		tokenType = ACA
 	case coin.BASE:
-		tokenType = BASE20
+		tokenType = BASE
 	}
 
 	if tokenType == "" {

@@ -85,7 +85,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 		{
 			name: "Test Conflux eSpace",
 			args: args{
-				type_: "CFXEVM",
+				type_: "CONFLUX",
 			},
 			want:    coin.Cfxevm(),
 			wantErr: false,
