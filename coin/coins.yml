@@ -92,7 +92,7 @@
   name: IoTeX Network Mainnet
   decimals: 18
   blockTime: 10000
-  blockchain: IoTeX Network Mainnet
+  blockchain: Ethereum
 
 - id: 313
   symbol: ZIL

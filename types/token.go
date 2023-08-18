@@ -104,6 +104,7 @@ const (
 	SEI          TokenType = "SEI"
 	CARDANO      TokenType = "CARDANO"
 	NEON         TokenType = "NEON"
+	IOTEXEVM     TokenType = "XRC20"
 )
 
 const (
@@ -439,6 +440,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = BASE
 	case coin.NEON:
 		tokenType = NEON
+	case coin.IOTEXEVM:
+		tokenType = IOTEXEVM
 	}
 
 	if tokenType == "" {
