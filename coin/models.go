@@ -155,6 +155,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://basescan.org/token/%s", tokenID), nil
 	case CARDANO:
 		return fmt.Sprintf("https://cexplorer.io/asset/%s", tokenID), nil
+	case NEON:
+		return fmt.Sprintf("https://neonscan.org/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

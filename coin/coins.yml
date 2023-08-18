@@ -791,3 +791,10 @@
   name: Sei
   decimals: 6
   blockchain: Cosmos
+
+- id: 245022934
+  symbol: NEON
+  handle: neon
+  name: Neon
+  decimals: 18
+  blockchain: Ethereum

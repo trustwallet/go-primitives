@@ -103,6 +103,7 @@ const (
 	JUNO         TokenType = "JUNO"
 	SEI          TokenType = "SEI"
 	CARDANO      TokenType = "CARDANO"
+	NEON         TokenType = "NEON"
 )
 
 const (
@@ -194,6 +195,7 @@ func GetTokenTypes() []TokenType {
 		JUNO,
 		SEI,
 		CARDANO,
+		NEON,
 	}
 }
 
@@ -283,6 +285,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(SEI), true
 	case coin.CARDANO:
 		return string(CARDANO), true
+	case coin.NEON:
+		return string(NEON), true
 	default:
 		return "", false
 	}
@@ -335,7 +339,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV13, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CONFLUX,
-		ACA, CARDANO:
+		ACA, CARDANO, NEON:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -433,6 +437,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = ACA
 	case coin.BASE:
 		tokenType = BASE
+	case coin.NEON:
+		tokenType = NEON
 	}
 
 	if tokenType == "" {
