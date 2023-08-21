@@ -272,7 +272,7 @@ var Coins = map[uint]Coin{
 		Decimals:         18,
 		BlockTime:        10000,
 		MinConfirmations: 0,
-		Blockchain:       "IoTeX Network Mainnet",
+		Blockchain:       "Ethereum",
 	},
 	ZILLIQA: {
 		ID:               313,
@@ -1335,7 +1335,7 @@ var Chains = map[string]Coin{
 		Decimals:         18,
 		BlockTime:        10000,
 		MinConfirmations: 0,
-		Blockchain:       "IoTeX Network Mainnet",
+		Blockchain:       "Ethereum",
 	},
 	Zilliqa().Handle: {
 		ID:               313,
