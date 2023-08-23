@@ -121,8 +121,9 @@ type (
 	// UTXO transactions consist of a set of inputs and a set of outputs
 	// both represented by TxOutput model
 	TxOutput struct {
-		Address string `json:"address"`
-		Value   Amount `json:"value"`
+		Address string       `json:"address"`
+		Value   Amount       `json:"value"`
+		Asset   coin.AssetID `json:"asset"`
 	}
 
 	// Transfer describes the transfer of currency
