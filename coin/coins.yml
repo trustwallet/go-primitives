@@ -798,3 +798,10 @@
   name: Neon
   decimals: 18
   blockchain: Ethereum
+
+- id: 204
+  symbol: BNB
+  handle: opbnb
+  name: OpBNB
+  decimals: 18
+  blockchain: Ethereum
