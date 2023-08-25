@@ -123,7 +123,7 @@ type (
 	TxOutput struct {
 		Address string       `json:"address"`
 		Value   Amount       `json:"value"`
-		Asset   coin.AssetID `json:"asset"`
+		Asset   coin.AssetID `json:"asset,omitempty"`
 	}
 
 	// Transfer describes the transfer of currency
