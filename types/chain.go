@@ -141,6 +141,16 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Cardano(), nil
 	case NEON:
 		return coin.Neon(), nil
+	case OSMOSIS:
+		return coin.Osmosis(), nil
+	case NATIVEINJECTIVE:
+		return coin.Nativeinjective(), nil
+	case NATIVEEVMOS:
+		return coin.Nativeevmos(), nil
+	case CRYPTOORG:
+		return coin.Cryptoorg(), nil
+	case COSMOS:
+		return coin.Cosmos(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
