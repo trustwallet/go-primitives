@@ -53,7 +53,7 @@ jobs:
             git checkout -b "${RANDOM_BRANCH}"
             git pull origin main
           
-            # Make changes (example: go get go-primitives)
+            # Make changes
             go get github.com/trustwallet/go-primitives
           
             # Commit and push changes
