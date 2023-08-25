@@ -1,0 +1,68 @@
+name: Sync and Create PRs
+
+on:
+  release:
+    types:
+      - released
+
+jobs:
+  sync_and_create_prs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Get Release Author
+        id: get_author
+        run: |
+          AUTHOR=$(curl -s -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                    "https://api.github.com/repos/trustwallet/go-primitives/releases/latest" | \
+                    jq -r '.author.login')
+          echo "The release author is $AUTHOR"
+          echo "::set-output name=author::$AUTHOR"
+
+      - name: Generate Random Branch Name
+        id: random_branch
+        run: |
+          echo "random-branch-${RANDOM}" >> random-branch.txt
+          echo "::set-output name=branch_name::$(cat random-branch.txt)"
+
+      - name: Create Sync Branch and PRs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RELEASE_AUTHOR: ${{ steps.get_author.outputs.author }}
+          RANDOM_BRANCH: sync/${{ steps.random_branch.outputs.branch_name }}
+        run: |
+          # Extract the tag/release version
+          TAG_NAME=$(echo "${GITHUB_REF}" | sed -n 's/refs\/tags\/\(.*\)/\1/p')
+          
+          # Set up Git config
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          
+          # Clone and create branches, make changes, and open PRs
+          REPOS=("trustwallet/backend" "trustwallet/backend-market" "trustwallet/backend-devices" "trustwallet/backend-wallets" "trustwallet/backend-assets")
+          for repo in "${REPOS[@]}"; do
+            echo "Processing ${repo}"
+            git clone "https://github.com/${repo}.git"
+            cd $(basename ${repo})
+          
+            # Create a new random branch
+            git checkout -b "${RANDOM_BRANCH}"
+            git pull origin main
+          
+            # Make changes (example: go get go-primitives)
+            go get github.com/trustwallet/go-primitives
+          
+            # Commit and push changes
+            git commit -am "Sync with go-primitives ${TAG_NAME}"
+            git push origin "${RANDOM_BRANCH}"
+          
+            # Create a PR and assign to the release author
+            PR_TITLE="Sync with go-primitives ${TAG_NAME}"
+            PR_BODY="Syncing with the new release of go-primitives ${TAG_NAME}"
+            hub pull-request -b main -h "${RANDOM_BRANCH}" -m "${PR_TITLE}" -m "${PR_BODY}" -a "${RELEASE_AUTHOR}"
+          
+            cd ..
+          done
