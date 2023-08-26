@@ -304,7 +304,23 @@ func (t *Tx) GetAddresses() []string {
 
 		return append(addresses, t.From, t.To)
 	case TxContractCall:
-		return append(addresses, t.From, t.To)
+		uniqueAddresses := map[string]struct{}{
+			t.From: {},
+			t.To:   {},
+		}
+		for _, input := range t.Inputs {
+			uniqueAddresses[input.Address] = struct{}{}
+		}
+
+		for _, output := range t.Outputs {
+			uniqueAddresses[output.Address] = struct{}{}
+		}
+
+		for address := range uniqueAddresses {
+			addresses = append(addresses, address)
+		}
+
+		return addresses
 	case TxSwap:
 		return append(addresses, t.From, t.To)
 	case TxStakeDelegate, TxStakeRedelegate, TxStakeUndelegate, TxStakeClaimRewards, TxStakeCompound:
