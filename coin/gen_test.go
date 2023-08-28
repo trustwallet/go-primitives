@@ -92,7 +92,7 @@ func TestEthereum(t *testing.T) {
 	assert.Equal(t, "Ethereum", c.Name)
 	assert.Equal(t, uint(18), c.Decimals)
 	assert.Equal(t, 10000, c.BlockTime)
-	assert.Equal(t, int64(0), c.MinConfirmations)
+	assert.Equal(t, int64(12), c.MinConfirmations)
 }
 
 func TestBinance(t *testing.T) {
@@ -105,7 +105,7 @@ func TestBinance(t *testing.T) {
 	assert.Equal(t, "Smart Chain", c.Name)
 	assert.Equal(t, uint(18), c.Decimals)
 	assert.Equal(t, 3000, c.BlockTime)
-	assert.Equal(t, int64(0), c.MinConfirmations)
+	assert.Equal(t, int64(12), c.MinConfirmations)
 }
 
 func TestPublicVariables(t *testing.T) {
@@ -117,7 +117,7 @@ func TestPublicVariables(t *testing.T) {
 			Name:             "Smart Chain",
 			Decimals:         18,
 			BlockTime:        3000,
-			MinConfirmations: 0,
+			MinConfirmations: 12,
 			Blockchain:       "Ethereum",
 		},
 		{
@@ -127,7 +127,7 @@ func TestPublicVariables(t *testing.T) {
 			Name:             "Ethereum",
 			Decimals:         18,
 			BlockTime:        10000,
-			MinConfirmations: 0,
+			MinConfirmations: 12,
 			Blockchain:       "Ethereum",
 		},
 	}
