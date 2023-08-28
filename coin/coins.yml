@@ -456,9 +456,9 @@
   blockchain: EOS
 
 - id: 330
-  symbol: LUNA
+  symbol: LUNC
   handle: terra
-  name: Terra
+  name: Terra Classic
   decimals: 6
   blockchain: Cosmos
 
