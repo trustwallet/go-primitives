@@ -161,6 +161,7 @@ func GetTokenTypes() []TokenType {
 		NATIVEEVMOS,
 		NATIVEINJECTIVE,
 		OSMOSIS,
+		STARGAZE,
 		SPL,
 		POLYGON,
 		OPTIMISM,
@@ -367,7 +368,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV13, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CONFLUX,
-		ACA, CARDANO, NEON, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS:
+		ACA, CARDANO, NEON, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes

@@ -5,6 +5,7 @@
   decimals: 18
   blockTime: 10000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 61
   symbol: ETC
@@ -13,6 +14,7 @@
   decimals: 18
   blockTime: 30000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 74
   symbol: ICX
@@ -53,6 +55,7 @@
   decimals: 18
   blockTime: 5000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 195
   symbol: TRX
@@ -93,6 +96,7 @@
   decimals: 18
   blockTime: 10000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 313
   symbol: ZIL
@@ -158,6 +162,7 @@
   decimals: 18
   blockTime: 10000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 889
   symbol: TOMO
@@ -166,6 +171,7 @@
   blockTime: 4000
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 1001
   symbol: TT
@@ -174,6 +180,7 @@
   decimals: 18
   blockTime: 10000
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 1024
   symbol: ONT
@@ -214,6 +221,7 @@
   decimals: 18
   blockTime: 20000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 5718350
   symbol: WAN
@@ -222,6 +230,7 @@
   decimals: 18
   blockTime: 30000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 5741564
   symbol: WAVES
@@ -414,6 +423,7 @@
   decimals: 18
   blockTime: 3000
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 461
   symbol: FIL
@@ -497,6 +507,7 @@
   name: Polygon
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 931
   symbol: RUNE
@@ -511,6 +522,7 @@
   name: Optimism Ethereum
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 10000100
   symbol: xDAI
@@ -518,6 +530,7 @@
   name: xDai
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 10009000
   symbol: AVAX
@@ -525,6 +538,7 @@
   name: Avalanche C-Chain
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 10000553
   symbol: HT
@@ -532,6 +546,7 @@
   name: Huobi ECO Chain
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 10000250
   symbol: FTM
@@ -539,6 +554,7 @@
   name: Fantom
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 10042221
   symbol: ARETH
@@ -546,6 +562,7 @@
   name: Arbitrum
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 52752
   symbol: CELO
@@ -553,6 +570,7 @@
   name: Celo
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 10002020
   symbol: RON
@@ -560,6 +578,7 @@
   name: Ronin
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 10000118
   symbol: OSMO
@@ -574,6 +593,7 @@
   name: Cronos
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 10000321
   symbol: KCS
@@ -581,6 +601,7 @@
   name: KuCoin Community Chain
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 1323161554
   symbol: AURORAETH
@@ -588,6 +609,7 @@
   name: Aurora
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 10002222
   symbol: KAVA
@@ -595,6 +617,7 @@
   name: KavaEvm
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 7
 
 - id: 18000
   symbol: MTR
@@ -602,6 +625,7 @@
   name: Meter
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 10009001
   symbol: EVMOS
@@ -609,6 +633,7 @@
   name: Evmos
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 20009001
   symbol: EVMOS
@@ -623,6 +648,7 @@
   name: OKX Chain
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 7
 
 - id: 394
   symbol: CRO
@@ -644,6 +670,7 @@
   name: Moonbeam
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 7
 
 - id: 10008217
   symbol: KLAY
@@ -651,6 +678,7 @@
   name: Klaytn
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 10001088
   symbol: METIS
@@ -658,6 +686,7 @@
   name: Metis
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 10001285
   symbol: MOVR
@@ -665,6 +694,7 @@
   name: Moonriver
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 2
 
 - id: 10000288
   symbol: BOBAETH
@@ -672,6 +702,7 @@
   name: Boba
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 1
 
 - id: 607
   symbol: TON
@@ -686,6 +717,7 @@
   name: Polygon zkEVM
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 10000324
   symbol: ZKSYNC
@@ -693,6 +725,7 @@
   name: Zksync
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 784
   symbol: SUI
@@ -735,6 +768,7 @@
   name: Conflux eSpace
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 36
 
 - id: 787
   symbol: ACA
@@ -749,6 +783,7 @@
   name: Acala EVM
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 2
 
 - id: 8453
   symbol: ETH
@@ -756,6 +791,7 @@
   name: Base
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 12
 
 - id: 17000118
   symbol: AKT
@@ -798,6 +834,7 @@
   name: Neon
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 1
 
 - id: 204
   symbol: BNB
@@ -805,6 +842,7 @@
   name: OpBNB
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 24
 
 - id: 59144
   symbol: ETH
@@ -812,3 +850,4 @@
   name: Linea
   decimals: 18
   blockchain: Ethereum
+  minConfirmations: 7
