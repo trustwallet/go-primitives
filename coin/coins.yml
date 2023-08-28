@@ -805,3 +805,10 @@
   name: OpBNB
   decimals: 18
   blockchain: Ethereum
+
+- id: 59144
+  symbol: ETH
+  handle: linea
+  name: Linea
+  decimals: 18
+  blockchain: Ethereum
