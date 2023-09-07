@@ -213,6 +213,7 @@ func GetTokenTypes() []TokenType {
 		NEON,
 		OPBNB,
 		LINEA,
+		ACALAEVM,
 	}
 }
 
@@ -368,7 +369,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV13, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
 		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CONFLUX,
-		ACA, CARDANO, NEON, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
+		ACA, CARDANO, NEON, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, ACALAEVM:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -462,8 +463,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = NEUTRON
 	case coin.CFXEVM:
 		tokenType = CONFLUX
-	case coin.ACALA:
-		tokenType = ACA
+	case coin.ACALAEVM:
+		tokenType = ACALAEVM
 	case coin.BASE:
 		tokenType = BASE
 	case coin.NEON:
