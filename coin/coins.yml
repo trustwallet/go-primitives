@@ -31,6 +31,7 @@
   decimals: 6
   blockTime: 5000
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 144
   symbol: XRP
@@ -130,6 +131,7 @@
   decimals: 6
   blockTime: 5000
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 500
   symbol: THETA
@@ -471,6 +473,7 @@
   name: Terra Classic
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 494
   symbol: BAND
@@ -586,6 +589,7 @@
   name: Osmosis
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 10000025
   symbol: CRO
@@ -641,6 +645,7 @@
   name: NativeEvmos
   decimals: 18
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 996
   symbol: OKT
@@ -656,6 +661,7 @@
   name: CryptoOrg
   decimals: 8
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 637
   symbol: APTOS
@@ -740,6 +746,7 @@
   name: Stride
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 90000118
   symbol: NTRN
@@ -747,6 +754,7 @@
   name: Neutron
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 10
 
 - id: 20000118
   symbol: STARS
@@ -754,6 +762,7 @@
   name: Stargaze
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 10000060
   symbol: INJ
@@ -761,6 +770,7 @@
   name: NativeInjective
   decimals: 18
   blockchain: Cosmos
+  minConfirmations: 30
 
 - id: 1030
   symbol: CFX
@@ -799,6 +809,7 @@
   name: Akash
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 564
   symbol: BLD
@@ -806,6 +817,7 @@
   name: Agoric
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 50000118
   symbol: AXL
@@ -813,6 +825,7 @@
   name: Axelar
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 30000118
   symbol: JUNO
@@ -820,6 +833,7 @@
   name: Juno
   decimals: 6
   blockchain: Cosmos
+  minConfirmations: 7
 
 - id: 19000118
   symbol: SEI

@@ -108,6 +108,19 @@ func TestBinance(t *testing.T) {
 	assert.Equal(t, int64(12), c.MinConfirmations)
 }
 
+func TestCosmos(t *testing.T) {
+
+	c := Cosmos()
+
+	assert.Equal(t, uint(118), c.ID)
+	assert.Equal(t, "cosmos", c.Handle)
+	assert.Equal(t, "ATOM", c.Symbol)
+	assert.Equal(t, "Cosmos", c.Name)
+	assert.Equal(t, uint(6), c.Decimals)
+	assert.Equal(t, 5000, c.BlockTime)
+	assert.Equal(t, int64(7), c.MinConfirmations)
+}
+
 func TestPublicVariables(t *testing.T) {
 	want := []Coin{
 		{
