@@ -480,31 +480,31 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Moonbeam token version",
 			args{t: string(MOONBEAM)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Klaytn token version",
 			args{t: string(KLAYTN)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Metis token version",
 			args{t: string(METIS)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Moonriver token version",
 			args{t: string(MOONRIVER)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Boba token version",
 			args{t: string(BOBA)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 
@@ -539,7 +539,7 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Acala token version",
 			args{t: string(ACA)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 	}
