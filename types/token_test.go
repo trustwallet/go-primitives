@@ -532,7 +532,7 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Conflux eSpace token version",
 			args{t: string(CONFLUX)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 
