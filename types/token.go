@@ -129,6 +129,7 @@ const (
 	TokenVersionV11       TokenVersion = 11
 	TokenVersionV12       TokenVersion = 12
 	TokenVersionV13       TokenVersion = 13
+	TokenVersionV14       TokenVersion = 14
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -365,11 +366,12 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
-	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB, LINEA:
+	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB:
 		return TokenVersionV13, nil
-	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND,
-		KAVAERC20, METER, EVMOS_ERC20, KIP20, MOONBEAM, KLAYTN, METIS, MOONRIVER, BOBA, STRIDE, NEUTRON, FA2, CONFLUX,
-		ACA, CARDANO, NEON, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, ACALAEVM:
+	case KAVAERC20, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM:
+		return TokenVersionV14, nil
+	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
