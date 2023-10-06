@@ -49,7 +49,7 @@ const (
 	TT20            TokenType = "TT20"
 	KAVA            TokenType = "KAVA"
 	COSMOS          TokenType = "COSMOS"
-	CRYPTOORG       TokenType = "CRYPTOORG"
+	CRYPTOORG       TokenType = "CRC20"
 	NATIVEEVMOS     TokenType = "NATIVEEVMOS"
 	NATIVEINJECTIVE TokenType = "NATIVEINJECTIVE"
 	STARGAZE        TokenType = "STARGAZE"
