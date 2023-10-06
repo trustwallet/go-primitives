@@ -83,7 +83,7 @@ const (
 	KRC20           TokenType = "KRC20"
 	AURORA          TokenType = "AURORA"
 	ALGORAND        TokenType = "ASA"
-	KAVAERC20       TokenType = "KAVAERC20"
+	KAVAEVM         TokenType = "KAVAEVM"
 	METER           TokenType = "METER"
 	EVMOS_ERC20     TokenType = "EVMOS_ERC20"
 	KIP20           TokenType = "KIP20"
@@ -190,7 +190,7 @@ func GetTokenTypes() []TokenType {
 		KRC20,
 		AURORA,
 		ALGORAND,
-		KAVAERC20,
+		KAVAEVM,
 		METER,
 		EVMOS_ERC20,
 		KIP20,
@@ -368,7 +368,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV12, nil
 	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB:
 		return TokenVersionV13, nil
-	case KAVAERC20, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM:
+	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM:
 		return TokenVersionV14, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
@@ -434,7 +434,7 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 	case coin.ARBITRUM:
 		tokenType = ARBITRUM
 	case coin.KAVAEVM:
-		tokenType = KAVAERC20
+		tokenType = KAVAEVM
 	case coin.METER:
 		tokenType = METER
 	case coin.EVMOS:
