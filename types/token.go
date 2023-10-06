@@ -49,7 +49,6 @@ const (
 	TT20            TokenType = "TT20"
 	KAVA            TokenType = "KAVA"
 	COSMOS          TokenType = "COSMOS"
-	CRYPTOORG       TokenType = "CRC20"
 	NATIVEEVMOS     TokenType = "NATIVEEVMOS"
 	NATIVEINJECTIVE TokenType = "NATIVEINJECTIVE"
 	STARGAZE        TokenType = "STARGAZE"
@@ -158,7 +157,6 @@ func GetTokenTypes() []TokenType {
 		AGORIC,
 		AKASH,
 		AXELAR,
-		CRYPTOORG,
 		NATIVEEVMOS,
 		NATIVEINJECTIVE,
 		OSMOSIS,
@@ -273,7 +271,7 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	case coin.COSMOS:
 		return string(COSMOS), true
 	case coin.CRYPTOORG:
-		return string(CRYPTOORG), true
+		return string(CRC20), true
 	case coin.NATIVEEVMOS:
 		return string(NATIVEEVMOS), true
 	case coin.NATIVEINJECTIVE:
@@ -371,7 +369,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM:
 		return TokenVersionV14, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
-		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
