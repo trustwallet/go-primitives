@@ -106,8 +106,8 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			want: RONIN,
 		},
 		{
-			name: "Cronos CRC20",
-			args: args{coinIndex: coin.CRONOS},
+			name: "Cryptoorg CRC20",
+			args: args{coinIndex: coin.CRYPTOORG},
 			want: CRC20,
 		},
 		{
@@ -186,8 +186,8 @@ func TestGetTokenType(t *testing.T) {
 			wantBool: true,
 		},
 		{
-			name:     "Cronos",
-			args:     args{coin.CRONOS, ""},
+			name:     "Cryptoorg",
+			args:     args{coin.CRYPTOORG, ""},
 			want:     string(CRC20),
 			wantBool: true,
 		},

@@ -49,7 +49,7 @@ const (
 	TT20            TokenType = "TT20"
 	KAVA            TokenType = "KAVA"
 	COSMOS          TokenType = "COSMOS"
-	CRYPTOORG       TokenType = "CRYPTOORG"
+	CRYPTOORG       TokenType = "CRO"
 	NATIVEEVMOS     TokenType = "NATIVEEVMOS"
 	NATIVEINJECTIVE TokenType = "NATIVEINJECTIVE"
 	STARGAZE        TokenType = "STARGAZE"
@@ -273,7 +273,7 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	case coin.COSMOS:
 		return string(COSMOS), true
 	case coin.CRYPTOORG:
-		return string(CRYPTOORG), true
+		return string(CRC20), true
 	case coin.NATIVEEVMOS:
 		return string(NATIVEEVMOS), true
 	case coin.NATIVEINJECTIVE:
@@ -425,7 +425,7 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = RONIN
 	case coin.CELO:
 		tokenType = CELO
-	case coin.CRONOS:
+	case coin.CRYPTOORG:
 		tokenType = CRC20
 	case coin.KCC:
 		tokenType = KRC20

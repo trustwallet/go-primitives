@@ -76,7 +76,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 	case OASIS:
 		return coin.Oasis(), nil
 	case CRC20:
-		return coin.Cronos(), nil
+		return coin.Cryptoorg(), nil
 	case STELLAR:
 		return coin.Stellar(), nil
 	case KRC20:
@@ -148,7 +148,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 	case NATIVEEVMOS:
 		return coin.Nativeevmos(), nil
 	case CRYPTOORG:
-		return coin.Cryptoorg(), nil
+		return coin.Cronos(), nil
 	case COSMOS:
 		return coin.Cosmos(), nil
 	case OPBNB:
