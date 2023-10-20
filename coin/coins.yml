@@ -865,3 +865,10 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
+
+- id: 5600
+  symbol: gBNB
+  handle: gbnb
+  name: BNB Greenfield
+  decimals: 18
+  blockchain: Greenfield
