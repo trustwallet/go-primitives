@@ -872,3 +872,10 @@
   name: BNB Greenfield
   decimals: 18
   blockchain: Greenfield
+
+- id: 5000
+  symbol: MNT
+  handle: mantle
+  name: Mantle
+  decimals: 18
+  blockchain: Ethereum
