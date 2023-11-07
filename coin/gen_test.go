@@ -27,6 +27,7 @@ type TestCoin struct {
 	Decimals         uint   `yaml:"decimals"`
 	BlockTime        int    `yaml:"blockTime"`
 	MinConfirmations int64  `yaml:"minConfirmations"`
+	IsTokenSupported bool   `yaml:"isTokenSupported"`
 	SampleAddr       string `yaml:"sampleAddress"`
 }
 
@@ -71,6 +72,7 @@ func TestCoinFile(t *testing.T) {
 		assert.Equal(t, got.Decimals, want.Decimals)
 		assert.Equal(t, got.BlockTime, want.BlockTime)
 		assert.Equal(t, got.MinConfirmations, want.MinConfirmations)
+		assert.Equal(t, got.IsTokenSupported, want.IsTokenSupported)
 
 		s := cases.Title(language.English).String(want.Handle)
 		method := fmt.Sprintf("func %s() Coin", s)
@@ -93,6 +95,7 @@ func TestEthereum(t *testing.T) {
 	assert.Equal(t, uint(18), c.Decimals)
 	assert.Equal(t, 10000, c.BlockTime)
 	assert.Equal(t, int64(12), c.MinConfirmations)
+	assert.True(t, c.IsTokenSupported)
 }
 
 func TestBinance(t *testing.T) {
@@ -106,6 +109,7 @@ func TestBinance(t *testing.T) {
 	assert.Equal(t, uint(18), c.Decimals)
 	assert.Equal(t, 3000, c.BlockTime)
 	assert.Equal(t, int64(12), c.MinConfirmations)
+	assert.True(t, c.IsTokenSupported)
 }
 
 func TestCosmos(t *testing.T) {
@@ -119,6 +123,7 @@ func TestCosmos(t *testing.T) {
 	assert.Equal(t, uint(6), c.Decimals)
 	assert.Equal(t, 5000, c.BlockTime)
 	assert.Equal(t, int64(7), c.MinConfirmations)
+	assert.True(t, c.IsTokenSupported)
 }
 
 func TestPublicVariables(t *testing.T) {
@@ -132,6 +137,7 @@ func TestPublicVariables(t *testing.T) {
 			BlockTime:        3000,
 			MinConfirmations: 12,
 			Blockchain:       "Ethereum",
+			IsTokenSupported: true,
 		},
 		{
 			ID:               60,
@@ -142,6 +148,7 @@ func TestPublicVariables(t *testing.T) {
 			BlockTime:        10000,
 			MinConfirmations: 12,
 			Blockchain:       "Ethereum",
+			IsTokenSupported: true,
 		},
 	}
 
