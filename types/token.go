@@ -216,6 +216,7 @@ func GetTokenTypes() []TokenType {
 		OPBNB,
 		LINEA,
 		ACALAEVM,
+		MANTLE,
 	}
 }
 
@@ -319,6 +320,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(CARDANO), true
 	case coin.NEON:
 		return string(NEON), true
+	case coin.MANTLE:
+		return string(MANTLE), true
 	default:
 		return "", false
 	}
@@ -478,6 +481,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = OPBNB
 	case coin.LINEA:
 		tokenType = LINEA
+	case coin.MANTLE:
+		tokenType = MANTLE
 	}
 
 	if tokenType == "" {
