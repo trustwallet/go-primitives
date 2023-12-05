@@ -105,7 +105,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case ALGORAND:
 		return fmt.Sprintf("https://algoexplorer.io/asset/%s", tokenID), nil
 	case KAVAEVM:
-		return fmt.Sprintf("https://explorer.kava.io/token/%s", tokenID), nil
+		return fmt.Sprintf("https://kavascan.com/token/%s", tokenID), nil
 	case METER:
 		return fmt.Sprintf("https://scan.meter.io/address/%s", tokenID), nil
 	case EVMOS:
@@ -157,6 +157,10 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://cexplorer.io/asset/%s", tokenID), nil
 	case NEON:
 		return fmt.Sprintf("https://neonscan.org/token/%s", tokenID), nil
+	case MANTLE:
+		return fmt.Sprintf("https://explorer.mantle.xyz/address/%s", tokenID), nil
+	case LINEA:
+		return fmt.Sprintf("https://explorer.linea.build/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
