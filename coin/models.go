@@ -47,7 +47,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case SOLANA:
 		return fmt.Sprintf("https://solscan.io/token/%s", tokenID), nil
 	case TOMOCHAIN:
-		return fmt.Sprintf("https://tomoscan.io/address/%s", tokenID), nil
+		return fmt.Sprintf("https://tomoscan.io/token/%s", tokenID), nil
 	case KAVA:
 		return "https://www.mintscan.io/kava", nil
 	case ONTOLOGY:
