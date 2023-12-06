@@ -47,7 +47,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case SOLANA:
 		return fmt.Sprintf("https://solscan.io/token/%s", tokenID), nil
 	case TOMOCHAIN:
-		return fmt.Sprintf("https://scan.tomochain.com/address/%s", tokenID), nil
+		return fmt.Sprintf("https://tomoscan.io/address/%s", tokenID), nil
 	case KAVA:
 		return "https://www.mintscan.io/kava", nil
 	case ONTOLOGY:
@@ -105,7 +105,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case ALGORAND:
 		return fmt.Sprintf("https://algoexplorer.io/asset/%s", tokenID), nil
 	case KAVAEVM:
-		return fmt.Sprintf("https://kavascan.com/token/%s", tokenID), nil
+		return fmt.Sprintf("https://explorer.kava.io/token/%s", tokenID), nil
 	case METER:
 		return fmt.Sprintf("https://scan.meter.io/address/%s", tokenID), nil
 	case EVMOS:
