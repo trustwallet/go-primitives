@@ -161,6 +161,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://explorer.mantle.xyz/address/%s", tokenID), nil
 	case LINEA:
 		return fmt.Sprintf("https://explorer.linea.build/token/%s", tokenID), nil
+	case OPBNB:
+		return fmt.Sprintf("https://opbnbscan.com/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

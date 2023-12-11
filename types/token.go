@@ -111,7 +111,7 @@ const (
 	CARDANO         TokenType = "CARDANO"
 	NEON            TokenType = "NEON"
 	IOTEXEVM        TokenType = "XRC20"
-	OPBNB           TokenType = "OPBNB"
+	OBNB            TokenType = "OBNB"
 	LINEA           TokenType = "LINEA"
 	MANTLE          TokenType = "MANTLE"
 )
@@ -213,7 +213,7 @@ func GetTokenTypes() []TokenType {
 		SEI,
 		CARDANO,
 		NEON,
-		OPBNB,
+		OBNB,
 		LINEA,
 		ACALAEVM,
 		MANTLE,
@@ -370,12 +370,12 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
-	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB:
+	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OBNB:
 		return TokenVersionV13, nil
-	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM:
+	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM, MANTLE:
 		return TokenVersionV14, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
-		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, MANTLE:
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -478,7 +478,7 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 	case coin.IOTEXEVM:
 		tokenType = IOTEXEVM
 	case coin.OPBNB:
-		tokenType = OPBNB
+		tokenType = OBNB
 	case coin.LINEA:
 		tokenType = LINEA
 	case coin.MANTLE:
