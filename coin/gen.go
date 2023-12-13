@@ -41,6 +41,7 @@ type Coin struct {
 	BlockTime        int
 	MinConfirmations int64
 	Blockchain       string // Name of the Blockchain which core is used for this network
+	IsTokenSupported bool 	// Indicate whether the backend supports token parsing for this network
 }
 
 type AssetID string
@@ -79,6 +80,7 @@ var Coins = map[uint]Coin{
 		BlockTime:        {{.BlockTime}},
 		MinConfirmations: {{.MinConfirmations}},
 		Blockchain:       "{{.Blockchain}}",
+		IsTokenSupported: {{.IsTokenSupported}},
 	},
 {{- end }}
 }
@@ -94,6 +96,7 @@ var Chains = map[string]Coin{
 		BlockTime:        {{.BlockTime}},
 		MinConfirmations: {{.MinConfirmations}},
 		Blockchain:       "{{.Blockchain}}",
+		IsTokenSupported: {{.IsTokenSupported}},
 	},
 {{- end }}
 }
@@ -117,6 +120,7 @@ type Coin struct {
 	BlockTime        int    `yaml:"blockTime"`
 	MinConfirmations int64  `yaml:"minConfirmations"`
 	Blockchain       string `yaml:"blockchain"`
+	IsTokenSupported bool   `yaml:"isTokenSupported"`
 }
 
 func main() {

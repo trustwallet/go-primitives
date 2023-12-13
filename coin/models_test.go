@@ -344,6 +344,26 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://acala.subscan.io/custom_token?customTokenId=test",
 			wantErr: false,
 		},
+		{
+			name: "Test BASE20 token",
+			args: args{
+				addr:      "0x48bcf9455ba97cc439a2efbcfdf8f1afe692139b",
+				tokenType: "BASE20",
+				chain:     Base(),
+			},
+			want:    "https://basescan.org/token/0x48bcf9455ba97cc439a2efbcfdf8f1afe692139b",
+			wantErr: false,
+		},
+		{
+			name: "Test NEON token",
+			args: args{
+				addr:      "0x5f38248f339bf4e84a2caf4e4c0552862dc9f82a",
+				tokenType: "NEON",
+				chain:     Neon(),
+			},
+			want:    "https://neonscan.org/token/0x5f38248f339bf4e84a2caf4e4c0552862dc9f82a",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -394,6 +414,12 @@ var evmCoinsTestSet = map[uint]struct{}{
 	ZKSYNC:       {},
 	CFXEVM:       {},
 	ACALAEVM:     {},
+	BASE:         {},
+	NEON:         {},
+	IOTEXEVM:     {},
+	OPBNB:        {},
+	LINEA:        {},
+	MANTLE:       {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

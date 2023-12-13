@@ -180,12 +180,28 @@ func TestTx_GetAddresses(t *testing.T) {
 		{
 			name: "contract_call",
 			tx: Tx{
-				Type:     TxContractCall,
-				From:     "from",
-				To:       "to",
+				Type: TxContractCall,
+				From: "from",
+				To:   "to",
+				Inputs: []TxOutput{
+					{
+						Address: "from1",
+					},
+					{
+						Address: "from",
+					},
+				},
+				Outputs: []TxOutput{
+					{
+						Address: "to",
+					},
+					{
+						Address: "to1",
+					},
+				},
 				Metadata: &ContractCall{},
 			},
-			expected: []string{"from", "to"},
+			expected: []string{"from", "to", "from1", "to1"},
 		},
 		{
 			name: "swap",

@@ -10,7 +10,7 @@ import (
 type HexNumber big.Int
 
 func (i HexNumber) MarshalJSON() ([]byte, error) {
-	hexNumber := fmt.Sprintf("\"0x%x\"", (*big.Int)(&i).Uint64())
+	hexNumber := fmt.Sprintf("\"0x%x\"", (*big.Int)(&i))
 
 	return []byte(hexNumber), nil
 }

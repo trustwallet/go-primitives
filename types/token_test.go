@@ -153,7 +153,7 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 		{
 			name: "Conflux eSpace",
 			args: args{coinIndex: coin.CFXEVM},
-			want: CFXEVM,
+			want: CONFLUX,
 		},
 	}
 	for _, tt := range tests {
@@ -344,7 +344,7 @@ func TestGetTokenType(t *testing.T) {
 		{
 			name:     "Conflux eSpace",
 			args:     args{coin.CFXEVM, ""},
-			want:     string(CFXEVM),
+			want:     string(CONFLUX),
 			wantBool: true,
 		},
 		{
@@ -480,31 +480,31 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"Moonbeam token version",
 			args{t: string(MOONBEAM)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Klaytn token version",
 			args{t: string(KLAYTN)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Metis token version",
 			args{t: string(METIS)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Moonriver token version",
 			args{t: string(MOONRIVER)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 		{
 			"Boba token version",
 			args{t: string(BOBA)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 
@@ -531,15 +531,15 @@ func TestGetTokenVersion(t *testing.T) {
 
 		{
 			"Conflux eSpace token version",
-			args{t: string(CFXEVM)},
-			TokenVersionUndefined,
+			args{t: string(CONFLUX)},
+			TokenVersionV14,
 			nil,
 		},
 
 		{
 			"Acala token version",
 			args{t: string(ACA)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 	}

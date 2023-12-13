@@ -85,7 +85,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Aurora(), nil
 	case ALGORAND:
 		return coin.Algorand(), nil
-	case KAVAERC20:
+	case KAVAEVM:
 		return coin.Kavaevm(), nil
 	case METER:
 		return coin.Meter(), nil
@@ -119,12 +119,46 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Neutron(), nil
 	case FA2:
 		return coin.Tezos(), nil
-	case CFXEVM:
+	case CONFLUX:
 		return coin.Cfxevm(), nil
 	case ACA:
 		return coin.Acala(), nil
 	case ACALAEVM:
 		return coin.Acalaevm(), nil
+	case BASE:
+		return coin.Base(), nil
+	case AKASH:
+		return coin.Akash(), nil
+	case AGORIC:
+		return coin.Agoric(), nil
+	case AXELAR:
+		return coin.Axelar(), nil
+	case JUNO:
+		return coin.Juno(), nil
+	case SEI:
+		return coin.Sei(), nil
+	case CARDANO:
+		return coin.Cardano(), nil
+	case NEON:
+		return coin.Neon(), nil
+	case OSMOSIS:
+		return coin.Osmosis(), nil
+	case NATIVEINJECTIVE:
+		return coin.Nativeinjective(), nil
+	case NATIVEEVMOS:
+		return coin.Nativeevmos(), nil
+	case CRYPTOORG:
+		return coin.Cryptoorg(), nil
+	case COSMOS:
+		return coin.Cosmos(), nil
+	case OBNB:
+		return coin.Opbnb(), nil
+	case LINEA:
+		return coin.Linea(), nil
+	case STARGAZE:
+		return coin.Stargaze(), nil
+	case MANTLE:
+		return coin.Mantle(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
