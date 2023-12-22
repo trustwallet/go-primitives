@@ -151,7 +151,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Cryptoorg(), nil
 	case COSMOS:
 		return coin.Cosmos(), nil
-	case OBNB:
+	case OPBNB:
 		return coin.Opbnb(), nil
 	case LINEA:
 		return coin.Linea(), nil
