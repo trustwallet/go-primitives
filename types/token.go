@@ -111,7 +111,7 @@ const (
 	CARDANO         TokenType = "CARDANO"
 	NEON            TokenType = "NEON"
 	IOTEXEVM        TokenType = "XRC20"
-	OBNB            TokenType = "OBNB"
+	OPBNB           TokenType = "OPBNB"
 	LINEA           TokenType = "LINEA"
 	MANTLE          TokenType = "MANTLE"
 )
@@ -213,7 +213,7 @@ func GetTokenTypes() []TokenType {
 		SEI,
 		CARDANO,
 		NEON,
-		OBNB,
+		OPBNB,
 		LINEA,
 		ACALAEVM,
 		MANTLE,
@@ -370,7 +370,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV11, nil
 	case TON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
-	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OBNB:
+	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB:
 		return TokenVersionV13, nil
 	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM, MANTLE:
 		return TokenVersionV14, nil
@@ -478,7 +478,7 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 	case coin.IOTEXEVM:
 		tokenType = IOTEXEVM
 	case coin.OPBNB:
-		tokenType = OBNB
+		tokenType = OPBNB
 	case coin.LINEA:
 		tokenType = LINEA
 	case coin.MANTLE:
