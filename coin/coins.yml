@@ -989,3 +989,11 @@
   decimals: 18
   blockchain: Ethereum
   isTokenSupported: false
+
+- id: 169
+  symbol: ETH
+  handle: manta
+  name: Manta Pacific
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: true

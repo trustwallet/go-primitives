@@ -114,6 +114,7 @@ const (
 	OPBNB           TokenType = "OPBNB"
 	LINEA           TokenType = "LINEA"
 	MANTLE          TokenType = "MANTLE"
+	MANTA           TokenType = "MANTA"
 )
 
 const (
@@ -131,6 +132,7 @@ const (
 	TokenVersionV12       TokenVersion = 12
 	TokenVersionV13       TokenVersion = 13
 	TokenVersionV14       TokenVersion = 14
+	TokenVersionV15       TokenVersion = 15
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -217,6 +219,7 @@ func GetTokenTypes() []TokenType {
 		LINEA,
 		ACALAEVM,
 		MANTLE,
+		MANTA,
 	}
 }
 
@@ -322,6 +325,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(NEON), true
 	case coin.MANTLE:
 		return string(MANTLE), true
+	case coin.MANTA:
+		return string(MANTA), true
 	default:
 		return "", false
 	}
@@ -374,6 +379,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV13, nil
 	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM, MANTLE:
 		return TokenVersionV14, nil
+	case MANTA:
+		return TokenVersionV15, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
@@ -483,6 +490,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = LINEA
 	case coin.MANTLE:
 		tokenType = MANTLE
+	case coin.MANTA:
+		tokenType = MANTA
 	}
 
 	if tokenType == "" {
