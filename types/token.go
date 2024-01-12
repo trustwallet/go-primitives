@@ -51,7 +51,7 @@ const (
 	COSMOS          TokenType = "COSMOS"
 	CRYPTOORG       TokenType = "CRYPTOORG"
 	NATIVEEVMOS     TokenType = "NATIVEEVMOS"
-	NATIVEINJECTIVE TokenType = "NATIVEINJECTIVE"
+	NATIVEINJECTIVE TokenType = "INJECTIVE"
 	STARGAZE        TokenType = "STARGAZE"
 	NEUTRON         TokenType = "NEUTRON"
 	OSMOSIS         TokenType = "OSMOSIS"
@@ -377,12 +377,13 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV12, nil
 	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB:
 		return TokenVersionV13, nil
-	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM, MANTLE:
+	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM, MANTLE,
+		NATIVEINJECTIVE:
 		return TokenVersionV14, nil
 	case MANTA:
 		return TokenVersionV15, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
-		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEINJECTIVE, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
