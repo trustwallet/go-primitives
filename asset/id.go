@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+var ErrBadAssetID = errors.New("bad ID")
+
 type CoinType string
 
 const (
@@ -20,12 +22,12 @@ func ParseID(id string) (uint, string, error) {
 	rawResult := strings.Split(id, "_")
 	resLen := len(rawResult)
 	if resLen < 1 {
-		return 0, "", errors.New("bad ID")
+		return 0, "", ErrBadAssetID
 	}
 
 	coin, err := FindCoinID(rawResult)
 	if err != nil {
-		return 0, "", errors.New("bad ID")
+		return 0, "", ErrBadAssetID
 	}
 
 	token := FindTokenID(rawResult)
