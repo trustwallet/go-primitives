@@ -37,7 +37,7 @@ func TestParseID(t *testing.T) {
 			0,
 			"",
 			Coin,
-			errors.New("bad ID"),
+			ErrBadAssetID,
 		},
 		{"c714_TWT-8C2",
 			714,
@@ -46,10 +46,10 @@ func TestParseID(t *testing.T) {
 			nil,
 		},
 		{
-			givenID: "c60_",
-			wantedCoin: 60,
+			givenID:     "c60_",
+			wantedCoin:  60,
 			wantedToken: "",
-			wantedType: Coin,
+			wantedType:  Coin,
 			wantedError: nil,
 		},
 	}
