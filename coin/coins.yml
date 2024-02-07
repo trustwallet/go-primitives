@@ -997,3 +997,19 @@
   decimals: 18
   blockchain: Ethereum
   isTokenSupported: true
+
+- id: 10007000
+  symbol: ZETA
+  handle: zetachain
+  name: NativeZetaChain
+  decimals: 18
+  blockchain: Cosmos
+  isTokenSupported: false ## TO VALIDATE
+
+- id: 20007000
+  symbol: ZETA
+  handle: zetaevm
+  name: Zeta EVM
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: false ## TO VALIDATE

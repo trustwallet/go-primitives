@@ -165,6 +165,10 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://opbnbscan.com/token/%s", tokenID), nil
 	case MANTA:
 		return fmt.Sprintf("https://pacific-explorer.manta.network/token/%s", tokenID), nil
+	case ZETACHAIN:
+		return fmt.Sprintf("https://explorer.zetachain.com/address/%s", tokenID), nil
+	case ZETAEVM:
+		return fmt.Sprintf("https://explorer.zetachain.com/address/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

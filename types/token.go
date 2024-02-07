@@ -115,6 +115,8 @@ const (
 	LINEA           TokenType = "ETH"
 	MANTLE          TokenType = "MANTLE"
 	MANTA           TokenType = "MANTA"
+	ZETACHAIN       TokenType = "ZETACHAIN"
+	ZETAEVM         TokenType = "ZETAEVM"
 )
 
 const (
@@ -220,6 +222,8 @@ func GetTokenTypes() []TokenType {
 		ACALAEVM,
 		MANTLE,
 		MANTA,
+		ZETACHAIN,
+		ZETAEVM,
 	}
 }
 
@@ -327,6 +331,10 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(MANTLE), true
 	case coin.MANTA:
 		return string(MANTA), true
+	case coin.ZETACHAIN:
+		return string(ZETACHAIN), true
+	case coin.ZETAEVM:
+		return string(ZETAEVM), true
 	default:
 		return "", false
 	}
@@ -381,7 +389,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		NATIVEINJECTIVE, MANTA:
 		return TokenVersionV14, nil
 	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
-		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, ZETACHAIN, ZETAEVM:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
@@ -491,6 +499,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = MANTLE
 	case coin.MANTA:
 		tokenType = MANTA
+	case coin.ZETAEVM:
+		tokenType = ZETAEVM
 	}
 
 	if tokenType == "" {
