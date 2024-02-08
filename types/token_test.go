@@ -353,6 +353,18 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(ACA),
 			wantBool: true,
 		},
+		{
+			name:     "NativeZeta",
+			args:     args{coin.ZETACHAIN, ""},
+			want:     string(ZETACHAIN),
+			wantBool: true,
+		},
+		{
+			name:     "ZetaEVM",
+			args:     args{coin.ZETAEVM, ""},
+			want:     string(ZETAEVM),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -540,6 +552,20 @@ func TestGetTokenVersion(t *testing.T) {
 			"Acala token version",
 			args{t: string(ACA)},
 			TokenVersionV14,
+			nil,
+		},
+
+		{
+			"NativeZeta token version",
+			args{t: string(ZETACHAIN)},
+			TokenVersionUndefined,
+			nil,
+		},
+
+		{
+			"ZetaEVM token version",
+			args{t: string(ZETAEVM)},
+			TokenVersionUndefined,
 			nil,
 		},
 	}

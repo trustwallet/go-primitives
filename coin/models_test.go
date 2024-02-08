@@ -364,6 +364,26 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://neonscan.org/token/0x5f38248f339bf4e84a2caf4e4c0552862dc9f82a",
 			wantErr: false,
 		},
+		{
+			name: "Test Native ZETA",
+			args: args{
+				addr:      "zeta14py36sx57ud82t9yrks9z6hdsrpn5x6kmxs0ne",
+				tokenType: "ZETA",
+				chain:     Zetachain(),
+			},
+			want:    "https://explorer.zetachain.com/address/zeta14py36sx57ud82t9yrks9z6hdsrpn5x6kmxs0ne",
+			wantErr: false,
+		},
+		{
+			name: "Test ZETA EVM",
+			args: args{
+				addr:      "0x890a1b6dc3ca666eacda1c453115494291c6bc6a",
+				tokenType: "ZETA",
+				chain:     Zetaevm(),
+			},
+			want:    "https://explorer.zetachain.com/address/0x890a1b6dc3ca666eacda1c453115494291c6bc6a",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -421,6 +441,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	LINEA:        {},
 	MANTLE:       {},
 	MANTA:        {},
+	ZETAEVM:      {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
