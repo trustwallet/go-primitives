@@ -222,7 +222,7 @@ func (t *Transfer) GetAsset() coin.AssetID {
 
 func (t *Transfer) Validate() error {
 	if t.Value == "" {
-		return fmt.Errorf("emtpy transfer value")
+		return fmt.Errorf("empty transfer value")
 	}
 
 	if t.Asset == "" {
