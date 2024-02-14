@@ -558,14 +558,14 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"NativeZeta token version",
 			args{t: string(ZETACHAIN)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 
 		{
 			"ZetaEVM token version",
 			args{t: string(ZETAEVM)},
-			TokenVersionUndefined,
+			TokenVersionV14,
 			nil,
 		},
 	}
