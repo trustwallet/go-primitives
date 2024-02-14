@@ -1004,7 +1004,7 @@
   name: NativeZetaChain
   decimals: 18
   blockchain: Cosmos
-  isTokenSupported: false ## TO VALIDATE
+  isTokenSupported: false
 
 - id: 20007000
   symbol: ZETA
@@ -1012,4 +1012,4 @@
   name: Zeta EVM
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: false ## TO VALIDATE
+  isTokenSupported: false
