@@ -69,7 +69,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 			args: args{
 				addr:      "token",
 				tokenType: "",
-				chain:     Coin{Name: "Custom Coin"},
+				chain:     Coin{ID: 1, Name: "Custom Coin"},
 			},
 			want:    "",
 			wantErr: true,
