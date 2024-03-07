@@ -135,6 +135,7 @@ const (
 	TokenVersionV13       TokenVersion = 13
 	TokenVersionV14       TokenVersion = 14
 	TokenVersionV15       TokenVersion = 15
+	TokenVersionV16       TokenVersion = 16
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -388,7 +389,9 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 	case KAVAEVM, BOBA, METIS, NEON, LINEA, ACA, ACALAEVM, CONFLUX, IOTEXEVM, KLAYTN, MOONRIVER, MOONBEAM, MANTLE,
 		NATIVEINJECTIVE, MANTA, ZETACHAIN, ZETAEVM:
 		return TokenVersionV14, nil
-	case BRC20, ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
+	case BRC20:
+		return TokenVersionV16, nil
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
 	default:

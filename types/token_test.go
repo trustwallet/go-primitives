@@ -561,11 +561,16 @@ func TestGetTokenVersion(t *testing.T) {
 			TokenVersionV14,
 			nil,
 		},
-
 		{
 			"ZetaEVM token version",
 			args{t: string(ZETAEVM)},
 			TokenVersionV14,
+			nil,
+		},
+		{
+			"BRC20 token version",
+			args{t: string(BRC20)},
+			TokenVersionV16,
 			nil,
 		},
 	}
