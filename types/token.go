@@ -112,7 +112,7 @@ const (
 	NEON            TokenType = "NEON"
 	IOTEXEVM        TokenType = "XRC20"
 	OPBNB           TokenType = "OPBNB"
-	LINEA           TokenType = "ETH"
+	LINEA           TokenType = "LINEA"
 	MANTLE          TokenType = "MANTLE"
 	MANTA           TokenType = "MANTA"
 	ZETACHAIN       TokenType = "ZETACHAIN"
