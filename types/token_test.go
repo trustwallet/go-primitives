@@ -597,16 +597,18 @@ func TestGetTokenVersionImplementEverySupportedTokenTypes(t *testing.T) {
 // - GetTokenType function, that return token type by coin
 func TestGetCheckTokenTypes(t *testing.T) {
 	for _, tokenType := range GetTokenTypes() {
-		if tokenType == ERC721 || tokenType == ERC1155 {
+		if tokenType == ERC721 || tokenType == ERC1155 || tokenType == NATIVEINJECTIVE {
 			continue
 		}
 
-		c, err := GetChainFromAssetType(string(tokenType))
+		coins, err := GetChainsFromAssetType(string(tokenType))
 		assert.NoErrorf(t, err, "Missing chain for token type")
 
-		result, ok := GetTokenType(c.ID, "")
-		assert.Truef(t, ok, "Missing token type for coin %d", c.ID)
+		for _, c := range coins {
+			result, ok := GetTokenType(c.ID, "")
+			assert.Truef(t, ok, "Missing token type for coin %d", c.ID)
 
-		assert.Truef(t, len(result) > 0, "Empty token type for coin %d", c.ID)
+			assert.Truef(t, len(result) > 0, "Empty token type for coin %d", c.ID)
+		}
 	}
 }

@@ -29,28 +29,29 @@ type (
 )
 
 const (
-	Coin            TokenType = "coin"
-	Gas             TokenType = "gas"
-	BRC20           TokenType = "BRC20"
-	ERC20           TokenType = "ERC20"
-	ERC721          TokenType = "ERC721"
-	ERC1155         TokenType = "ERC1155"
-	BEP2            TokenType = "BEP2"
-	BEP8            TokenType = "BEP8"
-	BEP20           TokenType = "BEP20"
-	TRC10           TokenType = "TRC10"
-	ETC20           TokenType = "ETC20"
-	POA20           TokenType = "POA20"
-	TRC20           TokenType = "TRC20"
-	TRC21           TokenType = "TRC21"
-	CLO20           TokenType = "CLO20"
-	GO20            TokenType = "GO20"
-	WAN20           TokenType = "WAN20"
-	TT20            TokenType = "TT20"
-	KAVA            TokenType = "KAVA"
-	COSMOS          TokenType = "COSMOS"
-	CRYPTOORG       TokenType = "CRYPTOORG"
-	NATIVEEVMOS     TokenType = "NATIVEEVMOS"
+	Coin        TokenType = "coin"
+	Gas         TokenType = "gas"
+	BRC20       TokenType = "BRC20"
+	ERC20       TokenType = "ERC20"
+	ERC721      TokenType = "ERC721"
+	ERC1155     TokenType = "ERC1155"
+	BEP2        TokenType = "BEP2"
+	BEP8        TokenType = "BEP8"
+	BEP20       TokenType = "BEP20"
+	TRC10       TokenType = "TRC10"
+	ETC20       TokenType = "ETC20"
+	POA20       TokenType = "POA20"
+	TRC20       TokenType = "TRC20"
+	TRC21       TokenType = "TRC21"
+	CLO20       TokenType = "CLO20"
+	GO20        TokenType = "GO20"
+	WAN20       TokenType = "WAN20"
+	TT20        TokenType = "TT20"
+	KAVA        TokenType = "KAVA"
+	COSMOS      TokenType = "COSMOS"
+	CRYPTOORG   TokenType = "CRYPTOORG"
+	NATIVEEVMOS TokenType = "NATIVEEVMOS"
+	// Deprecated: NATIVEINJECTIVE chain should use CW20 token type
 	NATIVEINJECTIVE TokenType = "INJECTIVE"
 	STARGAZE        TokenType = "STARGAZE"
 	NEUTRON         TokenType = "NEUTRON"
@@ -287,7 +288,7 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	case coin.NATIVEEVMOS:
 		return string(NATIVEEVMOS), true
 	case coin.NATIVEINJECTIVE:
-		return string(NATIVEINJECTIVE), true
+		return string(CW20), true
 	case coin.STARGAZE:
 		return string(STARGAZE), true
 	case coin.NEUTRON:

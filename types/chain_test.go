@@ -1,13 +1,13 @@
 package types
 
 import (
-	"reflect"
+	"github.com/stretchr/testify/assert"
 	"testing"
 
 	"github.com/trustwallet/go-primitives/coin"
 )
 
-func TestGetChainFromAssetType(t *testing.T) {
+func TestGetChainsFromAssetType(t *testing.T) {
 	type args struct {
 		type_ string
 	}
@@ -15,7 +15,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 	tests := []struct {
 		name    string
 		args    args
-		want    coin.Coin
+		want    []coin.Coin
 		wantErr bool
 	}{
 		{
@@ -23,7 +23,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "ERC20",
 			},
-			want:    coin.Ethereum(),
+			want:    []coin.Coin{coin.Ethereum()},
 			wantErr: false,
 		},
 		{
@@ -31,7 +31,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "UNKNOWN20",
 			},
-			want:    coin.Coin{},
+			want:    nil,
 			wantErr: true,
 		},
 		{
@@ -39,7 +39,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "TRC20",
 			},
-			want:    coin.Tron(),
+			want:    []coin.Coin{coin.Tron()},
 			wantErr: false,
 		},
 		{
@@ -47,7 +47,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "TRC10",
 			},
-			want:    coin.Tron(),
+			want:    []coin.Coin{coin.Tron()},
 			wantErr: false,
 		},
 		{
@@ -55,7 +55,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "TRC10",
 			},
-			want:    coin.Tron(),
+			want:    []coin.Coin{coin.Tron()},
 			wantErr: false,
 		},
 		{
@@ -63,7 +63,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "TOMO",
 			},
-			want:    coin.Tomochain(),
+			want:    []coin.Coin{coin.Tomochain()},
 			wantErr: false,
 		},
 		{
@@ -71,7 +71,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "TRC21",
 			},
-			want:    coin.Tomochain(),
+			want:    []coin.Coin{coin.Tomochain()},
 			wantErr: false,
 		},
 		{
@@ -79,7 +79,7 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "STELLAR",
 			},
-			want:    coin.Stellar(),
+			want:    []coin.Coin{coin.Stellar()},
 			wantErr: false,
 		},
 		{
@@ -87,31 +87,37 @@ func TestGetChainFromAssetType(t *testing.T) {
 			args: args{
 				type_: "CONFLUX",
 			},
-			want:    coin.Cfxevm(),
+			want:    []coin.Coin{coin.Cfxevm()},
+			wantErr: false,
+		},
+		{
+			name: "Test CW20",
+			args: args{
+				type_: "CW20",
+			},
+			want:    []coin.Coin{coin.Terra(), coin.Nativeinjective()},
 			wantErr: false,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := GetChainFromAssetType(tt.args.type_)
+			got, err := GetChainsFromAssetType(tt.args.type_)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("GetCoinForId() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
-			if !reflect.DeepEqual(got, tt.want) {
-				t.Errorf("GetCoinForId() got = %v, want %v", got, tt.want)
-			}
+			assert.ElementsMatch(t, got, tt.want)
 		})
 	}
 }
 
-func TestGetChainFromAssetTypeFullness(t *testing.T) {
+func TestGetChainsFromAssetTypeFullness(t *testing.T) {
 	for _, tokenType := range GetTokenTypes() {
-		if tokenType == ERC721 || tokenType == ERC1155 {
+		if tokenType == ERC721 || tokenType == ERC1155 || tokenType == NATIVEINJECTIVE {
 			continue
 		}
 
-		_, err := GetChainFromAssetType(string(tokenType))
+		_, err := GetChainsFromAssetType(string(tokenType))
 		if err != nil {
 			t.Error(err)
 		}
