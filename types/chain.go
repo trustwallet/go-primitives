@@ -165,6 +165,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Zetachain(), nil
 	case ZETAEVM:
 		return coin.Zetaevm(), nil
+	case MERLIN:
+		return coin.Merlin(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)

@@ -573,6 +573,12 @@ func TestGetTokenVersion(t *testing.T) {
 			TokenVersionV16,
 			nil,
 		},
+		{
+			"MERLIN token version",
+			args{t: string(MERLIN)},
+			TokenVersionV17,
+			nil,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -445,6 +445,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	MANTLE:       {},
 	MANTA:        {},
 	ZETAEVM:      {},
+	MERLIN:       {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

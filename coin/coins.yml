@@ -1013,3 +1013,11 @@
   decimals: 18
   blockchain: Ethereum
   isTokenSupported: false
+
+- id: 4200
+  symbol: BTC
+  handle: merlin
+  name: Merlin
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: true
