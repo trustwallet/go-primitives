@@ -387,6 +387,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.zetachain.com/address/0x890a1b6dc3ca666eacda1c453115494291c6bc6a",
 			wantErr: false,
 		},
+		{
+			name: "Test Celo",
+			args: args{
+				addr:      "0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C",
+				tokenType: "CELO",
+				chain:     Celo(),
+			},
+			want:    "https://explorer.bitquery.io/celo_mainnet/token/0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
