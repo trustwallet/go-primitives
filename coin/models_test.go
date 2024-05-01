@@ -394,7 +394,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 				tokenType: "CELO",
 				chain:     Celo(),
 			},
-			want:    "https://explorer.bitquery.io/celo_mainnet/token/0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C",
+			want:    "https://explorer.celo.org/mainnet/address/0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C",
 			wantErr: false,
 		},
 	}
