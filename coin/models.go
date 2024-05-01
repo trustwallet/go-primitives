@@ -83,7 +83,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case RONIN:
 		return fmt.Sprintf("https://explorer.roninchain.com/token/%s", tokenID), nil
 	case CELO:
-		return fmt.Sprintf("https://explorer.bitquery.io/celo_rc1/token/%s", tokenID), nil
+		return fmt.Sprintf("https://explorer.celo.org/mainnet/address/%s", tokenID), nil
 	case ELROND:
 		if tokenType == "ESDT" {
 			return fmt.Sprintf("https://explorer.multiversx.com/tokens/%s", tokenID), nil
