@@ -365,6 +365,18 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(ZETAEVM),
 			wantBool: true,
 		},
+		{
+			name:     "Blast",
+			args:     args{coin.BLAST, ""},
+			want:     string(BLAST),
+			wantBool: true,
+		},
+		{
+			name:     "Scroll",
+			args:     args{coin.SCROLL, ""},
+			want:     string(SCROLL),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -577,6 +589,18 @@ func TestGetTokenVersion(t *testing.T) {
 			"MERLIN token version",
 			args{t: string(MERLIN)},
 			TokenVersionV17,
+			nil,
+		},
+		{
+			"BLAST token version",
+			args{t: string(BLAST)},
+			TokenVersionV18,
+			nil,
+		},
+		{
+			"SCROLL token version",
+			args{t: string(SCROLL)},
+			TokenVersionV18,
 			nil,
 		},
 	}

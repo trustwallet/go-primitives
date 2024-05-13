@@ -118,6 +118,8 @@ const (
 	ZETACHAIN       TokenType = "ZETACHAIN"
 	ZETAEVM         TokenType = "ZETAEVM"
 	MERLIN          TokenType = "MERLIN"
+	BLAST           TokenType = "BLAST"
+	SCROLL          TokenType = "SCROLL"
 )
 
 const (
@@ -138,6 +140,7 @@ const (
 	TokenVersionV15       TokenVersion = 15
 	TokenVersionV16       TokenVersion = 16
 	TokenVersionV17       TokenVersion = 17
+	TokenVersionV18       TokenVersion = 18
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -228,6 +231,8 @@ func GetTokenTypes() []TokenType {
 		ZETACHAIN,
 		ZETAEVM,
 		MERLIN,
+		BLAST,
+		SCROLL,
 	}
 }
 
@@ -339,6 +344,10 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(ZETACHAIN), true
 	case coin.ZETAEVM:
 		return string(ZETAEVM), true
+	case coin.BLAST:
+		return string(BLAST), true
+	case coin.SCROLL:
+		return string(SCROLL), true
 	default:
 		return "", false
 	}
@@ -396,6 +405,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV16, nil
 	case MERLIN:
 		return TokenVersionV17, nil
+	case BLAST, SCROLL:
+		return TokenVersionV18, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
@@ -511,6 +522,10 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = ZETAEVM
 	case coin.MERLIN:
 		tokenType = MERLIN
+	case coin.BLAST:
+		tokenType = BLAST
+	case coin.SCROLL:
+		tokenType = SCROLL
 	}
 
 	if tokenType == "" {
