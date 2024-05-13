@@ -1021,3 +1021,19 @@
   decimals: 18
   blockchain: Ethereum
   isTokenSupported: true
+
+- id: 81457
+  symbol: ETH
+  handle: blast
+  name: Blast
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: true
+
+- id: 534352
+  symbol: ETH
+  handle: scroll
+  name: Scroll
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: true

@@ -397,6 +397,26 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.celo.org/mainnet/address/0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C",
 			wantErr: false,
 		},
+		{
+			name: "Test Blast",
+			args: args{
+				addr:      "0x4300000000000000000000000000000000000004",
+				tokenType: "BLAST",
+				chain:     Blast(),
+			},
+			want:    "https://blastscan.io/token/0x4300000000000000000000000000000000000004",
+			wantErr: false,
+		},
+		{
+			name: "Test Scroll",
+			args: args{
+				addr:      "0xf55bec9cafdbe8730f096aa55dad6d22d44099df",
+				tokenType: "SCROLL",
+				chain:     Scroll(),
+			},
+			want:    "https://scrollscan.com/token/0xf55bec9cafdbe8730f096aa55dad6d22d44099df",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -456,6 +476,8 @@ var evmCoinsTestSet = map[uint]struct{}{
 	MANTA:        {},
 	ZETAEVM:      {},
 	MERLIN:       {},
+	BLAST:        {},
+	SCROLL:       {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
