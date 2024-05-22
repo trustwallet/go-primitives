@@ -171,6 +171,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Blast(), nil
 	case SCROLL:
 		return coin.Scroll(), nil
+	case ICP:
+		return coin.Internet_computer(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)

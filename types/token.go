@@ -120,6 +120,7 @@ const (
 	MERLIN          TokenType = "MERLIN"
 	BLAST           TokenType = "BLAST"
 	SCROLL          TokenType = "SCROLL"
+	ICP             TokenType = "ICP"
 )
 
 const (
@@ -233,6 +234,7 @@ func GetTokenTypes() []TokenType {
 		MERLIN,
 		BLAST,
 		SCROLL,
+		ICP,
 	}
 }
 
@@ -348,6 +350,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(BLAST), true
 	case coin.SCROLL:
 		return string(SCROLL), true
+	case coin.INTERNET_COMPUTER:
+		return string(ICP), true
 	default:
 		return "", false
 	}
@@ -403,7 +407,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV14, nil
 	case BRC20:
 		return TokenVersionV16, nil
-	case MERLIN:
+	case MERLIN, ICP:
 		return TokenVersionV17, nil
 	case BLAST, SCROLL:
 		return TokenVersionV18, nil

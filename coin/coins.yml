@@ -1037,3 +1037,11 @@
   decimals: 18
   blockchain: Ethereum
   isTokenSupported: true
+
+- id: 223
+  symbol: ICP
+  handle: internet_computer
+  name: Internet Computer
+  decimals: 8
+  blockchain: Internet Computer
+  isTokenSupported: false
