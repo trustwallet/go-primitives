@@ -1045,3 +1045,11 @@
   decimals: 8
   blockchain: Internet Computer
   isTokenSupported: false
+
+- id: 6001
+  symbol: BB
+  handle: bouncebit
+  name: BounceBit
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: false
