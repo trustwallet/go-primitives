@@ -155,6 +155,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.CFXEVM},
 			want: CONFLUX,
 		},
+		{
+			name: "BounceBit BOUNCEBIT",
+			args: args{coinIndex: coin.BOUNCEBIT},
+			want: BOUNCEBIT,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -375,6 +380,12 @@ func TestGetTokenType(t *testing.T) {
 			name:     "Scroll",
 			args:     args{coin.SCROLL, ""},
 			want:     string(SCROLL),
+			wantBool: true,
+		},
+		{
+			name:     "BounceBit",
+			args:     args{coin.BOUNCEBIT, ""},
+			want:     string(BOUNCEBIT),
 			wantBool: true,
 		},
 	}
@@ -601,6 +612,12 @@ func TestGetTokenVersion(t *testing.T) {
 			"SCROLL token version",
 			args{t: string(SCROLL)},
 			TokenVersionV18,
+			nil,
+		},
+		{
+			"BOUNCEBIT token version",
+			args{t: string(BOUNCEBIT)},
+			TokenVersionV19,
 			nil,
 		},
 	}
