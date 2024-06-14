@@ -1055,7 +1055,7 @@
   isTokenSupported: false
 
 - id: 810180
-  symbol: ZKL
+  symbol: ETH
   handle: zklinknova
   name: zkLink Nova
   decimals: 18
