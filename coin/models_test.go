@@ -417,6 +417,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://scrollscan.com/token/0xf55bec9cafdbe8730f096aa55dad6d22d44099df",
 			wantErr: false,
 		},
+		{
+			name: "Test zkLink Nova - Dai",
+			args: args{
+				addr:      "0xF573fA04A73d5AC442F3DEa8741317fEaA3cDeab",
+				tokenType: "ZKLINKNOVA",
+				chain:     Zklinknova(),
+			},
+			want:    "https://explorer.zklink.io/address/0xF573fA04A73d5AC442F3DEa8741317fEaA3cDeab",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -479,6 +489,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	BLAST:        {},
 	SCROLL:       {},
 	BOUNCEBIT:    {},
+	ZKLINKNOVA:   {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

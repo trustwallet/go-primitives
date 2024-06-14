@@ -1053,3 +1053,11 @@
   decimals: 18
   blockchain: Ethereum
   isTokenSupported: false
+
+- id: 810180
+  symbol: ETH
+  handle: zklinknova
+  name: zkLink Nova
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: true
