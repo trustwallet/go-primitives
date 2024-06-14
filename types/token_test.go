@@ -388,6 +388,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(BOUNCEBIT),
 			wantBool: true,
 		},
+		{
+			name:     "ZkLinkNova",
+			args:     args{coin.ZKLINKNOVA, ""},
+			want:     string(ZKLINKNOVA),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -618,6 +624,12 @@ func TestGetTokenVersion(t *testing.T) {
 			"BOUNCEBIT token version",
 			args{t: string(BOUNCEBIT)},
 			TokenVersionV19,
+			nil,
+		},
+		{
+			"ZKLINKNOVA token version",
+			args{t: string(ZKLINKNOVA)},
+			TokenVersionV20,
 			nil,
 		},
 	}

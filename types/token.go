@@ -546,6 +546,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = SCROLL
 	case coin.BOUNCEBIT:
 		tokenType = BOUNCEBIT
+	case coin.ZKLINKNOVA:
+		tokenType = ZKLINKNOVA
 	}
 
 	if tokenType == "" {
