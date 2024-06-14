@@ -122,6 +122,7 @@ const (
 	SCROLL          TokenType = "SCROLL"
 	ICP             TokenType = "ICP"
 	BOUNCEBIT       TokenType = "BOUNCEBIT"
+	ZKLINKNOVA      TokenType = "ZKLINKNOVA"
 )
 
 const (
@@ -144,6 +145,7 @@ const (
 	TokenVersionV17       TokenVersion = 17
 	TokenVersionV18       TokenVersion = 18
 	TokenVersionV19       TokenVersion = 19
+	TokenVersionV20       TokenVersion = 20
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -238,6 +240,7 @@ func GetTokenTypes() []TokenType {
 		SCROLL,
 		ICP,
 		BOUNCEBIT,
+		ZKLINKNOVA,
 	}
 }
 
@@ -357,6 +360,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(ICP), true
 	case coin.BOUNCEBIT:
 		return string(BOUNCEBIT), true
+	case coin.ZKLINKNOVA:
+		return string(ZKLINKNOVA), true
 	default:
 		return "", false
 	}
@@ -418,6 +423,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV18, nil
 	case BOUNCEBIT:
 		return TokenVersionV19, nil
+	case ZKLINKNOVA:
+		return TokenVersionV20, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
