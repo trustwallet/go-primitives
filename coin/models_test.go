@@ -489,6 +489,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	BLAST:        {},
 	SCROLL:       {},
 	BOUNCEBIT:    {},
+	ZKLINKNOVA:   {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
