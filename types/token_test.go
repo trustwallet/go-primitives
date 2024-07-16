@@ -548,42 +548,30 @@ func TestGetTokenVersion(t *testing.T) {
 			TokenVersionV14,
 			nil,
 		},
-
-		{
-			"Ton token version",
-			args{t: string(TON)},
-			TokenVersionV12,
-			nil,
-		},
-
 		{
 			"Stride token version",
 			args{t: string(STRIDE)},
 			TokenVersionUndefined,
 			nil,
 		},
-
 		{
 			"Neutron token version",
 			args{t: string(NEUTRON)},
 			TokenVersionUndefined,
 			nil,
 		},
-
 		{
 			"Conflux eSpace token version",
 			args{t: string(CONFLUX)},
 			TokenVersionV14,
 			nil,
 		},
-
 		{
 			"Acala token version",
 			args{t: string(ACA)},
 			TokenVersionV14,
 			nil,
 		},
-
 		{
 			"NativeZeta token version",
 			args{t: string(ZETACHAIN)},
@@ -630,6 +618,12 @@ func TestGetTokenVersion(t *testing.T) {
 			"ZKLINKNOVA token version",
 			args{t: string(ZKLINKNOVA)},
 			TokenVersionV20,
+			nil,
+		},
+		{
+			"TON token version",
+			args{t: string(TON)},
+			TokenVersionV21,
 			nil,
 		},
 	}

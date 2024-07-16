@@ -146,6 +146,7 @@ const (
 	TokenVersionV18       TokenVersion = 18
 	TokenVersionV19       TokenVersion = 19
 	TokenVersionV20       TokenVersion = 20
+	TokenVersionV21       TokenVersion = 21
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -408,7 +409,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case TON, POLYGONZKEVM, ZKSYNC, SUI:
+	case POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
 	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB:
 		return TokenVersionV13, nil
@@ -425,6 +426,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV19, nil
 	case ZKLINKNOVA:
 		return TokenVersionV20, nil
+	case TON:
+		return TokenVersionV21, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
