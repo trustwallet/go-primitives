@@ -146,7 +146,6 @@ const (
 	TokenVersionV18       TokenVersion = 18
 	TokenVersionV19       TokenVersion = 19
 	TokenVersionV20       TokenVersion = 20
-	TokenVersionV21       TokenVersion = 21
 	TokenVersionUndefined TokenVersion = -1
 )
 
