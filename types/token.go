@@ -93,7 +93,7 @@ const (
 	METIS           TokenType = "METIS"
 	MOONRIVER       TokenType = "MOONRIVER"
 	BOBA            TokenType = "BOBA"
-	TON             TokenType = "TON"
+	JETTON          TokenType = "JETTON"
 	POLYGONZKEVM    TokenType = "ZKEVM"
 	ZKSYNC          TokenType = "ZKSYNC"
 	SUI             TokenType = "SUI"
@@ -216,7 +216,7 @@ func GetTokenTypes() []TokenType {
 		METIS,
 		MOONRIVER,
 		BOBA,
-		TON,
+		JETTON,
 		POLYGONZKEVM,
 		ZKSYNC,
 		SUI,
@@ -321,7 +321,7 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	case coin.APTOS:
 		return string(APTOS), true
 	case coin.TON:
-		return string(TON), true
+		return string(JETTON), true
 	case coin.SUI:
 		return string(SUI), true
 	case coin.STRIDE:
@@ -408,7 +408,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV10, nil
 	case RONIN, AURORA:
 		return TokenVersionV11, nil
-	case TON, POLYGONZKEVM, ZKSYNC, SUI:
+	case JETTON, POLYGONZKEVM, ZKSYNC, SUI:
 		return TokenVersionV12, nil
 	case BASE, AKASH, AGORIC, AXELAR, JUNO, SEI, OPBNB:
 		return TokenVersionV13, nil
@@ -507,7 +507,7 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 	case coin.BOBA:
 		tokenType = BOBA
 	case coin.TON:
-		tokenType = TON
+		tokenType = JETTON
 	case coin.POLYGONZKEVM:
 		tokenType = POLYGONZKEVM
 	case coin.ZKSYNC:

@@ -311,9 +311,9 @@ func TestGetTokenType(t *testing.T) {
 			wantBool: true,
 		},
 		{
-			name:     "Ton",
+			name:     "Jetton",
 			args:     args{coin.TON, ""},
-			want:     string(TON),
+			want:     string(JETTON),
 			wantBool: true,
 		},
 		{
@@ -548,42 +548,36 @@ func TestGetTokenVersion(t *testing.T) {
 			TokenVersionV14,
 			nil,
 		},
-
 		{
-			"Ton token version",
-			args{t: string(TON)},
+			"Jetton token version",
+			args{t: string(JETTON)},
 			TokenVersionV12,
 			nil,
 		},
-
 		{
 			"Stride token version",
 			args{t: string(STRIDE)},
 			TokenVersionUndefined,
 			nil,
 		},
-
 		{
 			"Neutron token version",
 			args{t: string(NEUTRON)},
 			TokenVersionUndefined,
 			nil,
 		},
-
 		{
 			"Conflux eSpace token version",
 			args{t: string(CONFLUX)},
 			TokenVersionV14,
 			nil,
 		},
-
 		{
 			"Acala token version",
 			args{t: string(ACA)},
 			TokenVersionV14,
 			nil,
 		},
-
 		{
 			"NativeZeta token version",
 			args{t: string(ZETACHAIN)},
