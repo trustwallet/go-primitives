@@ -56,12 +56,25 @@ func EIP55Checksum(unchecksummed string) (string, error) {
 	return "0x" + val, nil
 }
 
-func ToEIP55ByCoinID(str string, coinID uint) (string, error) {
-	switch coinID {
-	case coin.ETHEREUM, coin.POA, coin.CLASSIC, coin.TOMOCHAIN, coin.CALLISTO,
-		coin.THUNDERTOKEN, coin.GOCHAIN, coin.WANCHAIN:
-		return EIP55Checksum(str)
-	default:
+func ToEIP55ByCoinID(str string, coinID uint) (eip55Addr string, err error) {
+	if !coin.IsEVM(coinID) {
 		return str, nil
 	}
+
+	// special case for ronin addresses
+	const roninPrefix, hexPrefix = "ronin:", "0x"
+	if coinID == coin.RONIN && strings.HasPrefix(str, roninPrefix) {
+		str = hexPrefix + str[len(roninPrefix):]
+		defer func() {
+			// remove 0x prefix, then add roninPrefix
+			eip55Addr = roninPrefix + eip55Addr[len(hexPrefix):]
+		}()
+	}
+
+	eip55Addr, err = EIP55Checksum(str)
+	if err != nil {
+		return "", err
+	}
+
+	return
 }

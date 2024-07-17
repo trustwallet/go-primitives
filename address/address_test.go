@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+
 	"github.com/trustwallet/go-primitives/coin"
 )
 
@@ -68,7 +69,11 @@ func TestToEIP55ByCoinID(t *testing.T) {
 		wanAddrLowercase             = "0xae96137e0e05681ed2f5d1af272c3ee512939d0f"
 		wanAddrEIP55Checksum         = "0xAe96137E0e05681eD2F5D1AF272C3ee512939D0F"
 		wanAddrEIP55ChecksumWanchain = "0xAe96137E0e05681eD2F5D1AF272C3ee512939D0F"
-		tests                        = []struct {
+
+		roninAddr      = "ronin:ea674fdde714fd979de3edf0f56aa9716b898ec8"
+		roninAddrEIP55 = "ronin:EA674fdDe714fd979de3EdF0F56AA9716B898ec8"
+
+		tests = []struct {
 			name, address, expectedAddress string
 			coinID                         uint
 		}{
@@ -84,6 +89,8 @@ func TestToEIP55ByCoinID(t *testing.T) {
 			{"Wanchain 2", wanAddrEIP55Checksum, wanAddrEIP55ChecksumWanchain, coin.WANCHAIN},
 			{"Non Ethereum like chain 1", "", "", coin.TRON},
 			{"Non Ethereum like chain 2", addr1, addr1, coin.BINANCE},
+			{"SmartChain", addr1, addr1EIP55, coin.SMARTCHAIN},
+			{"Ronin", roninAddr, roninAddrEIP55, coin.RONIN},
 		}
 	)
 
