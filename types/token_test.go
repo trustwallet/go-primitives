@@ -311,9 +311,9 @@ func TestGetTokenType(t *testing.T) {
 			wantBool: true,
 		},
 		{
-			name:     "Ton",
+			name:     "Jetton",
 			args:     args{coin.TON, ""},
-			want:     string(TON),
+			want:     string(JETTON),
 			wantBool: true,
 		},
 		{
@@ -549,6 +549,12 @@ func TestGetTokenVersion(t *testing.T) {
 			nil,
 		},
 		{
+			"Jetton token version",
+			args{t: string(JETTON)},
+			TokenVersionV12,
+			nil,
+		},
+		{
 			"Stride token version",
 			args{t: string(STRIDE)},
 			TokenVersionUndefined,
@@ -618,12 +624,6 @@ func TestGetTokenVersion(t *testing.T) {
 			"ZKLINKNOVA token version",
 			args{t: string(ZKLINKNOVA)},
 			TokenVersionV20,
-			nil,
-		},
-		{
-			"TON token version",
-			args{t: string(TON)},
-			TokenVersionV21,
 			nil,
 		},
 	}
