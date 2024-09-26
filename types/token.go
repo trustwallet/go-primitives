@@ -89,7 +89,7 @@ const (
 	KIP20           TokenType = "KIP20"
 	APTOS           TokenType = "APTOS"
 	MOONBEAM        TokenType = "MOONBEAM"
-	KLAYTN          TokenType = "KLAYTN"
+	KLAYTN          TokenType = "KAIA"
 	METIS           TokenType = "METIS"
 	MOONRIVER       TokenType = "MOONRIVER"
 	BOBA            TokenType = "BOBA"
