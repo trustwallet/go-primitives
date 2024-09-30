@@ -567,9 +567,9 @@
   isTokenSupported: false
 
 - id: 966
-  symbol: MATIC
+  symbol: POL
   handle: polygon
-  name: Polygon
+  name: POL (ex-MATIC)
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
@@ -765,7 +765,7 @@
 - id: 10008217
   symbol: KLAY
   handle: klaytn
-  name: Klaytn
+  name: Kaia
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36

@@ -214,7 +214,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 				tokenType: "KLAYTN",
 				chain:     Klaytn(),
 			},
-			want:    "https://scope.klaytn.com/token/test",
+			want:    "https://kaiascan.io/token/test",
 			wantErr: false,
 		},
 		{

@@ -117,7 +117,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case MOONBEAM:
 		return fmt.Sprintf("https://moonscan.io/token/%s", tokenID), nil
 	case KLAYTN:
-		return fmt.Sprintf("https://scope.klaytn.com/token/%s", tokenID), nil
+		return fmt.Sprintf("https://kaiascan.io/token/%s", tokenID), nil
 	case METIS:
 		return fmt.Sprintf("https://andromeda-explorer.metis.io/token/%s", tokenID), nil
 	case MOONRIVER:
