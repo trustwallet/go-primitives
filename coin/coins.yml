@@ -569,7 +569,7 @@
 - id: 966
   symbol: POL
   handle: polygon
-  name: Polygon
+  name: POL (ex-MATIC)
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
