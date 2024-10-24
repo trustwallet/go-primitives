@@ -804,7 +804,7 @@
   name: TON
   decimals: 9
   blockchain: The Open Network
-  isTokenSupported: false
+  isTokenSupported: true
 
 - id: 10001101
   symbol: ZKEVM
