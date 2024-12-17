@@ -19,7 +19,7 @@ const (
 )
 
 func ParseID(id string) (uint, string, error) {
-	rawResult := strings.Split(id, "_")
+	rawResult := strings.SplitN(id, "_", 2)
 	resLen := len(rawResult)
 	if resLen < 1 {
 		return 0, "", ErrBadAssetID
