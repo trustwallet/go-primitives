@@ -427,6 +427,26 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.zklink.io/address/0xF573fA04A73d5AC442F3DEa8741317fEaA3cDeab",
 			wantErr: false,
 		},
+		{
+			name: "Test Aptos (legacy)",
+			args: args{
+				addr:      "0xacd014e8bdf395fa8497b6d585b164547a9d45269377bdf67c96c541b7fec9ed::coin::T",
+				tokenType: "APTOS",
+				chain:     Aptos(),
+			},
+			want:    "https://explorer.aptoslabs.com/coin/0xacd014e8bdf395fa8497b6d585b164547a9d45269377bdf67c96c541b7fec9ed::coin::T?network=mainnet",
+			wantErr: false,
+		},
+		{
+			name: "Test Aptos (fungible asset)",
+			args: args{
+				addr:      "0x357b0b74bc833e95a115ad22604854d6b0fca151cecd94111770e5d6ffc9dc2b",
+				tokenType: "APTOSFA",
+				chain:     Aptos(),
+			},
+			want:    "https://explorer.aptoslabs.com/fungible_asset/0x357b0b74bc833e95a115ad22604854d6b0fca151cecd94111770e5d6ffc9dc2b?network=mainnet",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

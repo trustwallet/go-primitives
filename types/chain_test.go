@@ -90,6 +90,22 @@ func TestGetChainFromAssetType(t *testing.T) {
 			want:    coin.Cfxevm(),
 			wantErr: false,
 		},
+		{
+			name: "Test APTOS (legacy)",
+			args: args{
+				type_: "APTOS",
+			},
+			want:    coin.Aptos(),
+			wantErr: false,
+		},
+		{
+			name: "Test APTOSFA (fungible asset)",
+			args: args{
+				type_: "APTOSFA",
+			},
+			want:    coin.Aptos(),
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

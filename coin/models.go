@@ -113,7 +113,12 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case OKC:
 		return fmt.Sprintf("https://www.oklink.com/en/okc/address/%s", tokenID), nil
 	case APTOS:
-		return "https://explorer.aptoslabs.com/", nil
+		switch tokenType {
+		case "APTOSFA":
+			return fmt.Sprintf("https://explorer.aptoslabs.com/fungible_asset/%s?network=mainnet", tokenID), nil
+		default:
+			return fmt.Sprintf("https://explorer.aptoslabs.com/coin/%s?network=mainnet", tokenID), nil
+		}
 	case MOONBEAM:
 		return fmt.Sprintf("https://moonscan.io/token/%s", tokenID), nil
 	case KLAYTN:

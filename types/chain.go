@@ -93,7 +93,7 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Evmos(), nil
 	case KIP20:
 		return coin.Okc(), nil
-	case APTOS:
+	case APTOS, APTOSFA:
 		return coin.Aptos(), nil
 	case MOONBEAM:
 		return coin.Moonbeam(), nil
