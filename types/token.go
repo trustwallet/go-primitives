@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"strconv"
+	"strings"
 
 	"github.com/trustwallet/go-primitives/asset"
 	"github.com/trustwallet/go-primitives/coin"
@@ -88,6 +89,7 @@ const (
 	EVMOS_ERC20     TokenType = "EVMOS_ERC20"
 	KIP20           TokenType = "KIP20"
 	APTOS           TokenType = "APTOS"
+	APTOSFA         TokenType = "APTOSFA"
 	MOONBEAM        TokenType = "MOONBEAM"
 	KLAYTN          TokenType = "KAIA"
 	METIS           TokenType = "METIS"
@@ -146,6 +148,7 @@ const (
 	TokenVersionV18       TokenVersion = 18
 	TokenVersionV19       TokenVersion = 19
 	TokenVersionV20       TokenVersion = 20
+	TokenVersionV21       TokenVersion = 21
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -211,6 +214,7 @@ func GetTokenTypes() []TokenType {
 		EVMOS_ERC20,
 		KIP20,
 		APTOS,
+		APTOSFA,
 		MOONBEAM,
 		KLAYTN,
 		METIS,
@@ -319,7 +323,11 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 	case coin.OKC:
 		return string(KIP20), true
 	case coin.APTOS:
-		return string(APTOS), true
+		// TODO: improve this
+		if strings.Contains(tokenID, "::") {
+			return string(APTOS), true
+		}
+		return string(APTOSFA), true
 	case coin.TON:
 		return string(JETTON), true
 	case coin.SUI:
@@ -428,6 +436,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
 		return TokenVersionUndefined, nil
+	case APTOSFA:
+		return TokenVersionV21, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
 		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)
