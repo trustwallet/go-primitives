@@ -447,6 +447,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://explorer.aptoslabs.com/fungible_asset/0x357b0b74bc833e95a115ad22604854d6b0fca151cecd94111770e5d6ffc9dc2b?network=mainnet",
 			wantErr: false,
 		},
+		{
+			name: "Test XRP",
+			args: args{
+				addr:      "rMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De",
+				tokenType: "XRP",
+				chain:     Ripple(),
+			},
+			want:    "https://xrpscan.com/account/rMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

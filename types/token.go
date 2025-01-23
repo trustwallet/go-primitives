@@ -125,6 +125,7 @@ const (
 	ICP             TokenType = "ICP"
 	BOUNCEBIT       TokenType = "BOUNCEBIT"
 	ZKLINKNOVA      TokenType = "ZKLINKNOVA"
+	XRP             TokenType = "XRP"
 )
 
 const (
@@ -149,6 +150,7 @@ const (
 	TokenVersionV19       TokenVersion = 19
 	TokenVersionV20       TokenVersion = 20
 	TokenVersionV21       TokenVersion = 21
+	TokenVersionV22       TokenVersion = 22
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -245,6 +247,7 @@ func GetTokenTypes() []TokenType {
 		ICP,
 		BOUNCEBIT,
 		ZKLINKNOVA,
+		XRP,
 	}
 }
 
@@ -370,6 +373,9 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(BOUNCEBIT), true
 	case coin.ZKLINKNOVA:
 		return string(ZKLINKNOVA), true
+	case coin.RIPPLE:
+		return string(XRP), true
+
 	default:
 		return "", false
 	}
@@ -438,6 +444,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionUndefined, nil
 	case APTOSFA:
 		return TokenVersionV21, nil
+	case XRP:
+		return TokenVersionV22, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
 		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)

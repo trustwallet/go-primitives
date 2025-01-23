@@ -72,6 +72,14 @@ func TestParseID(t *testing.T) {
 			wantedType:  Token,
 			wantedError: nil,
 		},
+		{
+			name:        "c637_t0xe4ccb6d39136469f376242c31b34d10515c8eaaa38092f804db8e08a8f53c5b2",
+			givenID:     "c637_t0xe4ccb6d39136469f376242c31b34d10515c8eaaa38092f804db8e08a8f53c5b2",
+			wantedCoin:  637,
+			wantedToken: "0xe4ccb6d39136469f376242c31b34d10515c8eaaa38092f804db8e08a8f53c5b2",
+			wantedType:  Token,
+			wantedError: nil,
+		},
 	}
 
 	for _, tt := range testStruct {
