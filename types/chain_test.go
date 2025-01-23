@@ -106,6 +106,14 @@ func TestGetChainFromAssetType(t *testing.T) {
 			want:    coin.Aptos(),
 			wantErr: false,
 		},
+		{
+			name: "Test XRP",
+			args: args{
+				type_: "XRP",
+			},
+			want:    coin.Ripple(),
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
