@@ -179,6 +179,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Zklinknova(), nil
 	case XRP:
 		return coin.Ripple(), nil
+	case SONIC:
+		return coin.Sonic(), nil
 
 	}
 

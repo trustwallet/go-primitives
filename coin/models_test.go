@@ -457,6 +457,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://xrpscan.com/account/rMxCKbEDwqr76QuheSUMdEGf4B9xJ8m5De",
 			wantErr: false,
 		},
+		{
+			name: "Test Sonic",
+			args: args{
+				addr:      "0x29219dd400f2bf60e5a23d13be72b486d4038894",
+				tokenType: "SONIC",
+				chain:     Sonic(),
+			},
+			want:    "https://sonicscan.org/token/0x29219dd400f2bf60e5a23d13be72b486d4038894",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -520,6 +530,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	SCROLL:       {},
 	BOUNCEBIT:    {},
 	ZKLINKNOVA:   {},
+	SONIC:        {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
