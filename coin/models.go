@@ -184,6 +184,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://explorer.zklink.io/address/%s", tokenID), nil
 	case RIPPLE:
 		return fmt.Sprintf("https://xrpscan.com/account/%s", tokenID), nil
+	case SONIC:
+		return fmt.Sprintf("https://sonicscan.org/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

@@ -126,6 +126,7 @@ const (
 	BOUNCEBIT       TokenType = "BOUNCEBIT"
 	ZKLINKNOVA      TokenType = "ZKLINKNOVA"
 	XRP             TokenType = "XRP"
+	SONIC           TokenType = "SONIC"
 )
 
 const (
@@ -566,6 +567,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = BOUNCEBIT
 	case coin.ZKLINKNOVA:
 		tokenType = ZKLINKNOVA
+	case coin.SONIC:
+		tokenType = SONIC
 	}
 
 	if tokenType == "" {

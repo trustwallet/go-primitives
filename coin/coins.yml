@@ -1061,3 +1061,11 @@
   decimals: 18
   blockchain: Ethereum
   isTokenSupported: true
+
+- id: 10000146
+  symbol: S
+  handle: sonic
+  name: Sonic
+  decimals: 18
+  blockchain: Ethereum
+  isTokenSupported: true

@@ -406,6 +406,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(XRP),
 			wantBool: true,
 		},
+		{
+			name:     "Sonic",
+			args:     args{coin.SONIC, ""},
+			want:     string(SONIC),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
