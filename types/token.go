@@ -249,6 +249,7 @@ func GetTokenTypes() []TokenType {
 		BOUNCEBIT,
 		ZKLINKNOVA,
 		XRP,
+		SONIC,
 	}
 }
 
@@ -445,7 +446,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionUndefined, nil
 	case APTOSFA:
 		return TokenVersionV21, nil
-	case XRP:
+	case XRP, SONIC:
 		return TokenVersionV22, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
