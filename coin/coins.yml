@@ -751,7 +751,7 @@
   name: Aptos
   decimals: 8
   blockchain: Aptos
-  isTokenSupported: false
+  isTokenSupported: true
 
 - id: 10001284
   symbol: GLMR
@@ -963,7 +963,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 24
-  isTokenSupported: false
+  isTokenSupported: true
 
 - id: 59144
   symbol: ETH
