@@ -6,7 +6,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 61
   symbol: ETC
@@ -16,7 +16,7 @@
   blockTime: 30000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 74
   symbol: ICX
@@ -25,7 +25,7 @@
   decimals: 18
   blockTime: 10000
   blockchain: Icon
-  isTokenSupported: false
+
 
 - id: 118
   symbol: ATOM
@@ -35,7 +35,7 @@
   blockTime: 5000
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 144
   symbol: XRP
@@ -44,7 +44,7 @@
   decimals: 6
   blockTime: 5000
   blockchain: Ripple
-  isTokenSupported: false
+
 
 - id: 148
   symbol: XLM
@@ -53,7 +53,7 @@
   decimals: 7
   blockTime: 5000
   blockchain: Stellar
-  isTokenSupported: false
+
 
 - id: 178
   symbol: POA
@@ -63,7 +63,7 @@
   blockTime: 5000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 195
   symbol: TRX
@@ -72,7 +72,7 @@
   decimals: 6
   blockTime: 10000
   blockchain: Tron
-  isTokenSupported: true
+
 
 - id: 235
   symbol: FIO
@@ -81,7 +81,7 @@
   decimals: 9
   blockTime: 5000
   blockchain: FIO
-  isTokenSupported: false
+
 
 - id: 242
   symbol: NIM
@@ -90,7 +90,7 @@
   decimals: 5
   blockTime: 60000
   blockchain: Nimiq
-  isTokenSupported: false
+
 
 - id: 304
   symbol: IOTX
@@ -99,7 +99,7 @@
   decimals: 18
   blockTime: 10000
   blockchain: IoTeX
-  isTokenSupported: false
+
 
 - id: 10004689
   symbol: IOTX
@@ -109,7 +109,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 313
   symbol: ZIL
@@ -119,7 +119,7 @@
   blockTime: 30000
   minConfirmations: 1
   blockchain: Zilliqa
-  isTokenSupported: false
+
 
 - id: 425
   symbol: AION
@@ -128,7 +128,7 @@
   decimals: 18
   blockTime: 10000
   blockchain: Aion
-  isTokenSupported: false
+
 
 - id: 457
   symbol: AE
@@ -137,7 +137,7 @@
   decimals: 18
   blockTime: 6000
   blockchain: Aeternity
-  isTokenSupported: false
+
 
 - id: 459
   symbol: KAVA
@@ -147,7 +147,7 @@
   blockTime: 5000
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 500
   symbol: THETA
@@ -155,7 +155,7 @@
   name: Theta
   decimals: 18
   blockchain: Theta
-  isTokenSupported: true
+
 
 - id: 714
   symbol: BNB
@@ -165,7 +165,7 @@
   blockTime: 1000
   minConfirmations: 2
   blockchain: Binance
-  isTokenSupported: true
+
 
 - id: 818
   symbol: VET
@@ -174,7 +174,7 @@
   decimals: 18
   blockTime: 20000
   blockchain: Vechain
-  isTokenSupported: true
+
 
 - id: 820
   symbol: CLO
@@ -184,7 +184,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 889
   symbol: TOMO
@@ -194,7 +194,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 1001
   symbol: TT
@@ -204,7 +204,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 1024
   symbol: ONT
@@ -213,7 +213,7 @@
   decimals: 0
   blockTime: 10000
   blockchain: Ontology
-  isTokenSupported: true
+
 
 - id: 1729
   symbol: XTZ
@@ -222,7 +222,7 @@
   decimals: 6
   blockTime: 20000
   blockchain: Tezos
-  isTokenSupported: false
+
 
 - id: 2017
   symbol: KIN
@@ -231,7 +231,7 @@
   decimals: 5
   blockTime: 5000
   blockchain: Stellar
-  isTokenSupported: false
+
 
 - id: 2718
   symbol: NAS
@@ -240,7 +240,7 @@
   decimals: 18
   blockTime: 30000
   blockchain: Nebulas
-  isTokenSupported: false
+
 
 - id: 6060
   symbol: GO
@@ -250,7 +250,7 @@
   blockTime: 20000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 5718350
   symbol: WAN
@@ -260,7 +260,7 @@
   blockTime: 30000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 5741564
   symbol: WAVES
@@ -270,7 +270,7 @@
   blockTime: 30000
   minConfirmations: 1
   blockchain: Waves
-  isTokenSupported: false
+
 
 - id: 0
   symbol: BTC
@@ -279,7 +279,7 @@
   decimals: 8
   blockTime: 600000
   blockchain: Bitcoin
-  isTokenSupported: true
+
 
 - id: 2
   symbol: LTC
@@ -288,7 +288,7 @@
   decimals: 8
   blockTime: 150000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 3
   symbol: DOGE
@@ -297,7 +297,7 @@
   decimals: 8
   blockTime: 60000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 5
   symbol: DASH
@@ -306,7 +306,7 @@
   decimals: 8
   blockTime: 180000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 14
   symbol: VIA
@@ -315,7 +315,7 @@
   decimals: 8
   blockTime: 15000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 17
   symbol: GRS
@@ -324,7 +324,7 @@
   decimals: 8
   blockTime: 60000
   blockchain: Groestlcoin
-  isTokenSupported: false
+
 
 - id: 133
   symbol: ZEC
@@ -333,7 +333,7 @@
   decimals: 8
   blockTime: 150000
   blockchain: Zcash
-  isTokenSupported: false
+
 
 - id: 136
   symbol: FIRO
@@ -342,7 +342,7 @@
   decimals: 8
   blockTime: 300000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 145
   symbol: BCH
@@ -351,7 +351,7 @@
   decimals: 8
   blockTime: 600000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 175
   symbol: RVN
@@ -360,7 +360,7 @@
   decimals: 8
   blockTime: 60000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 2301
   symbol: QTUM
@@ -369,7 +369,7 @@
   decimals: 8
   blockTime: 60000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 19167
   symbol: ZEL
@@ -378,7 +378,7 @@
   decimals: 8
   blockTime: 120000
   blockchain: Zcash
-  isTokenSupported: false
+
 
 - id: 42
   symbol: DCR
@@ -387,7 +387,7 @@
   decimals: 8
   blockTime: 300000
   blockchain: Decred
-  isTokenSupported: false
+
 
 - id: 283
   symbol: ALGO
@@ -396,7 +396,7 @@
   decimals: 6
   blockTime: 20000
   blockchain: Algorand
-  isTokenSupported: false
+
 
 - id: 165
   symbol: XNO
@@ -404,7 +404,7 @@
   name: Nano
   decimals: 30
   blockchain: Nano
-  isTokenSupported: false
+
 
 - id: 20
   symbol: DGB
@@ -413,7 +413,7 @@
   decimals: 8
   blockTime: 15000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 1023
   symbol: ONE
@@ -422,7 +422,7 @@
   decimals: 18
   blockTime: 5000
   blockchain: Harmony
-  isTokenSupported: false
+
 
 - id: 434
   symbol: KSM
@@ -431,7 +431,7 @@
   decimals: 12
   blockTime: 6000
   blockchain: Kusama
-  isTokenSupported: false
+
 
 - id: 354
   symbol: DOT
@@ -440,7 +440,7 @@
   decimals: 10
   blockTime: 6000
   blockchain: Polkadot
-  isTokenSupported: false
+
 
 - id: 501
   symbol: SOL
@@ -449,7 +449,7 @@
   decimals: 9
   blockTime: 500
   blockchain: Solana
-  isTokenSupported: true
+
 
 - id: 397
   symbol: NEAR
@@ -458,7 +458,7 @@
   decimals: 24
   blockTime: 2000
   blockchain: NEAR
-  isTokenSupported: false
+
 
 - id: 508
   symbol: eGLD
@@ -467,7 +467,7 @@
   decimals: 18
   blockTime: 6000
   blockchain: ElrondNetwork
-  isTokenSupported: false
+
 
 - id: 20000714
   symbol: BNB
@@ -477,7 +477,7 @@
   blockTime: 3000
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 461
   symbol: FIL
@@ -486,7 +486,7 @@
   decimals: 18
   blockTime: 3000
   blockchain: Filecoin
-  isTokenSupported: false
+
 
 - id: 474
   symbol: ROSE
@@ -495,7 +495,7 @@
   decimals: 9
   blockTime: 6000
   blockchain: OasisNetwork
-  isTokenSupported: false
+
 
 - id: 22
   symbol: MONA
@@ -504,7 +504,7 @@
   decimals: 8
   blockTime: 90000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 156
   symbol: BTG
@@ -513,7 +513,7 @@
   decimals: 8
   blockTime: 600000
   blockchain: Bitcoin
-  isTokenSupported: false
+
 
 - id: 194
   symbol: EOS
@@ -522,7 +522,7 @@
   decimals: 4
   blockTime: 500
   blockchain: EOS
-  isTokenSupported: false
+
 
 - id: 330
   symbol: LUNC
@@ -531,7 +531,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 494
   symbol: BAND
@@ -540,7 +540,7 @@
   decimals: 6
   blockTime: 2000
   blockchain: Cosmos
-  isTokenSupported: false
+
 
 - id: 888
   symbol: NEO
@@ -548,7 +548,7 @@
   name: NEO
   decimals: 8
   blockchain: NEO
-  isTokenSupported: false
+
 
 - id: 1815
   symbol: ADA
@@ -556,7 +556,7 @@
   name: Cardano
   decimals: 6
   blockchain: Cardano
-  isTokenSupported: false
+
 
 - id: 8964
   symbol: NULS
@@ -564,7 +564,7 @@
   name: NULS
   decimals: 8
   blockchain: NULS
-  isTokenSupported: false
+
 
 - id: 966
   symbol: POL
@@ -573,7 +573,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 931
   symbol: RUNE
@@ -581,7 +581,7 @@
   name: THORChain
   decimals: 8
   blockchain: Thorchain
-  isTokenSupported: false
+
 
 - id: 10000070
   symbol: OETH
@@ -590,7 +590,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 10000100
   symbol: xDAI
@@ -599,7 +599,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 10009000
   symbol: AVAX
@@ -608,7 +608,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 10000553
   symbol: HT
@@ -617,7 +617,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 10000250
   symbol: FTM
@@ -626,7 +626,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 10042221
   symbol: ARETH
@@ -635,7 +635,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 52752
   symbol: CELO
@@ -644,7 +644,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 10002020
   symbol: RON
@@ -653,7 +653,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 10000118
   symbol: OSMO
@@ -662,7 +662,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 10000025
   symbol: CRO
@@ -671,7 +671,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 10000321
   symbol: KCS
@@ -680,7 +680,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 1323161554
   symbol: AURORAETH
@@ -689,7 +689,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 10002222
   symbol: KAVA
@@ -698,7 +698,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 18000
   symbol: MTR
@@ -707,7 +707,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: false
+
 
 - id: 10009001
   symbol: EVMOS
@@ -716,7 +716,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 20009001
   symbol: EVMOS
@@ -725,7 +725,7 @@
   decimals: 18
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 996
   symbol: OKT
@@ -734,7 +734,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
-  isTokenSupported: false
+
 
 - id: 394
   symbol: CRO
@@ -743,7 +743,7 @@
   decimals: 8
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 637
   symbol: APTOS
@@ -751,7 +751,7 @@
   name: Aptos
   decimals: 8
   blockchain: Aptos
-  isTokenSupported: true
+
 
 - id: 10001284
   symbol: GLMR
@@ -760,7 +760,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 10008217
   symbol: KLAY
@@ -769,7 +769,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 10001088
   symbol: METIS
@@ -778,7 +778,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 10001285
   symbol: MOVR
@@ -787,7 +787,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 2
-  isTokenSupported: true
+
 
 - id: 10000288
   symbol: BOBAETH
@@ -796,7 +796,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 1
-  isTokenSupported: true
+
 
 - id: 607
   symbol: TON
@@ -804,7 +804,7 @@
   name: TON
   decimals: 9
   blockchain: The Open Network
-  isTokenSupported: true
+
 
 - id: 10001101
   symbol: ZKEVM
@@ -813,7 +813,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 10000324
   symbol: ZKSYNC
@@ -822,7 +822,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 784
   symbol: SUI
@@ -830,7 +830,7 @@
   name: Sui
   decimals: 9
   blockchain: Sui
-  isTokenSupported: false
+
 
 - id: 40000118
   symbol: STRD
@@ -839,7 +839,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 90000118
   symbol: NTRN
@@ -848,7 +848,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 10
-  isTokenSupported: true
+
 
 - id: 20000118
   symbol: STARS
@@ -857,7 +857,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 10000060
   symbol: INJ
@@ -866,7 +866,7 @@
   decimals: 18
   blockchain: Cosmos
   minConfirmations: 30
-  isTokenSupported: true
+
 
 - id: 1030
   symbol: CFX
@@ -875,7 +875,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
-  isTokenSupported: true
+
 
 - id: 787
   symbol: ACA
@@ -883,7 +883,7 @@
   name: Acala
   decimals: 12
   blockchain: Polkadot
-  isTokenSupported: false
+
 
 - id: 10000787
   symbol: ACA
@@ -892,7 +892,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 2
-  isTokenSupported: true
+
 
 - id: 8453
   symbol: ETH
@@ -901,7 +901,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
-  isTokenSupported: true
+
 
 - id: 17000118
   symbol: AKT
@@ -910,7 +910,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 564
   symbol: BLD
@@ -919,7 +919,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 50000118
   symbol: AXL
@@ -928,7 +928,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 30000118
   symbol: JUNO
@@ -937,7 +937,7 @@
   decimals: 6
   blockchain: Cosmos
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 19000118
   symbol: SEI
@@ -945,7 +945,7 @@
   name: Sei
   decimals: 6
   blockchain: Cosmos
-  isTokenSupported: false
+
 
 - id: 245022934
   symbol: NEON
@@ -954,7 +954,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 1
-  isTokenSupported: true
+
 
 - id: 204
   symbol: BNB
@@ -963,7 +963,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 24
-  isTokenSupported: true
+
 
 - id: 59144
   symbol: ETH
@@ -972,7 +972,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
-  isTokenSupported: true
+
 
 - id: 5600
   symbol: gBNB
@@ -980,7 +980,7 @@
   name: BNB Greenfield
   decimals: 18
   blockchain: Greenfield
-  isTokenSupported: false
+
 
 - id: 5000
   symbol: MNT
@@ -988,7 +988,7 @@
   name: Mantle
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: false
+
 
 - id: 169
   symbol: ETH
@@ -996,7 +996,7 @@
   name: Manta Pacific
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: true
+
 
 - id: 10007000
   symbol: ZETA
@@ -1004,7 +1004,7 @@
   name: NativeZetaChain
   decimals: 18
   blockchain: Cosmos
-  isTokenSupported: false
+
 
 - id: 20007000
   symbol: ZETA
@@ -1012,7 +1012,7 @@
   name: Zeta EVM
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: false
+
 
 - id: 4200
   symbol: BTC
@@ -1020,7 +1020,7 @@
   name: Merlin
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: true
+
 
 - id: 81457
   symbol: ETH
@@ -1028,7 +1028,7 @@
   name: Blast
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: true
+
 
 - id: 534352
   symbol: ETH
@@ -1036,7 +1036,7 @@
   name: Scroll
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: true
+
 
 - id: 223
   symbol: ICP
@@ -1044,7 +1044,7 @@
   name: Internet Computer
   decimals: 8
   blockchain: Internet Computer
-  isTokenSupported: false
+
 
 - id: 6001
   symbol: BB
@@ -1052,7 +1052,7 @@
   name: BounceBit
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: false
+
 
 - id: 810180
   symbol: ETH
@@ -1060,7 +1060,7 @@
   name: zkLink Nova
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: true
+
 
 - id: 10000146
   symbol: S
@@ -1068,4 +1068,3 @@
   name: Sonic
   decimals: 18
   blockchain: Ethereum
-  isTokenSupported: true
