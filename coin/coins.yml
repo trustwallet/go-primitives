@@ -830,6 +830,7 @@
   name: Sui
   decimals: 9
   blockchain: Sui
+  minConfirmations: 1
 
 
 - id: 40000118
