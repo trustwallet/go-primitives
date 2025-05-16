@@ -617,6 +617,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  deprecated: true
 
 
 - id: 10000250

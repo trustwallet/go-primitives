@@ -64,7 +64,10 @@ func (c Coin) TokenAssetID(t string) AssetID {
 
 const (
 {{- range .Coins }}
-	{{ .Handle | ToUpper }} = {{ .ID }}
+	{{- if .Deprecated}}
+		//Deprecated: {{ .Handle | ToUpper }} exists for historical compatibility and should not be used.
+	{{- end}}
+		{{ .Handle | ToUpper }} = {{ .ID }}
 {{- end }}
 )
 
@@ -117,6 +120,7 @@ type Coin struct {
 	BlockTime        int    `yaml:"blockTime"`
 	MinConfirmations int64  `yaml:"minConfirmations"`
 	Blockchain       string `yaml:"blockchain"`
+	Deprecated       bool   `yaml:"deprecated"`
 }
 
 func main() {
