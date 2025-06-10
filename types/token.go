@@ -127,6 +127,12 @@ const (
 	ZKLINKNOVA      TokenType = "ZKLINKNOVA"
 	XRP             TokenType = "XRP"
 	SONIC           TokenType = "SONIC"
+	TIA             TokenType = "TIA"
+	NOBLE           TokenType = "NOBLE"
+	PERSISTENCE     TokenType = "PERSISTENCE"
+	MARS            TokenType = "MARS"
+	DYDX            TokenType = "DYDX"
+	SOMMELIER       TokenType = "SOMMELIER"
 )
 
 const (
@@ -250,6 +256,12 @@ func GetTokenTypes() []TokenType {
 		ZKLINKNOVA,
 		XRP,
 		SONIC,
+		TIA,
+		NOBLE,
+		PERSISTENCE,
+		MARS,
+		DYDX,
+		SOMMELIER,
 	}
 }
 
@@ -377,6 +389,18 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(ZKLINKNOVA), true
 	case coin.RIPPLE:
 		return string(XRP), true
+	case coin.TIA:
+		return string(TIA), true
+	case coin.NOBLE:
+		return string(NOBLE), true
+	case coin.PERSISTENCE:
+		return string(PERSISTENCE), true
+	case coin.MARS:
+		return string(MARS), true
+	case coin.DYDX:
+		return string(DYDX), true
+	case coin.SOMMELIER:
+		return string(SOMMELIER), true
 
 	default:
 		return "", false
@@ -442,7 +466,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 	case ZKLINKNOVA:
 		return TokenVersionV20, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
-		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE:
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, TIA, NOBLE,
+		PERSISTENCE, MARS, DYDX, SOMMELIER:
 		return TokenVersionUndefined, nil
 	case APTOSFA:
 		return TokenVersionV21, nil

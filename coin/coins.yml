@@ -1070,3 +1070,45 @@
   name: Sonic
   decimals: 18
   blockchain: Ethereum
+
+- id: 21000118
+  symbol: TIA
+  handle: tia
+  name: Celestia
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 18000118
+  symbol: USDC
+  handle: noble
+  name: Noble
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 16000118
+  symbol: XPRT
+  handle: persistence
+  name: Persistence
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 13000118
+  symbol: MARS
+  handle: mars
+  name: Mars Hub
+  decimals: 6
+  blockchain: Cosmos
+
+- id: 22000118
+  symbol: DYDX
+  handle: dydx
+  name: dYdX
+  decimals: 18
+  blockchain: Cosmos
+
+- id: 11000118
+  symbol: SOMM
+  handle: sommelier
+  name: Sommelier
+  decimals: 6
+  blockchain: Cosmos
