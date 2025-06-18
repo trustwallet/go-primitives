@@ -183,16 +183,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Sonic(), nil
 	case TIA:
 		return coin.Tia(), nil
-	case NOBLE:
-		return coin.Noble(), nil
-	case PERSISTENCE:
-		return coin.Persistence(), nil
-	case MARS:
-		return coin.Mars(), nil
 	case DYDX:
 		return coin.Dydx(), nil
-	case SOMMELIER:
-		return coin.Sommelier(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
