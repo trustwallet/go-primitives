@@ -188,10 +188,6 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://sonicscan.org/token/%s", tokenID), nil
 	case TIA:
 		return "https://www.mintscan.io/celestia", nil
-	case NOBLE:
-		return "https://www.mintscan.io/noble", nil
-	case PERSISTENCE:
-		return "https://www.mintscan.io/persistence", nil
 	case DYDX:
 		return "https://www.mintscan.io/dydx", nil
 	}
