@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/big"
 	"strings"
+	"time"
 )
 
 type HexNumber big.Int
@@ -38,4 +39,21 @@ func (i *HexNumber) UnmarshalJSON(data []byte) error {
 	*i = HexNumber(*value)
 
 	return nil
+}
+
+var Zero = big.NewInt(0)
+
+// ToBig converts HexNumber to *big.Int.
+// if HexNumber is nil, it returns a pointer to Zero.
+func (i *HexNumber) ToBig() *big.Int {
+	if i == nil {
+		return Zero
+	}
+
+	return (*big.Int)(i)
+}
+
+// HexNumberToUnix converts HexNumber to time.Time by interpreting it as a Unix timestamp.
+func HexNumberToUnix(n *HexNumber) time.Time {
+	return time.Unix(n.ToBig().Int64(), 0)
 }
