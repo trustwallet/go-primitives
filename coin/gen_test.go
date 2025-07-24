@@ -104,8 +104,8 @@ func TestBinance(t *testing.T) {
 	assert.Equal(t, "BNB", c.Symbol)
 	assert.Equal(t, "Smart Chain", c.Name)
 	assert.Equal(t, uint(18), c.Decimals)
-	assert.Equal(t, 3000, c.BlockTime)
-	assert.Equal(t, int64(12), c.MinConfirmations)
+	assert.Equal(t, 1000, c.BlockTime)
+	assert.Equal(t, int64(7), c.MinConfirmations)
 }
 
 func TestCosmos(t *testing.T) {
