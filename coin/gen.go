@@ -7,6 +7,7 @@ import (
 	"html/template"
 	"log"
 	"os"
+	"os/exec"
 	"strings"
 	"time"
 
@@ -22,7 +23,7 @@ const (
 // using data from coins.yml
 package coin
 
-import (
+import ( 
 	"fmt"
 )
 
@@ -149,6 +150,11 @@ func main() {
 		"Coins":     coinList,
 	})
 	if err != nil {
+		log.Panic(err)
+	}
+	fmtCommand := exec.Command("go", "fmt", filename)
+
+	if err = fmtCommand.Run(); err != nil {
 		log.Panic(err)
 	}
 }
