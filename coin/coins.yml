@@ -474,9 +474,9 @@
   handle: smartchain
   name: 'Smart Chain'
   decimals: 18
-  blockTime: 3000
+  blockTime: 1000
   blockchain: Ethereum
-  minConfirmations: 12
+  minConfirmations: 7
 
 
 - id: 461

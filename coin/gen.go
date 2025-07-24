@@ -7,6 +7,7 @@ import (
 	"html/template"
 	"log"
 	"os"
+	"os/exec"
 	"strings"
 	"time"
 
@@ -149,6 +150,11 @@ func main() {
 		"Coins":     coinList,
 	})
 	if err != nil {
+		log.Panic(err)
+	}
+	fmtCommand := exec.Command("go", "fmt", filename)
+
+	if err = fmtCommand.Run(); err != nil {
 		log.Panic(err)
 	}
 }
