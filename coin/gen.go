@@ -23,7 +23,7 @@ const (
 // using data from coins.yml
 package coin
 
-import ( 
+import (
 	"fmt"
 )
 
