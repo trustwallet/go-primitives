@@ -129,8 +129,8 @@ func TestPublicVariables(t *testing.T) {
 			Symbol:           "BNB",
 			Name:             "Smart Chain",
 			Decimals:         18,
-			BlockTime:        3000,
-			MinConfirmations: 12,
+			BlockTime:        1000,
+			MinConfirmations: 7,
 			Blockchain:       "Ethereum",
 		},
 		{
