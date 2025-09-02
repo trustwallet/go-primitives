@@ -64,10 +64,6 @@ func (c Coin) TokenAssetID(t string) AssetID {
 }
 
 func ptr[T any](v T) *T {
-	if v == nil {
-		return nil
-	}
-
 	return &v
 }
 
