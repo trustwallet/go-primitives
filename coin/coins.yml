@@ -6,6 +6,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 1 # https://chainlist.org/chain/1
 
 
 - id: 61
@@ -16,6 +17,7 @@
   blockTime: 30000
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 61 # https://chainlist.org/chain/61
 
 
 - id: 74
@@ -63,6 +65,7 @@
   blockTime: 5000
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 99 # https://chainlist.org/chain/99
 
 
 - id: 195
@@ -109,6 +112,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 4689 # https://chainlist.org/chain/4689
 
 
 - id: 313
@@ -184,6 +188,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 820 # https://chainlist.org/chain/820
 
 
 - id: 889
@@ -194,6 +199,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 88 # https://chainlist.org/chain/88
 
 
 - id: 1001
@@ -204,6 +210,7 @@
   blockTime: 10000
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 108 # https://chainlist.org/chain/108
 
 
 - id: 1024
@@ -250,6 +257,7 @@
   blockTime: 20000
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 60 # https://chainlist.org/chain/60
 
 
 - id: 5718350
@@ -260,6 +268,7 @@
   blockTime: 30000
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 888 # https://chainlist.org/chain/888
 
 
 - id: 5741564
@@ -477,6 +486,7 @@
   blockTime: 1000
   blockchain: Ethereum
   minConfirmations: 7
+  chainId: 56 # https://chainlist.org/chain/56
 
 
 - id: 461
@@ -573,6 +583,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 137 # https://chainlist.org/chain/137
 
 
 - id: 931
@@ -590,6 +601,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 10 # https://chainlist.org/chain/10
 
 
 - id: 10000100
@@ -599,6 +611,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 100 # https://chainlist.org/chain/100
 
 
 - id: 10009000
@@ -608,6 +621,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 43114 # https://chainlist.org/chain/43114
 
 
 - id: 10000553
@@ -618,6 +632,7 @@
   blockchain: Ethereum
   minConfirmations: 12
   deprecated: true
+  chainId: 128 # https://chainlist.org/chain/128
 
 
 - id: 10000250
@@ -627,6 +642,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 250 # https://chainlist.org/chain/250
 
 
 - id: 10042221
@@ -636,6 +652,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 42161 # https://chainlist.org/chain/42161
 
 
 - id: 52752
@@ -645,6 +662,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 42220 # https://chainlist.org/chain/42220
 
 
 - id: 10002020
@@ -654,6 +672,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 2020 # https://chainlist.org/chain/2020
 
 
 - id: 10000118
@@ -672,6 +691,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 25 # https://chainlist.org/chain/25
 
 
 - id: 10000321
@@ -681,6 +701,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 321 # https://chainlist.org/chain/321
 
 
 - id: 1323161554
@@ -690,6 +711,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 1313161554 # https://chainlist.org/chain/1313161554
 
 
 - id: 10002222
@@ -699,6 +721,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
+  chainId: 2222 # https://chainlist.org/chain/2222
 
 
 - id: 18000
@@ -708,6 +731,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 82 # https://chainlist.org/chain/82
 
 
 - id: 10009001
@@ -717,6 +741,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 9001 # https://chainlist.org/chain/9001
 
 
 - id: 20009001
@@ -735,6 +760,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
+  chainId: 66 # https://chainlist.org/chain/66
 
 
 - id: 394
@@ -761,6 +787,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
+  chainId: 1284 # https://chainlist.org/chain/1284
 
 
 - id: 10008217
@@ -770,6 +797,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 8217 # https://chainlist.org/chain/8217
 
 
 - id: 10001088
@@ -779,6 +807,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 1088 # https://chainlist.org/chain/1088
 
 
 - id: 10001285
@@ -788,6 +817,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 2
+  chainId: 1285 # https://chainlist.org/chain/1285
 
 
 - id: 10000288
@@ -797,6 +827,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 1
+  chainId: 288 # https://chainlist.org/chain/288
 
 
 - id: 607
@@ -814,6 +845,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 1101 # https://chainlist.org/chain/1101
 
 
 - id: 10000324
@@ -823,6 +855,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 324 # https://chainlist.org/chain/324
 
 
 - id: 784
@@ -877,6 +910,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 36
+  chainId: 1030 # https://chainlist.org/chain/1030
 
 
 - id: 787
@@ -894,6 +928,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 2
+  chainId: 787 # https://chainlist.org/chain/787
 
 
 - id: 8453
@@ -903,6 +938,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
+  chainId: 8453 # https://chainlist.org/chain/8453
 
 
 - id: 17000118
@@ -956,6 +992,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 1
+  chainId: 245022934 # https://chainlist.org/chain/245022934
 
 
 - id: 204
@@ -965,6 +1002,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 24
+  chainId: 204 # https://chainlist.org/chain/204
 
 
 - id: 59144
@@ -974,6 +1012,7 @@
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 7
+  chainId: 59144 # https://chainlist.org/chain/59144
 
 
 - id: 5600
@@ -990,6 +1029,7 @@
   name: Mantle
   decimals: 18
   blockchain: Ethereum
+  chainId: 5000 # https://chainlist.org/chain/5000
 
 
 - id: 169
@@ -998,6 +1038,7 @@
   name: Manta Pacific
   decimals: 18
   blockchain: Ethereum
+  chainId: 169 # https://chainlist.org/chain/169
 
 
 - id: 10007000
@@ -1014,6 +1055,7 @@
   name: Zeta EVM
   decimals: 18
   blockchain: Ethereum
+  chainId: 7000 # https://chainlist.org/chain/7000
 
 
 - id: 4200
@@ -1022,6 +1064,7 @@
   name: Merlin
   decimals: 18
   blockchain: Ethereum
+  chainId: 4200 # https://chainlist.org/chain/4200
 
 
 - id: 81457
@@ -1030,6 +1073,7 @@
   name: Blast
   decimals: 18
   blockchain: Ethereum
+  chainId: 81457 # https://chainlist.org/chain/81457
 
 
 - id: 534352
@@ -1038,6 +1082,7 @@
   name: Scroll
   decimals: 18
   blockchain: Ethereum
+  chainId: 534352 # https://chainlist.org/chain/534352
 
 
 - id: 223
@@ -1054,6 +1099,7 @@
   name: BounceBit
   decimals: 18
   blockchain: Ethereum
+  chainId: 6001 # https://chainlist.org/chain/6001
 
 
 - id: 810180
@@ -1062,6 +1108,7 @@
   name: zkLink Nova
   decimals: 18
   blockchain: Ethereum
+  chainId: 810180 # https://chainlist.org/chain/810180
 
 
 - id: 10000146
@@ -1070,6 +1117,8 @@
   name: Sonic
   decimals: 18
   blockchain: Ethereum
+  chainId: 146 # https://chainlist.org/chain/146
+
 
 - id: 21000118
   symbol: TIA
@@ -1078,9 +1127,11 @@
   decimals: 6
   blockchain: Cosmos
 
+
 - id: 22000118
   symbol: DYDX
   handle: dydx
   name: dYdX
   decimals: 18
   blockchain: Cosmos
+

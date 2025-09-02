@@ -132,6 +132,7 @@ func TestPublicVariables(t *testing.T) {
 			BlockTime:        1000,
 			MinConfirmations: 7,
 			Blockchain:       "Ethereum",
+			ChainID:          ptr(uint(56)),
 		},
 		{
 			ID:               60,
@@ -142,6 +143,7 @@ func TestPublicVariables(t *testing.T) {
 			BlockTime:        10000,
 			MinConfirmations: 12,
 			Blockchain:       "Ethereum",
+			ChainID:          ptr(uint(1)),
 		},
 	}
 
