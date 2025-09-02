@@ -5,7 +5,6 @@ package main
 
 import (
 	"html/template"
-	"log"
 	"os"
 	"os/exec"
 	"strings"
@@ -42,6 +41,7 @@ type Coin struct {
 	BlockTime        int
 	MinConfirmations int64
 	Blockchain       string // Name of the Blockchain which core is used for this network
+	ChainID   		 *uint // EIP155; Source: https://chainlist.org
 }
 
 type AssetID string
@@ -61,6 +61,14 @@ func (c Coin) TokenAssetID(t string) AssetID {
 	}
 
 	return result
+}
+
+func ptr[T any](v T) *T {
+	if v == nil {
+		return nil
+	}
+
+	return &v
 }
 
 const (
@@ -83,6 +91,9 @@ var Coins = map[uint]Coin{
 		BlockTime:        {{.BlockTime}},
 		MinConfirmations: {{.MinConfirmations}},
 		Blockchain:       "{{.Blockchain}}",
+		{{- if .ChainID }}
+		ChainID:   ptr(uint({{.ChainID}})),
+		{{- end }}
 	},
 {{- end }}
 }
@@ -98,6 +109,9 @@ var Chains = map[string]Coin{
 		BlockTime:        {{.BlockTime}},
 		MinConfirmations: {{.MinConfirmations}},
 		Blockchain:       "{{.Blockchain}}",
+		{{- if .ChainID }}
+		ChainID:   ptr(uint({{.ChainID}})),
+		{{- end }}	
 	},
 {{- end }}
 }
@@ -122,6 +136,7 @@ type Coin struct {
 	MinConfirmations int64  `yaml:"minConfirmations"`
 	Blockchain       string `yaml:"blockchain"`
 	Deprecated       bool   `yaml:"deprecated"`
+	ChainID          *uint  `yaml:"chainId"`
 }
 
 func main() {
@@ -130,12 +145,12 @@ func main() {
 	dec := yaml.NewDecoder(coin)
 	err = dec.Decode(&coinList)
 	if err != nil {
-		log.Panic(err)
+		panic(err)
 	}
 
 	f, err := os.Create(filename)
 	if err != nil {
-		log.Panic(err)
+		panic(err)
 	}
 	defer f.Close()
 
@@ -150,12 +165,12 @@ func main() {
 		"Coins":     coinList,
 	})
 	if err != nil {
-		log.Panic(err)
+		panic(err)
 	}
 	fmtCommand := exec.Command("go", "fmt", filename)
 
 	if err = fmtCommand.Run(); err != nil {
-		log.Panic(err)
+		panic(err)
 	}
 }
 
