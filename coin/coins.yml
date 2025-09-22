@@ -1135,3 +1135,10 @@
   decimals: 18
   blockchain: Cosmos
 
+- id: 9745
+  symbol: XPL
+  handle: plasma
+  name: Plasma
+  decimals: 18
+  blockchain: Ethereum
+  chainId: 9745 # https://chainlist.org/chain/9745
