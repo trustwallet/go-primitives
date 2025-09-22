@@ -160,6 +160,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.BOUNCEBIT},
 			want: BOUNCEBIT,
 		},
+		{
+			name: "Plasma PLASMA",
+			args: args{coinIndex: coin.PLASMA},
+			want: PLASMA,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -412,6 +417,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(SONIC),
 			wantBool: true,
 		},
+		{
+			name:     "Plasma",
+			args:     args{coin.PLASMA, ""},
+			want:     string(PLASMA),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -648,6 +659,12 @@ func TestGetTokenVersion(t *testing.T) {
 			"SONIC token version",
 			args{t: string(SONIC)},
 			TokenVersionV22,
+			nil,
+		},
+		{
+			"PLASMA token version",
+			args{t: string(PLASMA)},
+			TokenVersionV23,
 			nil,
 		},
 	}

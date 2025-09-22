@@ -129,6 +129,7 @@ const (
 	SONIC           TokenType = "SONIC"
 	TIA             TokenType = "TIA"
 	DYDX            TokenType = "DYDX"
+	PLASMA          TokenType = "PLASMA"
 )
 
 const (
@@ -154,6 +155,7 @@ const (
 	TokenVersionV20       TokenVersion = 20
 	TokenVersionV21       TokenVersion = 21
 	TokenVersionV22       TokenVersion = 22
+	TokenVersionV23       TokenVersion = 23
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -254,6 +256,7 @@ func GetTokenTypes() []TokenType {
 		SONIC,
 		TIA,
 		DYDX,
+		PLASMA,
 	}
 }
 
@@ -385,6 +388,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(TIA), true
 	case coin.DYDX:
 		return string(DYDX), true
+	case coin.PLASMA:
+		return string(PLASMA), true
 	default:
 		return "", false
 	}
@@ -455,6 +460,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV21, nil
 	case XRP, SONIC:
 		return TokenVersionV22, nil
+	case PLASMA:
+		return TokenVersionV23, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
 		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)
@@ -577,6 +584,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = ZKLINKNOVA
 	case coin.SONIC:
 		tokenType = SONIC
+	case coin.PLASMA:
+		tokenType = PLASMA
 	}
 
 	if tokenType == "" {

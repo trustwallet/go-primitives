@@ -190,6 +190,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return "https://www.mintscan.io/celestia", nil
 	case DYDX:
 		return "https://www.mintscan.io/dydx", nil
+	case PLASMA:
+		return fmt.Sprintf("https://plasmascan.to/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
