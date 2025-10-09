@@ -492,6 +492,70 @@ func TestGetCoinExploreURL(t *testing.T) {
 	}
 }
 
+func TestGetAddressExploreURL(t *testing.T) {
+	type args struct {
+		addr  string
+		chain Coin
+	}
+
+	tests := []struct {
+		name    string
+		args    args
+		want    string
+		wantErr bool
+	}{
+		{
+			name: "Test Ethereum",
+			args: args{
+				addr:  "0x90adE3B7065fa715c7a150313877dF1d33e777D5",
+				chain: Ethereum(),
+			},
+			want:    "https://etherscan.io/address/0x90adE3B7065fa715c7a150313877dF1d33e777D5",
+			wantErr: false,
+		},
+		{
+			name: "Test BSC",
+			args: args{
+				addr:  "0x90adE3B7065fa715c7a150313877dF1d33e777D5",
+				chain: Smartchain(),
+			},
+			want:    "https://bscscan.com/address/0x90adE3B7065fa715c7a150313877dF1d33e777D5",
+			wantErr: false,
+		},
+		{
+			name: "Test BASE",
+			args: args{
+				addr:  "0x90adE3B7065fa715c7a150313877dF1d33e777D5",
+				chain: Base(),
+			},
+			want:    "https://basescan.org/address/0x90adE3B7065fa715c7a150313877dF1d33e777D5",
+			wantErr: false,
+		},
+		{
+			name: "Test TRON",
+			args: args{
+				addr:  "TKXVRaBsughUd1ZqqUQCs4dudMcg5BjUsa",
+				chain: Tron(),
+			},
+			want:    "https://tronscan.io/#/address/TKXVRaBsughUd1ZqqUQCs4dudMcg5BjUsa",
+			wantErr: false,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			got, err := GetAddressExploreURL(tt.args.chain, tt.args.addr)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("GetCoinForId() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+			if !reflect.DeepEqual(got, tt.want) {
+				t.Errorf("GetCoinForId() got = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
+
 var evmCoinsTestSet = map[uint]struct{}{
 	ETHEREUM:     {},
 	CLASSIC:      {},
