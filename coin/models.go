@@ -192,6 +192,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return "https://www.mintscan.io/dydx", nil
 	case PLASMA:
 		return fmt.Sprintf("https://plasmascan.to/token/%s", tokenID), nil
+	case MONAD:
+		return fmt.Sprintf("https://explorer.monad.xyz/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
@@ -336,6 +338,8 @@ func GetAddressExploreURL(c Coin, address string) (string, error) {
 		return "https://www.mintscan.io/dydx", nil
 	case PLASMA:
 		return fmt.Sprintf("https://plasmascan.to/address/%s", address), nil
+	case MONAD:
+		return fmt.Sprintf("https://explorer.monad.xyz/address/%s", address), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

@@ -1142,3 +1142,14 @@
   decimals: 18
   blockchain: Ethereum
   chainId: 9745 # https://chainlist.org/chain/9745
+
+
+- id: 10000143
+  symbol: MON
+  handle: monad
+  name: Monad
+  decimals: 18
+  blockTime: 1000
+  blockchain: Ethereum
+  minConfirmations: 12
+  chainId: 143 # https://chainlist.org/chain/143
