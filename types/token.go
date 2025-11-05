@@ -158,6 +158,7 @@ const (
 	TokenVersionV22       TokenVersion = 22
 	TokenVersionV23       TokenVersion = 23
 	TokenVersionV24       TokenVersion = 24
+	TokenVersionV26       TokenVersion = 26
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -468,7 +469,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 	case PLASMA:
 		return TokenVersionV23, nil
 	case MONAD:
-		return TokenVersionV24, nil
+		return TokenVersionV26, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
 		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)

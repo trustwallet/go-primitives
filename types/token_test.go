@@ -681,7 +681,7 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"MONAD token version",
 			args{t: string(MONAD)},
-			TokenVersionV24,
+			TokenVersionV26,
 			nil,
 		},
 	}
