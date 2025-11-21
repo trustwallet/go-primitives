@@ -174,7 +174,7 @@ const (
 	TIA               = 21000118
 	DYDX              = 22000118
 	PLASMA            = 9745
-	MONAD             = 10000143
+	MONAD             = 10143
 )
 
 var Coins = map[uint]Coin{
@@ -1458,7 +1458,7 @@ var Coins = map[uint]Coin{
 		ChainID:          ptr(uint(9745)),
 	},
 	MONAD: {
-		ID:               10000143,
+		ID:               10143,
 		Handle:           "monad",
 		Symbol:           "MON",
 		Name:             "Monad",
@@ -2751,7 +2751,7 @@ var Chains = map[string]Coin{
 		ChainID:          ptr(uint(9745)),
 	},
 	Monad().Handle: {
-		ID:               10000143,
+		ID:               10143,
 		Handle:           "monad",
 		Symbol:           "MON",
 		Name:             "Monad",
