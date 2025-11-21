@@ -1144,7 +1144,7 @@
   chainId: 9745 # https://chainlist.org/chain/9745
 
 
-- id: 10000143
+- id: 10143
   symbol: MON
   handle: monad
   name: Monad
