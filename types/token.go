@@ -131,6 +131,7 @@ const (
 	DYDX            TokenType = "DYDX"
 	PLASMA          TokenType = "PLASMA"
 	MONAD           TokenType = "MONAD"
+	MEGAETH         TokenType = "MEGAETH"
 )
 
 const (
@@ -159,6 +160,7 @@ const (
 	TokenVersionV23       TokenVersion = 23
 	TokenVersionV24       TokenVersion = 24
 	TokenVersionV26       TokenVersion = 26
+	TokenVersionV27       TokenVersion = 27
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -261,6 +263,7 @@ func GetTokenTypes() []TokenType {
 		DYDX,
 		PLASMA,
 		MONAD,
+		MEGAETH,
 	}
 }
 
@@ -396,6 +399,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(PLASMA), true
 	case coin.MONAD:
 		return string(MONAD), true
+	case coin.MEGAETH:
+		return string(MEGAETH), true
 	default:
 		return "", false
 	}
@@ -470,6 +475,8 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV23, nil
 	case MONAD:
 		return TokenVersionV26, nil
+	case MEGAETH:
+		return TokenVersionV27, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
 		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)
@@ -596,6 +603,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = PLASMA
 	case coin.MONAD:
 		tokenType = MONAD
+	case coin.MEGAETH:
+		tokenType = MEGAETH
 	}
 
 	if tokenType == "" {

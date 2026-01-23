@@ -170,6 +170,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.MONAD},
 			want: MONAD,
 		},
+		{
+			name: "MegaETH MEGAETH",
+			args: args{coinIndex: coin.MEGAETH},
+			want: MEGAETH,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -434,6 +439,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(MONAD),
 			wantBool: true,
 		},
+		{
+			name:     "MegaETH",
+			args:     args{coin.MEGAETH, ""},
+			want:     string(MEGAETH),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -682,6 +693,12 @@ func TestGetTokenVersion(t *testing.T) {
 			"MONAD token version",
 			args{t: string(MONAD)},
 			TokenVersionV26,
+			nil,
+		},
+		{
+			"MEGAETH token version",
+			args{t: string(MEGAETH)},
+			TokenVersionV27,
 			nil,
 		},
 	}

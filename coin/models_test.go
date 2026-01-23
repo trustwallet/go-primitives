@@ -541,6 +541,15 @@ func TestGetAddressExploreURL(t *testing.T) {
 			wantErr: false,
 		},
 		{
+			name: "Test MegaETH",
+			args: args{
+				addr:  "0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb",
+				chain: Megaeth(),
+			},
+			want:    "https://mega.etherscan.com/address/0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb",
+			wantErr: false,
+		},
+		{
 			name: "Test TRON",
 			args: args{
 				addr:  "TKXVRaBsughUd1ZqqUQCs4dudMcg5BjUsa",
@@ -616,6 +625,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	SONIC:        {},
 	PLASMA:       {},
 	MONAD:        {},
+	MEGAETH:      {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml

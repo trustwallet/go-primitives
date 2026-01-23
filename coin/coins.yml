@@ -779,6 +779,15 @@
   decimals: 8
   blockchain: Aptos
 
+- id: 4326
+  symbol: ETH
+  handle: megaeth
+  name: 'MegaETH'
+  decimals: 18
+  blockchain: Ethereum
+  minConfirmations: 12
+  chainId: 4326 # https://chainlist.org/chain/4326
+
 
 - id: 10001284
   symbol: GLMR
