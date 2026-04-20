@@ -993,6 +993,14 @@
   decimals: 6
   blockchain: Cosmos
 
+- id: 1329
+  symbol: SEI
+  handle: seievm
+  name: Sei EVM
+  decimals: 18
+  blockchain: Ethereum
+  minConfirmations: 12
+  chainId: 1329
 
 - id: 245022934
   symbol: NEON

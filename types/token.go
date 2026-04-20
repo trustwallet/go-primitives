@@ -110,6 +110,7 @@ const (
 	AXELAR          TokenType = "AXL"
 	JUNO            TokenType = "JUNO"
 	SEI             TokenType = "SEI"
+	SEIEVM          TokenType = "SEIEVM"
 	CARDANO         TokenType = "CARDANO"
 	NEON            TokenType = "NEON"
 	IOTEXEVM        TokenType = "XRC20"
@@ -242,6 +243,7 @@ func GetTokenTypes() []TokenType {
 		ACA,
 		BASE,
 		SEI,
+		SEIEVM,
 		CARDANO,
 		NEON,
 		OPBNB,
@@ -367,6 +369,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(JUNO), true
 	case coin.SEI:
 		return string(SEI), true
+	case coin.SEIEVM:
+		return string(SEIEVM), true
 	case coin.CARDANO:
 		return string(CARDANO), true
 	case coin.NEON:
@@ -464,9 +468,6 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV19, nil
 	case ZKLINKNOVA:
 		return TokenVersionV20, nil
-	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
-		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, TIA, DYDX:
-		return TokenVersionUndefined, nil
 	case APTOSFA:
 		return TokenVersionV21, nil
 	case XRP, SONIC:
@@ -477,6 +478,9 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV26, nil
 	case MEGAETH:
 		return TokenVersionV27, nil
+	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, TIA, DYDX, SEIEVM:
+		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
 		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)
@@ -605,6 +609,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = MONAD
 	case coin.MEGAETH:
 		tokenType = MEGAETH
+	case coin.SEIEVM:
+		tokenType = SEIEVM
 	}
 
 	if tokenType == "" {
