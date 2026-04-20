@@ -52,11 +52,11 @@ func DecimalExp(dec string, exp int) string {
 	i -= origSize - len(dec)
 	// Fix bounds
 	if i <= 0 {
-		zeros := ""
+		var zeros strings.Builder
 		for ; i < 0; i++ {
-			zeros += "0"
+			zeros.WriteString("0")
 		}
-		return "0." + zeros + dec
+		return "0." + zeros.String() + dec
 	} else if i >= len(dec) {
 		for i > len(dec) {
 			dec += "0"
@@ -82,8 +82,8 @@ func HexToDecimal(hex string) (string, error) {
 
 // CutZeroFractional cuts off a decimal separator and zeros to the right.
 // Fails if the fractional part contains contains other digits than zeros.
-//  - CutZeroFractional("123.00000") => ("123", true)
-//  - CutZeroFractional("123.456") => ("", false)
+//   - CutZeroFractional("123.00000") => ("123", true)
+//   - CutZeroFractional("123.456") => ("", false)
 func CutZeroFractional(dec string) (integer string, ok bool) {
 	// Get comma position
 	comma := strings.IndexRune(dec, '.')
