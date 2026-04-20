@@ -191,6 +191,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Monad(), nil
 	case MEGAETH:
 		return coin.Megaeth(), nil
+	case SEIEVM:
+		return coin.Seievm(), nil
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)

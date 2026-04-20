@@ -196,6 +196,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://explorer.monad.xyz/token/%s", tokenID), nil
 	case MEGAETH:
 		return fmt.Sprintf("https://mega.etherscan.com/token/%s", tokenID), nil
+	case SEIEVM:
+		return fmt.Sprintf("https://seitrace.com/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
@@ -344,6 +346,8 @@ func GetAddressExploreURL(c Coin, address string) (string, error) {
 		return fmt.Sprintf("https://explorer.monad.xyz/address/%s", address), nil
 	case MEGAETH:
 		return fmt.Sprintf("https://mega.etherscan.com/address/%s", address), nil
+	case SEIEVM:
+		return fmt.Sprintf("https://seitrace.com/address/%s", address), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
