@@ -224,7 +224,7 @@ var Coins = map[uint]Coin{
 	},
 	RIPPLE: {
 		ID:               144,
-		Handle:           "ripple",
+		Handle:           "xrpl",
 		Symbol:           "XRP",
 		Name:             "Ripple",
 		Decimals:         6,
@@ -501,7 +501,7 @@ var Coins = map[uint]Coin{
 	},
 	DOGE: {
 		ID:               3,
-		Handle:           "doge",
+		Handle:           "dogecoin",
 		Symbol:           "DOGE",
 		Name:             "Dogecoin",
 		Decimals:         8,
@@ -561,7 +561,7 @@ var Coins = map[uint]Coin{
 	},
 	BITCOINCASH: {
 		ID:               145,
-		Handle:           "bitcoincash",
+		Handle:           "bitcoin-cash",
 		Symbol:           "BCH",
 		Name:             "Bitcoin Cash",
 		Decimals:         8,
@@ -855,7 +855,7 @@ var Coins = map[uint]Coin{
 	},
 	AVALANCHEC: {
 		ID:               10009000,
-		Handle:           "avalanchec",
+		Handle:           "avalanche",
 		Symbol:           "AVAX",
 		Name:             "Avalanche C-Chain",
 		Decimals:         18,
