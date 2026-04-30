@@ -1539,7 +1539,7 @@ var Chains = map[string]Coin{
 	},
 	Ripple().Handle: {
 		ID:               144,
-		Handle:           "ripple",
+		Handle:           "xrpl",
 		Symbol:           "XRP",
 		Name:             "Ripple",
 		Decimals:         6,
@@ -1816,7 +1816,7 @@ var Chains = map[string]Coin{
 	},
 	Doge().Handle: {
 		ID:               3,
-		Handle:           "doge",
+		Handle:           "dogecoin",
 		Symbol:           "DOGE",
 		Name:             "Dogecoin",
 		Decimals:         8,
@@ -1876,7 +1876,7 @@ var Chains = map[string]Coin{
 	},
 	Bitcoincash().Handle: {
 		ID:               145,
-		Handle:           "bitcoincash",
+		Handle:           "bitcoin-cash",
 		Symbol:           "BCH",
 		Name:             "Bitcoin Cash",
 		Decimals:         8,
@@ -2170,7 +2170,7 @@ var Chains = map[string]Coin{
 	},
 	Avalanchec().Handle: {
 		ID:               10009000,
-		Handle:           "avalanchec",
+		Handle:           "avalanche",
 		Symbol:           "AVAX",
 		Name:             "Avalanche C-Chain",
 		Decimals:         18,
