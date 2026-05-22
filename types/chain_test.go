@@ -122,6 +122,14 @@ func TestGetChainFromAssetType(t *testing.T) {
 			want:    coin.Megaeth(),
 			wantErr: false,
 		},
+		{
+			name: "Test HYPEEVM",
+			args: args{
+				type_: "HYPEEVM",
+			},
+			want:    coin.Hypeevm(),
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

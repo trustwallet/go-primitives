@@ -1170,3 +1170,12 @@
   blockchain: Ethereum
   minConfirmations: 12
   chainId: 143 # https://chainlist.org/chain/143
+
+- id: 999
+  symbol: HYPE
+  handle: hypeevm
+  name: HypeEVM
+  decimals: 18
+  blockchain: Ethereum
+  minConfirmations: 12
+  chainId: 999 # https://chainlist.org/chain/999
