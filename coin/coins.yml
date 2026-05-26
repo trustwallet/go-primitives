@@ -1171,7 +1171,7 @@
   minConfirmations: 12
   chainId: 143 # https://chainlist.org/chain/143
 
-- id: 999
+- id: 10000999
   symbol: HYPE
   handle: hypeevm
   name: HypeEVM
