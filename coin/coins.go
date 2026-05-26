@@ -177,7 +177,7 @@ const (
 	DYDX              = 22000118
 	PLASMA            = 9745
 	MONAD             = 10143
-	HYPEEVM           = 999
+	HYPEEVM           = 10000999
 )
 
 var Coins = map[uint]Coin{
@@ -1494,7 +1494,7 @@ var Coins = map[uint]Coin{
 		ChainID:          ptr(uint(143)),
 	},
 	HYPEEVM: {
-		ID:               999,
+		ID:               10000999,
 		Handle:           "hypeevm",
 		Symbol:           "HYPE",
 		Name:             "HypeEVM",
@@ -2820,7 +2820,7 @@ var Chains = map[string]Coin{
 		ChainID:          ptr(uint(143)),
 	},
 	Hypeevm().Handle: {
-		ID:               999,
+		ID:               10000999,
 		Handle:           "hypeevm",
 		Symbol:           "HYPE",
 		Name:             "HypeEVM",
