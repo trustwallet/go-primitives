@@ -133,7 +133,7 @@ const (
 	PLASMA          TokenType = "PLASMA"
 	MONAD           TokenType = "MONAD"
 	MEGAETH         TokenType = "MEGAETH"
-	HYPEEVM         TokenType = "HYPEEVM"
+	HYPEREVM        TokenType = "HYPEREVM"
 )
 
 const (
@@ -268,7 +268,7 @@ func GetTokenTypes() []TokenType {
 		PLASMA,
 		MONAD,
 		MEGAETH,
-		HYPEEVM,
+		HYPEREVM,
 	}
 }
 
@@ -408,8 +408,8 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(MONAD), true
 	case coin.MEGAETH:
 		return string(MEGAETH), true
-	case coin.HYPEEVM:
-		return string(HYPEEVM), true
+	case coin.HYPEREVM:
+		return string(HYPEREVM), true
 	default:
 		return "", false
 	}
@@ -483,7 +483,7 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV26, nil
 	case MEGAETH:
 		return TokenVersionV27, nil
-	case HYPEEVM:
+	case HYPEREVM:
 		return TokenVersionV28, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, TIA, DYDX, SEIEVM:
@@ -618,8 +618,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = MEGAETH
 	case coin.SEIEVM:
 		tokenType = SEIEVM
-	case coin.HYPEEVM:
-		tokenType = HYPEEVM
+	case coin.HYPEREVM:
+		tokenType = HYPEREVM
 	}
 
 	if tokenType == "" {

@@ -176,9 +176,9 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			want: MEGAETH,
 		},
 		{
-			name: "HypeEVM HYPEEVM",
-			args: args{coinIndex: coin.HYPEEVM},
-			want: HYPEEVM,
+			name: "HyperEVM HYPEREVM",
+			args: args{coinIndex: coin.HYPEREVM},
+			want: HYPEREVM,
 		},
 	}
 	for _, tt := range tests {
@@ -451,9 +451,9 @@ func TestGetTokenType(t *testing.T) {
 			wantBool: true,
 		},
 		{
-			name:     "HypeEVM",
-			args:     args{coin.HYPEEVM, ""},
-			want:     string(HYPEEVM),
+			name:     "HyperEVM",
+			args:     args{coin.HYPEREVM, ""},
+			want:     string(HYPEREVM),
 			wantBool: true,
 		},
 	}
@@ -713,8 +713,8 @@ func TestGetTokenVersion(t *testing.T) {
 			nil,
 		},
 		{
-			"HYPEEVM token version",
-			args{t: string(HYPEEVM)},
+			"HyperEVM token version",
+			args{t: string(HYPEREVM)},
 			TokenVersionV28,
 			nil,
 		},
