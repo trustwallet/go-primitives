@@ -123,11 +123,11 @@ func TestGetChainFromAssetType(t *testing.T) {
 			wantErr: false,
 		},
 		{
-			name: "Test HYPEEVM",
+			name: "Test HyperEVM",
 			args: args{
-				type_: "HYPEEVM",
+				type_: "HYPEREVM",
 			},
-			want:    coin.Hypeevm(),
+			want:    coin.Hyperevm(),
 			wantErr: false,
 		},
 	}

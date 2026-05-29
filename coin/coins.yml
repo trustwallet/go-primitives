@@ -1173,8 +1173,8 @@
 
 - id: 10000999
   symbol: HYPE
-  handle: hypeevm
-  name: HypeEVM
+  handle: hyperevm
+  name: HyperEVM
   decimals: 18
   blockchain: Ethereum
   minConfirmations: 12
