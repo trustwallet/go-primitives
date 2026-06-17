@@ -131,13 +131,10 @@ const (
 	TIA             TokenType = "TIA"
 	DYDX            TokenType = "DYDX"
 	PLASMA          TokenType = "PLASMA"
-<<<<<<< Updated upstream
 	MONAD           TokenType = "MONAD"
 	MEGAETH         TokenType = "MEGAETH"
 	HYPEREVM        TokenType = "HYPEREVM"
-=======
 	ROBINHOODCHAIN  TokenType = "ROBINHOODCHAIN"
->>>>>>> Stashed changes
 )
 
 const (
@@ -165,12 +162,9 @@ const (
 	TokenVersionV22       TokenVersion = 22
 	TokenVersionV23       TokenVersion = 23
 	TokenVersionV24       TokenVersion = 24
-<<<<<<< Updated upstream
 	TokenVersionV26       TokenVersion = 26
 	TokenVersionV27       TokenVersion = 27
 	TokenVersionV28       TokenVersion = 28
-=======
->>>>>>> Stashed changes
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -273,13 +267,10 @@ func GetTokenTypes() []TokenType {
 		TIA,
 		DYDX,
 		PLASMA,
-<<<<<<< Updated upstream
 		MONAD,
 		MEGAETH,
 		HYPEREVM,
-=======
 		ROBINHOODCHAIN,
->>>>>>> Stashed changes
 	}
 }
 
@@ -415,17 +406,14 @@ func GetTokenType(c uint, tokenID string) (string, bool) {
 		return string(DYDX), true
 	case coin.PLASMA:
 		return string(PLASMA), true
-<<<<<<< Updated upstream
 	case coin.MONAD:
 		return string(MONAD), true
 	case coin.MEGAETH:
 		return string(MEGAETH), true
 	case coin.HYPEREVM:
 		return string(HYPEREVM), true
-=======
 	case coin.ROBINHOODCHAIN:
 		return string(ROBINHOODCHAIN), true
->>>>>>> Stashed changes
 	default:
 		return "", false
 	}
@@ -495,20 +483,17 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV22, nil
 	case PLASMA:
 		return TokenVersionV23, nil
-<<<<<<< Updated upstream
 	case MONAD:
 		return TokenVersionV26, nil
 	case MEGAETH:
 		return TokenVersionV27, nil
 	case HYPEREVM:
 		return TokenVersionV28, nil
+	case ROBINHOODCHAIN:
+		return TokenVersionV24, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
 		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, TIA, DYDX, SEIEVM:
 		return TokenVersionUndefined, nil
-=======
-	case ROBINHOODCHAIN:
-		return TokenVersionV24, nil
->>>>>>> Stashed changes
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
 		return TokenVersionUndefined, fmt.Errorf("tokenType %s: %w", parsedTokenType, errTokenVersionNotImplemented)
@@ -633,7 +618,6 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = SONIC
 	case coin.PLASMA:
 		tokenType = PLASMA
-<<<<<<< Updated upstream
 	case coin.MONAD:
 		tokenType = MONAD
 	case coin.MEGAETH:
@@ -642,10 +626,8 @@ func GetEthereumTokenTypeByIndex(coinIndex uint) (TokenType, error) {
 		tokenType = SEIEVM
 	case coin.HYPEREVM:
 		tokenType = HYPEREVM
-=======
 	case coin.ROBINHOODCHAIN:
 		tokenType = ROBINHOODCHAIN
->>>>>>> Stashed changes
 	}
 
 	if tokenType == "" {

@@ -192,7 +192,6 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return "https://www.mintscan.io/dydx", nil
 	case PLASMA:
 		return fmt.Sprintf("https://plasmascan.to/token/%s", tokenID), nil
-<<<<<<< Updated upstream
 	case MONAD:
 		return fmt.Sprintf("https://explorer.monad.xyz/token/%s", tokenID), nil
 	case MEGAETH:
@@ -201,10 +200,8 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 		return fmt.Sprintf("https://seitrace.com/token/%s", tokenID), nil
 	case HYPEREVM:
 		return fmt.Sprintf("https://hyperevmscan.io/token/%s", tokenID), nil
-=======
 	case ROBINHOODCHAIN:
 		return fmt.Sprintf("https://explorer.testnet.chain.robinhood.com/token/%s", tokenID), nil
->>>>>>> Stashed changes
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
@@ -349,7 +346,6 @@ func GetAddressExploreURL(c Coin, address string) (string, error) {
 		return "https://www.mintscan.io/dydx", nil
 	case PLASMA:
 		return fmt.Sprintf("https://plasmascan.to/address/%s", address), nil
-<<<<<<< Updated upstream
 	case MONAD:
 		return fmt.Sprintf("https://explorer.monad.xyz/address/%s", address), nil
 	case MEGAETH:
@@ -358,10 +354,8 @@ func GetAddressExploreURL(c Coin, address string) (string, error) {
 		return fmt.Sprintf("https://seitrace.com/address/%s", address), nil
 	case HYPEREVM:
 		return fmt.Sprintf("https://hyperevmscan.io/address/%s", address), nil
-=======
 	case ROBINHOODCHAIN:
 		return fmt.Sprintf("https://explorer.testnet.chain.robinhood.com/address/%s", address), nil
->>>>>>> Stashed changes
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

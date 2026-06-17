@@ -187,7 +187,6 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Dydx(), nil
 	case PLASMA:
 		return coin.Plasma(), nil
-<<<<<<< Updated upstream
 	case MONAD:
 		return coin.Monad(), nil
 	case MEGAETH:
@@ -196,10 +195,8 @@ func GetChainFromAssetType(assetType string) (coin.Coin, error) {
 		return coin.Seievm(), nil
 	case HYPEREVM:
 		return coin.Hyperevm(), nil
-=======
 	case ROBINHOODCHAIN:
 		return coin.Robinhoodchain(), nil
->>>>>>> Stashed changes
 	}
 
 	return coin.Coin{}, errors.New("unknown asset type: " + assetType)
