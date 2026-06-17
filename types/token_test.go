@@ -166,6 +166,7 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			want: PLASMA,
 		},
 		{
+<<<<<<< Updated upstream
 			name: "Monad MONAD",
 			args: args{coinIndex: coin.MONAD},
 			want: MONAD,
@@ -179,6 +180,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			name: "HyperEVM HYPEREVM",
 			args: args{coinIndex: coin.HYPEREVM},
 			want: HYPEREVM,
+=======
+			name: "Robinhood Chain ROBINHOODCHAIN",
+			args: args{coinIndex: coin.ROBINHOODCHAIN},
+			want: ROBINHOODCHAIN,
+>>>>>>> Stashed changes
 		},
 	}
 	for _, tt := range tests {
@@ -439,6 +445,7 @@ func TestGetTokenType(t *testing.T) {
 			wantBool: true,
 		},
 		{
+<<<<<<< Updated upstream
 			name:     "Monad",
 			args:     args{coin.MONAD, ""},
 			want:     string(MONAD),
@@ -454,6 +461,11 @@ func TestGetTokenType(t *testing.T) {
 			name:     "HyperEVM",
 			args:     args{coin.HYPEREVM, ""},
 			want:     string(HYPEREVM),
+=======
+			name:     "Robinhood Chain",
+			args:     args{coin.ROBINHOODCHAIN, ""},
+			want:     string(ROBINHOODCHAIN),
+>>>>>>> Stashed changes
 			wantBool: true,
 		},
 	}
@@ -701,6 +713,7 @@ func TestGetTokenVersion(t *testing.T) {
 			nil,
 		},
 		{
+<<<<<<< Updated upstream
 			"MONAD token version",
 			args{t: string(MONAD)},
 			TokenVersionV26,
@@ -716,6 +729,11 @@ func TestGetTokenVersion(t *testing.T) {
 			"HyperEVM token version",
 			args{t: string(HYPEREVM)},
 			TokenVersionV28,
+=======
+			"ROBINHOODCHAIN token version",
+			args{t: string(ROBINHOODCHAIN)},
+			TokenVersionV24,
+>>>>>>> Stashed changes
 			nil,
 		},
 	}

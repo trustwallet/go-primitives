@@ -477,6 +477,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://plasmascan.to/token/0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb",
 			wantErr: false,
 		},
+		{
+			name: "Test Robinhood Chain",
+			args: args{
+				addr:      "0x7943e237c7F95DA44E0301572D358911207852Fa",
+				tokenType: "ROBINHOODCHAIN",
+				chain:     Robinhoodchain(),
+			},
+			want:    "https://explorer.testnet.chain.robinhood.com/token/0x7943e237c7F95DA44E0301572D358911207852Fa",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -584,6 +594,7 @@ func TestGetAddressExploreURL(t *testing.T) {
 }
 
 var evmCoinsTestSet = map[uint]struct{}{
+<<<<<<< Updated upstream
 	ETHEREUM:     {},
 	CLASSIC:      {},
 	POA:          {},
@@ -637,6 +648,58 @@ var evmCoinsTestSet = map[uint]struct{}{
 	MEGAETH:      {},
 	SEIEVM:       {},
 	HYPEREVM:      {},
+=======
+	ETHEREUM:       {},
+	CLASSIC:        {},
+	POA:            {},
+	CALLISTO:       {},
+	WANCHAIN:       {},
+	THUNDERTOKEN:   {},
+	GOCHAIN:        {},
+	TOMOCHAIN:      {},
+	SMARTCHAIN:     {},
+	POLYGON:        {},
+	OPTIMISM:       {},
+	XDAI:           {},
+	AVALANCHEC:     {},
+	FANTOM:         {},
+	HECO:           {},
+	RONIN:          {},
+	CRONOS:         {},
+	KCC:            {},
+	AURORA:         {},
+	ARBITRUM:       {},
+	KAVAEVM:        {},
+	METER:          {},
+	EVMOS:          {},
+	CELO:           {},
+	OKC:            {},
+	MOONBEAM:       {},
+	KLAYTN:         {},
+	METIS:          {},
+	MOONRIVER:      {},
+	BOBA:           {},
+	POLYGONZKEVM:   {},
+	ZKSYNC:         {},
+	CFXEVM:         {},
+	ACALAEVM:       {},
+	BASE:           {},
+	NEON:           {},
+	IOTEXEVM:       {},
+	OPBNB:          {},
+	LINEA:          {},
+	MANTLE:         {},
+	MANTA:          {},
+	ZETAEVM:        {},
+	MERLIN:         {},
+	BLAST:          {},
+	SCROLL:         {},
+	BOUNCEBIT:      {},
+	ZKLINKNOVA:     {},
+	SONIC:          {},
+	PLASMA:         {},
+	ROBINHOODCHAIN: {},
+>>>>>>> Stashed changes
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
