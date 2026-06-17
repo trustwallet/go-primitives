@@ -180,6 +180,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.HYPEREVM},
 			want: HYPEREVM,
 		},
+		{
+			name: "Robinhood Chain ROBINHOODCHAIN",
+			args: args{coinIndex: coin.ROBINHOODCHAIN},
+			want: ROBINHOODCHAIN,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -456,6 +461,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(HYPEREVM),
 			wantBool: true,
 		},
+		{
+			name:     "Robinhood Chain",
+			args:     args{coin.ROBINHOODCHAIN, ""},
+			want:     string(ROBINHOODCHAIN),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -716,6 +727,12 @@ func TestGetTokenVersion(t *testing.T) {
 			"HyperEVM token version",
 			args{t: string(HYPEREVM)},
 			TokenVersionV28,
+			nil,
+		},
+		{
+			"ROBINHOODCHAIN token version",
+			args{t: string(ROBINHOODCHAIN)},
+			TokenVersionV24,
 			nil,
 		},
 	}

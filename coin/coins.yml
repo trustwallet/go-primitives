@@ -1160,7 +1160,6 @@
   blockchain: Ethereum
   chainId: 9745 # https://chainlist.org/chain/9745
 
-
 - id: 10143
   symbol: MON
   handle: monad
@@ -1179,3 +1178,11 @@
   blockchain: Ethereum
   minConfirmations: 12
   chainId: 999 # https://chainlist.org/chain/999
+
+- id: 10046630
+  symbol: ETH
+  handle: robinhoodchain
+  name: Robinhood Chain
+  decimals: 18
+  blockchain: Ethereum
+  chainId: 46630 # testnet; mainnet TBD (https://docs.robinhood.com/chain/)
