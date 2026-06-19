@@ -480,11 +480,11 @@ func TestGetCoinExploreURL(t *testing.T) {
 		{
 			name: "Test Robinhood Chain",
 			args: args{
-				addr:      "0x7943e237c7F95DA44E0301572D358911207852Fa",
+				addr:      "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
 				tokenType: "ROBINHOODCHAIN",
 				chain:     Robinhoodchain(),
 			},
-			want:    "https://explorer.testnet.chain.robinhood.com/token/0x7943e237c7F95DA44E0301572D358911207852Fa",
+			want:    "https://8crv4vmq6tiu1yqr.blockscout.com/token/0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
 			wantErr: false,
 		},
 	}
