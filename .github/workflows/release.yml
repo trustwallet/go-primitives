@@ -1,0 +1,20 @@
+name: Release
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: trustwallet/github-actions-proxy/actions/checkout@main
+
+      - name: Bump version and push tag
+        uses: trustwallet/github-actions-proxy/actions/github-tag-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: v
