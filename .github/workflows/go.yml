@@ -8,37 +8,35 @@ on:
 
 jobs:
 
-  test:
-    name: Test
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: Setup go
-        uses: trustwallet/github-actions-proxy/actions/setup-go@main
-        with:
-          go-version: '1.25'
-        id: go
 
-      - name: Checkout
-        uses: trustwallet/github-actions-proxy/actions/checkout@main
+    - name: Set up Go 1.x
+      uses: actions/setup-go@v2
+      with:
+        go-version: ^1.19
+      id: go
 
-      - name: Test
-        run: go test -race ./...
+    - name: Check out code into the Go module directory
+      uses: actions/checkout@v2
 
-  lint:
+    - name: Get dependencies
+      run: |
+        go get -v -t -d ./...
+
+    - name: Test
+      run: go test -v ./...
+
+  golangci:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: trustwallet/github-actions-proxy/actions/setup-go@main
+      - uses: actions/checkout@v3
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v6
         with:
-          go-version: '1.25'
-
-      - uses: trustwallet/github-actions-proxy/actions/checkout@main
-        with:
-          fetch-depth: 0  # Required for only-new-issues to work correctly
-
-      - name: Lint
-        uses: trustwallet/github-actions-proxy/actions/golangci-lint-action@main
-        with:
-          version: v2.7
-          args: --timeout=10m
+          version: v1.63
           only-new-issues: true
+          args: --timeout=5m
