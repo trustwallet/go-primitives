@@ -1179,10 +1179,10 @@
   minConfirmations: 12
   chainId: 999 # https://chainlist.org/chain/999
 
-- id: 10046630
+- id: 10004663
   symbol: ETH
   handle: robinhoodchain
   name: Robinhood Chain
   decimals: 18
   blockchain: Ethereum
-  chainId: 46630 # testnet; mainnet TBD (https://docs.robinhood.com/chain/)
+  chainId: 4663 # mainnet (Arbitrum Orbit Nitro v3.10.0)
