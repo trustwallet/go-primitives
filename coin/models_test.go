@@ -324,7 +324,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 				tokenType: "",
 				chain:     Cfxevm(),
 			},
-			want:    "https://evm.confluxscan.net/address/test",
+			want:    "https://evm.confluxscan.org/address/test",
 			wantErr: false,
 		},
 		{
