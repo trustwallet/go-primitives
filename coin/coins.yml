@@ -180,6 +180,7 @@
   blockchain: Vechain
 
 
+# DEPRECATED: chain sunset — node provider dropped support 2026-07-01; removed from all backend services (Shortcut sc-145133). Kept in the registry so historical balances/tx data still resolve; do not reuse this coin id.
 - id: 820
   symbol: CLO
   handle: callisto
@@ -847,6 +848,7 @@
   blockchain: The Open Network
 
 
+# DEPRECATED: chain sunset — node provider dropped support 2026-07-01; removed from all backend services (Shortcut sc-145134). Kept in the registry so historical balances/tx data still resolve; do not reuse this coin id.
 - id: 10001101
   symbol: ZKEVM
   handle: polygonzkevm
