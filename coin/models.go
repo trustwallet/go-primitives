@@ -201,7 +201,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case HYPEREVM:
 		return fmt.Sprintf("https://hyperevmscan.io/token/%s", tokenID), nil
 	case ROBINHOODCHAIN:
-		return fmt.Sprintf("https://8crv4vmq6tiu1yqr.blockscout.com/token/%s", tokenID), nil
+		return fmt.Sprintf("https://robinhoodchain.blockscout.com/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
@@ -355,7 +355,7 @@ func GetAddressExploreURL(c Coin, address string) (string, error) {
 	case HYPEREVM:
 		return fmt.Sprintf("https://hyperevmscan.io/address/%s", address), nil
 	case ROBINHOODCHAIN:
-		return fmt.Sprintf("https://8crv4vmq6tiu1yqr.blockscout.com/address/%s", address), nil
+		return fmt.Sprintf("https://robinhoodchain.blockscout.com/address/%s", address), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
