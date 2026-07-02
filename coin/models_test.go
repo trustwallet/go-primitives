@@ -484,7 +484,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 				tokenType: "ROBINHOODCHAIN",
 				chain:     Robinhoodchain(),
 			},
-			want:    "https://8crv4vmq6tiu1yqr.blockscout.com/token/0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
+			want:    "https://robinhoodchain.blockscout.com/token/0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
 			wantErr: false,
 		},
 	}
