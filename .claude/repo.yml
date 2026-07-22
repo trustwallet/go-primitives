@@ -14,8 +14,14 @@
 schemaVersion: 1
 name: go-primitives
 summary: |-
-  go-primitives is Go library that contains blockchain types and functions to work with them.
-domain: library
+  Go library — blockchain primitives and type definitions for Trust Wallet backends.
+
+  Consumers: Any Trust Wallet Go backend service that needs blockchain type definitions or the coin registry. Imports as github.com/trustwallet/go-primitives.
+
+  Ships: Go module github.com/trustwallet/go-primitives (library, no binary). Key exports: coin.Coins map, coin.Ethereum() etc. accessors, types.Tx, types.Token, types.TokenType, asset.ParseID/BuildID, address.EIP55Checksum, numbers.ToDecimal.
+
+  Agent routing: new chain → knowledge/architecture/coin-registry.md; token types → knowledge/architecture/token-type-registry.md; transaction model → knowledge/architecture/transaction-model.md; asset ID → knowledge/architecture/asset-id-encoding.md; number conversions → knowledge/libs/numbers.md; build/CI → knowledge/build/overview.md; tests → knowledge/tests/testing-strategy.md.
+domain: cli-tool
 status: active
 
 # Capabilities this repo is authoritative for — the sharpest routing
@@ -25,12 +31,12 @@ owns: [go-primitives, go, primitives]
 topics: [anti-pattern, library, pattern]
 
 # Repos/teams that depend on this one (curated — fill in).
-consumers: []
+consumers: [Any Trust Wallet Go backend service that needs blockchain type definitions or…]
 # Internal repos this one depends on (auto-detected from shared npm scope).
 depends_on: []
 
 # Artifacts this repo ships, and its tech stack (auto-detected).
-ships: []
+ships: ["Go module github.com/trustwallet/go-primitives . Key exports: coin.Coins map", coin.Ethereum etc. accessors, types.Tx, types.Token, types.TokenType, asset.ParseID/BuildID, address.EIP55Checksum, numbers.ToDecimal]
 stack: [Go]
 
 generatedBy: sdd-knowledge

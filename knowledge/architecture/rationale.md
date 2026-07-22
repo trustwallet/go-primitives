@@ -9,3 +9,10 @@ Inline rationale comments (NOTE / WHY / HACK / FIXME / GOTCHA / WARNING / CAVEAT
 ## `types/token.go`
 
 - **TODO** (L352) _(in `GetTokenType`)_: improve this
+
+## See Also
+- [go conventions](../code-conventions/go-conventions.md) <!-- rel:strong -->
+- [testing strategy](../tests/testing-strategy.md) <!-- rel:related -->
+- [address](../features/address.md) <!-- rel:related -->
+- [slice](../features/slice.md) <!-- rel:related -->
+- [asset](../features/asset.md) <!-- rel:related -->

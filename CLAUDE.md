@@ -4,8 +4,12 @@
 
 ## What this repo is
 
-- Stack: Go
-- Knowledge base: 3 categories — code-conventions, libs, patterns
+- **Domain**: Go library — blockchain primitives and type definitions for Trust Wallet backends.
+- **Route here for**: blockchain coin registry (coin IDs, handles, symbols, decimals, explorer URLs); canonical transaction/token/asset types (`Tx`, `Token`, `TokenType`, `Collection`); asset ID encoding/decoding (`c<coinID>_t<tokenID>` format); EVM address utilities (EIP-55 checksum); decimal/satoshi number conversions; slice batch/chunking utilities.
+- **Do not route here for**: transaction signing, private keys, or mnemonics (wallet-core); mobile platform code (mobile-monorepo); RPC clients or node management (wallet-kit-go); swap or DeFi logic; UI components.
+- **Consumers**: Any Trust Wallet Go backend service that needs blockchain type definitions or the coin registry. Imports as `github.com/trustwallet/go-primitives`.
+- **Ships**: Go module `github.com/trustwallet/go-primitives` (library, no binary). Key exports: `coin.Coins` map, `coin.Ethereum()` etc. accessors, `types.Tx`, `types.Token`, `types.TokenType`, `asset.ParseID`/`BuildID`, `address.EIP55Checksum`, `numbers.ToDecimal`.
+- **Agent map**: new chain → `knowledge/architecture/coin-registry.md`; token types → `knowledge/architecture/token-type-registry.md`; transaction model → `knowledge/architecture/transaction-model.md`; asset ID → `knowledge/architecture/asset-id-encoding.md`; number conversions → `knowledge/libs/numbers.md`; build/CI → `knowledge/build/overview.md`; tests → `knowledge/tests/testing-strategy.md`.
 
 ## Repo Manifest (for agents)
 
@@ -21,9 +25,14 @@ For the structured knowledge base, see [knowledge/constitution.md](knowledge/con
 - [libs](knowledge/libs/index.md) — Core libraries and shared utilities
 - [patterns](knowledge/patterns/index.md) — Coding patterns, recipes, and proven approaches
 
+- [architecture](knowledge/architecture/index.md) — Architecture
+- [build](knowledge/build/index.md) — Build
+- [features](knowledge/features/index.md) — Features
+- [tests](knowledge/tests/index.md) — Tests
+
 ## Learnings
 
-This repo may keep a living archive of incident-derived rules in [`learnings/`](learnings/) — each file a postmortem of a real bug or a non-obvious pattern that bit once and would bite again: root cause, the rule that prevents recurrence, and tags for matching. The folder is **optional and may be absent** — create it the first time you have a learning worth saving.
+This repo may keep a living archive of incident-derived rules in ~~[`learnings/`](learnings/)~~ — each file a postmortem of a real bug or a non-obvious pattern that bit once and would bite again: root cause, the rule that prevents recurrence, and tags for matching. The folder is **optional and may be absent** — create it the first time you have a learning worth saving.
 
 **Before** investigating any bug, regression, or "weird behavior", *if a `learnings/` directory exists*:
 

@@ -1,5 +1,19 @@
-# Data Models & Schemas
+---
+category: architecture
+subcategory: data
+confidence: low
+documentType: explanation
+scope: repo
+contentHash: d4c6d7e1e207
+tags: [architecture, domain]
+source: architecture/data/models.md
+verified: 2026-07-22
+splitPartIndex: 1
+splitPartTotal: 2
+canonical: true
+---
 
+## Data Models & Schemas
 <!-- sdd-knowledge-generated -->
 
 > Field-level shape of data models extracted via tree-sitter: TS interfaces / type aliases, Zod `z.object` schemas, Go/Rust/Swift structs, Kotlin data classes, and Python dataclasses. Scoped to domain data — UI views/props, view-models, design tokens (theme/style/colors), and constant/identifier namespaces are excluded. Deterministic, no LLM.
@@ -147,126 +161,3 @@ _struct · `types/tx.go`:150_
 | `Asset` | `coin.AssetID` | no |
 | `Value` | `Amount` | no |
 | `Input` | `string` | no |
-
-## Fee
-
-_struct · `types/tx.go`:116_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Asset` | `coin.AssetID` | no |
-| `Value` | `Amount` | no |
-
-## Subscription
-
-_struct · `types/subscription.go`:17_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Coin` | `uint` | no |
-| `Address` | `string` | no |
-
-## SubscriptionEvent
-
-_struct · `types/subscription.go`:12_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Subscriptions` | `Subscriptions` | no |
-| `Operation` | `SubscriptionOperation` | no |
-
-## Swap
-
-_struct · `types/tx.go`:144_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `From` | `Transfer` | no |
-| `To` | `Transfer` | no |
-
-## Token
-
-_struct · `types/token.go`:22_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Name` | `string` | no |
-| `Symbol` | `string` | no |
-| `Decimals` | `uint` | no |
-| `TokenID` | `string` | no |
-| `Coin` | `uint` | no |
-| `Type` | `TokenType` | no |
-
-## TransactionNotification
-
-_struct · `types/subscription.go`:22_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Action` | `TransactionType` | no |
-| `Result` | `Tx` | no |
-
-## Transfer
-
-_struct · `types/tx.go`:130_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Asset` | `coin.AssetID` | no |
-| `Value` | `Amount` | no |
-
-## TransferNFT
-
-_struct · `types/tx.go`:136_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Asset` | `coin.AssetID` | no |
-| `Collection` | `string` | no |
-| `CollectibleID` | `string` | no |
-| `CollectionSymbol` | `string` | no |
-| `Value` | `Amount` | no |
-
-## Tx
-
-_struct · `types/tx.go`:68_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `ID` | `string` | no |
-| `From` | `string` | no |
-| `To` | `string` | no |
-| `BlockCreatedAt` | `int64` | no |
-| `Block` | `uint64` | no |
-| `Status` | `Status` | no |
-| `Error` | `string` | no |
-| `Sequence` | `uint64` | no |
-| `Type` | `TransactionType` | no |
-| `Direction` | `Direction` | no |
-| `Inputs` | `[]TxOutput` | no |
-| `Outputs` | `[]TxOutput` | no |
-| `Tokens` | `[]Asset` | no |
-| `Memo` | `string` | no |
-| `Fee` | `Fee` | no |
-| `Metadata` | `interface{}` | no |
-| `CreatedAt` | `int64` | no |
-
-## TxOutput
-
-_struct · `types/tx.go`:123_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Address` | `string` | no |
-| `Value` | `Amount` | no |
-| `Asset` | `coin.AssetID` | no |
-
-## TxPage
-
-_struct · `types/tx.go`:62_
-
-| Field | Type | Optional |
-|-------|------|----------|
-| `Total` | `int` | no |
-| `Docs` | `[]Tx` | no |
-

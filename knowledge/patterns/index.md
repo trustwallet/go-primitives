@@ -4,6 +4,7 @@
 
 ## Documents
 
-| Document | Source |
-|----------|--------|
-| [patterns validated approaches](patterns-validated-approaches.md) | .specify/memory/learnings.md |
+| Document | Description | Source |
+|----------|-------------|--------|
+| [patterns validated approaches](patterns-validated-approaches.md) | --> | .specify/memory/learnings.md |
+

@@ -36,3 +36,9 @@ classDiagram
 
 **Key Types**: Coin, Coin
 
+## See Also
+- [call graph](../architecture/call-graph.md) <!-- rel:strong -->
+- [dependency graph](../architecture/dependency-graph.md) <!-- rel:weak -->
+- [coin registry](../architecture/coin-registry.md) <!-- rel:weak -->
+- [token type registry](../architecture/token-type-registry.md) <!-- rel:weak -->
+- [testing strategy](../tests/testing-strategy.md) <!-- rel:weak -->

@@ -11,5 +11,4 @@
 | [coin.md](coin.md) | Coin |
 | [numbers.md](numbers.md) | Numbers |
 | [slice.md](slice.md) | Slice |
-| [types.md](types.md) | Types |
 
