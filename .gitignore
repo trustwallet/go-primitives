@@ -17,3 +17,6 @@ vendor/
 .idea/
 
 bin/*
+index.scip
+index.scip.json
+knowledge/.relations.json
