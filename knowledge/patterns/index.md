@@ -6,5 +6,5 @@
 
 | Document | Description | Source |
 |----------|-------------|--------|
-| [patterns validated approaches](patterns-validated-approaches.md) | --> | .specify/memory/learnings.md |
+| [patterns validated approaches](patterns-validated-approaches.md) | Validated coding patterns and proven approaches confirmed across features | .specify/memory/learnings.md |
 

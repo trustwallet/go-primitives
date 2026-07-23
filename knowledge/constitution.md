@@ -12,8 +12,9 @@
 
 ## Shared Resources
 
-- [learnings.md](learnings.md) — Cross-project learnings and validated patterns
-
+| Resource | Description |
+|----------|-------------|
+| [learnings.md](learnings.md) | Cross-project learnings and validated patterns |
 | [architecture](architecture/index.md) | Architecture |
 | [build](build/index.md) | Build |
 | [features](features/index.md) | Features |

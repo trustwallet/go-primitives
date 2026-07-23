@@ -24,18 +24,17 @@ go run -tags=coins coin/gen.go && goimports ./coin/...
 
 ## CI: `.github/workflows/go.yml`
 
-Triggers on push and pull_request to `master`.
+Triggers on push and pull_request to `master`. Two independent jobs:
 
-Steps:
-1. `actions/checkout`
-2. `actions/setup-go` (uses `go-version-file: go.mod`)
-3. `go get ./...`
+**`build` job:**
+1. `actions/setup-go@v2` (`go-version: ^1.19`)
+2. `actions/checkout@v2`
+3. `go get -v -t -d ./...`
 4. `go test -v ./...`
-5. `golangci-lint-action@v6` (version: v1.63, `only-new-issues: true`)
 
-**Note:** The org-wide `golangci-lint-action` is proxied through
-`trustwallet/github-actions-proxy` — see the github-actions-proxy knowledge base for
-the replacement action path.
+**`golangci` job (separate, parallel):**
+1. `actions/checkout@v3`
+2. `golangci/golangci-lint-action@v6` (`version: v1.63`, `only-new-issues: true`, `args: --timeout=5m`)
 
 ## CI: `.github/workflows/release.yml`
 

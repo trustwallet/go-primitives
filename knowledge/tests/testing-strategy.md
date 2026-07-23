@@ -18,27 +18,37 @@ at codegen time, not at runtime).
 
 ## Test patterns
 
-**Table-driven tests** are the dominant pattern. Each test function defines a `tests`
-slice of structs with `name`, `input`, and `expected` fields, then iterates with
+**Table-driven tests** are the dominant pattern. A test function defines a slice of
+case structs (`name` plus per-case inputs and expected outputs), then iterates with
 `t.Run(tt.name, ...)`.
 
-Example shape (from `asset/id_test.go`, `numbers/decimal_test.go`):
+Example shape (from `asset/id_test.go`, `TestParseID` — `ParseID` returns
+`(uint, string, error)`):
 ```go
-tests := []struct {
-    name     string
-    input    string
-    expected string
+testStruct := []struct {
+    name        string
+    givenID     string
+    wantedCoin  uint
+    wantedToken string
+    wantedError error
 }{
-    {"ethereum coin", "c60", "60 ''"},
-    ...
+    {name: "c714_tTWT-8C2", givenID: "c714_tTWT-8C2", wantedCoin: 714, wantedToken: "TWT-8C2", wantedError: nil},
+    {name: "c714", givenID: "c714", wantedCoin: 714, wantedToken: "", wantedError: nil},
+    // ...
 }
-for _, tt := range tests {
+for _, tt := range testStruct {
     t.Run(tt.name, func(t *testing.T) {
-        ...
-        assert.Equal(t, tt.expected, result)
+        coin, token, err := ParseID(tt.givenID)
+        assert.Equal(t, tt.wantedCoin, coin)
+        assert.Equal(t, tt.wantedToken, token)
+        assert.Equal(t, tt.wantedError, err)
     })
 }
 ```
+
+Not every suite uses the struct-slice form: `numbers/decimal_test.go` instead defines
+closure assertion helpers (e.g. `assertSatEquals(expected, input)`) and calls them with
+a flat list of input/expected pairs — the same table-driven spirit without `t.Run`.
 
 **Assertions** use `github.com/stretchr/testify/assert` throughout.
 
