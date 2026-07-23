@@ -10,7 +10,7 @@
 ## Files
 
 - `slice/batch_test.go`
-- `slice/batch.go` — Batch, NewBatch, GetChunks, GetChunks, GetInterfaceSlice, GetInterfaceSliceBatch
+- `slice/batch.go` — Batch, NewBatch, Batch.GetChunks (method), GetChunks (func), GetInterfaceSlice, GetInterfaceSliceBatch
 
 ## Class Diagram
 

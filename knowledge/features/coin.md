@@ -34,7 +34,7 @@ classDiagram
 
 > Auto-generated specification for the **Coin** feature.
 
-**Key Types**: Coin, Coin
+**Key Types**: Coin, AssetID
 
 ## See Also
 - [call graph](../architecture/call-graph.md) <!-- rel:strong -->

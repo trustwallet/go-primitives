@@ -19,20 +19,20 @@ synthetic: synthesized-faq
 
 ### Architecture
 
-**From [Coin Registry Architecture](../../architecture/coin-registry-architecture.md):**
+**From [Coin Registry](../../architecture/coin-registry.md):**
 - `coin/gen.go` is a program guarded by `//go:build coins` (never compiled into the
   library itself — only executed when you run `make generate-coins`).
 - The Makefile target runs `goimports` after generation to keep the output tidy.
 
-**From [Coin Registry Architecture](../../architecture/coin-registry-architecture.md):**
+**From [Coin Registry](../../architecture/coin-registry.md):**
 - **Never hand-edit `coins.go`** — changes will be overwritten by the next `make
   generate-coins` run.
 
-**From [Coin Registry Architecture](../../architecture/coin-registry-architecture.md):**
+**From [Coin Registry](../../architecture/coin-registry.md):**
 This is the canonical way to check if a coin is an EVM chain — do not compare `ChainID`
 or check `Blockchain` directly in calling code.
 
-**From [Central Symbols — God-Node Analysis](../../architecture/central-symbols-god-node-analysis.md):**
+**From [God Nodes](../../architecture/god-nodes.md):**
 key semantic: callers do not need to know which representation was stored.
 
 **Invariants:**
@@ -43,17 +43,18 @@ key semantic: callers do not need to know which representation was stored.
 
 ### Build
 
-**From [Build and CI Overview](../../build/build-and-ci-overview.md):**
+**From [Build and CI Overview](../../build/overview.md):**
 `//go:build coins` guards the generator so it is never compiled into the library.
 
 ### Code-conventions
 
-**From [Anti-Patterns (failed approaches)](../../code-conventions/anti-patterns-failed-approaches.md):**
+**From [Anti-Patterns (failed approaches)](../../code-conventions/code-style/anti-patterns-failed-approaches.md):**
 <!-- Add failed approaches here. Each anti-pattern should include:
 - **type**: anti-pattern
 - **discovered**: YYYY-MM-DD
+-->
 
-**From [Go Code Conventions](../../code-conventions/go-code-conventions.md):**
+**From [Go Conventions](../../code-conventions/go-conventions.md):**
 smallest unit (Wei, Satoshis, etc.). It is NEVER a floating-point representation.
 The `numbers` package provides `ToDecimal` and `FromDecimal` to convert for display.
 
