@@ -72,7 +72,7 @@ or check `Blockchain` directly in calling code.
 |----------|--------|---------|
 | `coin.Coins[id]` | by numeric ID | `Coin` |
 | `coin.Chains[handle]` | by handle string | `Coin` |
-| `coin.GetCoinForId(id string)` | by handle string (wraps `coin.Chains`) | `(Coin, bool)` |
+| `coin.GetCoinForId(id string)` | by handle string (linear scan over `coin.Coins`, matching `c.Handle == id`) | `(Coin, error)` — returns `errors.New("unknown id " + id)` when no match |
 | `coin.Ethereum()` etc. | named accessor | `Coin` |
 
 ## See Also

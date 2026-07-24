@@ -58,18 +58,31 @@ actual `Metadata` type before serializing (defaults `Status` to `"completed"` if
 `GetDirection(address string) Direction` computes whether the transaction is
 incoming, outgoing, or a self-transfer relative to a given address.
 
-- **Account-based chains** (non-UTXO): `determineTransactionDirection(address, from, to)`
-  — if `from == to == address` → `"yourself"`, if `from == address` → `"outgoing"`, else `"incoming"`.
-- **UTXO chains** (`IsUTXO() bool` is true): `InferDirection(tx, addressSet)` using
-  set arithmetic (via `golang-set`) on the input and output address sets. A tx where
-  the address appears in both inputs and outputs is a self-send (`"yourself"`).
+If `t.Direction` is already set (non-empty) it is returned as-is. Otherwise the
+branch is chosen structurally, **not** via `IsUTXO()`:
+
+- **Input/output set present** (`len(t.Inputs) > 0 && len(t.Outputs) > 0`):
+  `InferDirection(tx, addressSet)` using set arithmetic (via `golang-set`) on the
+  input and output address sets. A tx where the address appears in both inputs and
+  outputs is a self-send (`"yourself"`). This gate is independent of `IsUTXO()` —
+  any tx carrying both inputs and outputs takes this path.
+- **Otherwise** (account-based / no full in+out sets):
+  `determineTransactionDirection(address, from, to)` — stake-undelegate and
+  stake-claim-rewards are always `"incoming"`; else if `address == to`, `"yourself"`
+  when `from == to`, otherwise `"incoming"`; else `"outgoing"`.
 
 ## UTXO vs account-based
 
-`Tx.IsUTXO() bool` checks `len(t.Inputs) > 0 || len(t.Outputs) > 0` — not a coin lookup.
-This means a UTXO check is structural, not registry-based.
+`Tx.IsUTXO() bool` checks `t.Type == TxTransfer && len(t.Outputs) > 0` — not a coin
+lookup. This means a UTXO check is structural (type + non-empty outputs), not
+registry-based. Note it is **not** the same condition as the direction gate above,
+which requires both inputs *and* outputs.
 
-`Tx.IsEVM() bool` calls `asset.ParseID(t.GetAssetID())` then `coin.IsEVM(coinID)`.
+`Tx.IsEVM() (bool, error)` reads the asset ID from `t.Metadata` via the
+`AssetHolder` interface (`t.Metadata.(AssetHolder).GetAsset()`), then
+`asset.ParseID(...)` → `coin.IsEVM(coinID)`. It returns `(false, nil)` when
+`Metadata` is nil or not an `AssetHolder`, and propagates the `ParseID` error.
+It does **not** use `t.GetAssetID()`.
 
 ## `Txs` sort order
 

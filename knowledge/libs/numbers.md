@@ -12,8 +12,12 @@ updated: "2026-07-22"
 ## Purpose
 
 `package numbers` provides string-based arithmetic helpers for blockchain amounts.
-It avoids floating-point arithmetic for financial values by operating on string
-representations and using `math/big` or `shopspring/decimal` for precision.
+Where possible it avoids floating-point arithmetic — the `decimal.go` / `number.go`
+helpers operate on string representations using `math/big` or `shopspring/decimal`
+for precision. Note that this is **not** universal: `ParseAmount` falls back to
+`ToSatoshi`, which uses `strconv.ParseFloat` + `float64` (× 10^8), so parsing a
+non-integer amount string does go through float64 and is subject to its precision
+limits.
 
 ## Three files, three concerns
 
@@ -23,8 +27,8 @@ representations and using `math/big` or `shopspring/decimal` for precision.
 |----------|-------|--------|-------|
 | `ParseAmount(amount string) int64` | decimal or float string | `int64` smallest-unit | Tries `ParseInt` first; falls back to `ToSatoshi` (float×10^8). Central symbol. |
 | `ToSatoshi(amount string) int64` | float string | `int64` | `parseFloat * 1e8`. Use only for Bitcoin-scale values (8 decimal places). |
-| `AddAmount(left, right string) (string, error)` | two amount strings | sum as string | |
-| `GetAmountValue(amount string) int64` | amount string | `int64` | Delegates to `ParseAmount` |
+| `AddAmount(left, right string) string` | two amount strings | sum as string (no error) | Parses both via `ParseAmount`, adds as `int64`, formats back to string |
+| `GetAmountValue(amount string) string` | amount string | `string` | Delegates to `ParseAmount`, then `strconv.FormatInt` |
 
 ### `decimal.go` — String-based decimal operations
 
