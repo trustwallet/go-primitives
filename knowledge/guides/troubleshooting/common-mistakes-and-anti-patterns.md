@@ -48,12 +48,6 @@ key semantic: callers do not need to know which representation was stored.
 
 ### Code-conventions
 
-**From [Anti-Patterns (failed approaches)](../../code-conventions/code-style/anti-patterns-failed-approaches.md):**
-<!-- Add failed approaches here. Each anti-pattern should include:
-- **type**: anti-pattern
-- **discovered**: YYYY-MM-DD
--->
-
 **From [Go Conventions](../../code-conventions/go-conventions.md):**
 smallest unit (Wei, Satoshis, etc.). It is NEVER a floating-point representation.
 The `numbers` package provides `ToDecimal` and `FromDecimal` to convert for display.

@@ -58,7 +58,6 @@ token ID format. The comment indicates the branching logic is considered rough b
 functional.
 
 ## See Also
-- [code-conventions/code-style/anti-patterns-failed-approaches.md](code-style/anti-patterns-failed-approaches.md)
 - [architecture/transaction-model.md](../architecture/transaction-model.md)
 - [tests/testing-strategy.md](../tests/testing-strategy.md)
 - [token type registry](../architecture/token-type-registry.md) <!-- rel:strong -->
