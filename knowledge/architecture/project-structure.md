@@ -73,6 +73,5 @@ _No standard entry points detected_
 ## See Also
 - [testing strategy](../tests/testing-strategy.md) <!-- rel:strong -->
 - [constitution](../constitution.md) <!-- rel:strong -->
-- [learnings](../learnings.md) <!-- rel:strong -->
 - [slice](../features/slice.md) <!-- rel:related -->
 - [address](../features/address.md) <!-- rel:related -->
