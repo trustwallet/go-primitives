@@ -487,6 +487,16 @@ func TestGetCoinExploreURL(t *testing.T) {
 			want:    "https://robinhoodchain.blockscout.com/token/0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73",
 			wantErr: false,
 		},
+		{
+			name: "Test Arc",
+			args: args{
+				addr:      "0x3600000000000000000000000000000000000000",
+				tokenType: "ARC",
+				chain:     Arc(),
+			},
+			want:    "https://testnet.arcscan.app/token/0x3600000000000000000000000000000000000000",
+			wantErr: false,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -648,6 +658,7 @@ var evmCoinsTestSet = map[uint]struct{}{
 	SEIEVM:         {},
 	HYPEREVM:       {},
 	ROBINHOODCHAIN: {},
+	ARC:            {},
 }
 
 // TestEvmCoinsList This test will automatically fail when new EVM chain is added to coins.yml
