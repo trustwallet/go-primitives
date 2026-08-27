@@ -185,6 +185,11 @@ func TestGetEthereumTokenTypeByIndex(t *testing.T) {
 			args: args{coinIndex: coin.ROBINHOODCHAIN},
 			want: ROBINHOODCHAIN,
 		},
+		{
+			name: "Arc ARC",
+			args: args{coinIndex: coin.ARC},
+			want: ARC,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
@@ -467,6 +472,12 @@ func TestGetTokenType(t *testing.T) {
 			want:     string(ROBINHOODCHAIN),
 			wantBool: true,
 		},
+		{
+			name:     "Arc",
+			args:     args{coin.ARC, ""},
+			want:     string(ARC),
+			wantBool: true,
+		},
 	}
 
 	for _, tt := range tests {
@@ -733,6 +744,12 @@ func TestGetTokenVersion(t *testing.T) {
 			"ROBINHOODCHAIN token version",
 			args{t: string(ROBINHOODCHAIN)},
 			TokenVersionV24,
+			nil,
+		},
+		{
+			"ARC token version",
+			args{t: string(ARC)},
+			TokenVersionUndefined,
 			nil,
 		},
 	}
