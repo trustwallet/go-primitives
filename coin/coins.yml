@@ -1189,10 +1189,10 @@
   blockchain: Ethereum
   chainId: 4663 # mainnet (Arbitrum Orbit Nitro v3.10.0)
 
-- id: 15042002
+- id: 10005042
   symbol: USDC
   handle: arc
   name: Arc
   decimals: 18
   blockchain: Ethereum
-  chainId: 5042002 # testnet; mainnet TBD (https://docs.arc.io/arc/references/rpc-endpoints)
+  chainId: 5042 # mainnet; native gas token is USDC with 18 decimals (https://docs.arc.io)

@@ -749,7 +749,7 @@ func TestGetTokenVersion(t *testing.T) {
 		{
 			"ARC token version",
 			args{t: string(ARC)},
-			TokenVersionUndefined,
+			TokenVersionV29,
 			nil,
 		},
 	}

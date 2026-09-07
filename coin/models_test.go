@@ -494,7 +494,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 				tokenType: "ARC",
 				chain:     Arc(),
 			},
-			want:    "https://testnet.arcscan.app/token/0x3600000000000000000000000000000000000000",
+			want:    "https://explorer.arc.io/token/0x3600000000000000000000000000000000000000",
 			wantErr: false,
 		},
 	}
@@ -576,6 +576,15 @@ func TestGetAddressExploreURL(t *testing.T) {
 				chain: Hyperevm(),
 			},
 			want:    "https://hyperevmscan.io/address/0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb",
+			wantErr: false,
+		},
+		{
+			name: "Test Arc",
+			args: args{
+				addr:  "0x13AD8F497976D32aDE4909d88B71EC6ABd474102",
+				chain: Arc(),
+			},
+			want:    "https://explorer.arc.io/address/0x13AD8F497976D32aDE4909d88B71EC6ABd474102",
 			wantErr: false,
 		},
 		{
