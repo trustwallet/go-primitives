@@ -579,6 +579,15 @@ func TestGetAddressExploreURL(t *testing.T) {
 			wantErr: false,
 		},
 		{
+			name: "Test Arc",
+			args: args{
+				addr:  "0x13AD8F497976D32aDE4909d88B71EC6ABd474102",
+				chain: Arc(),
+			},
+			want:    "https://explorer.arc.io/address/0x13AD8F497976D32aDE4909d88B71EC6ABd474102",
+			wantErr: false,
+		},
+		{
 			name: "Test TRON",
 			args: args{
 				addr:  "TKXVRaBsughUd1ZqqUQCs4dudMcg5BjUsa",
