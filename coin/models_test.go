@@ -494,7 +494,7 @@ func TestGetCoinExploreURL(t *testing.T) {
 				tokenType: "ARC",
 				chain:     Arc(),
 			},
-			want:    "https://testnet.arcscan.app/token/0x3600000000000000000000000000000000000000",
+			want:    "https://explorer.arc.io/token/0x3600000000000000000000000000000000000000",
 			wantErr: false,
 		},
 	}

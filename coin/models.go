@@ -203,7 +203,7 @@ func GetCoinExploreURL(c Coin, tokenID, tokenType string) (string, error) {
 	case ROBINHOODCHAIN:
 		return fmt.Sprintf("https://robinhoodchain.blockscout.com/token/%s", tokenID), nil
 	case ARC:
-		return fmt.Sprintf("https://testnet.arcscan.app/token/%s", tokenID), nil
+		return fmt.Sprintf("https://explorer.arc.io/token/%s", tokenID), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)
@@ -359,7 +359,7 @@ func GetAddressExploreURL(c Coin, address string) (string, error) {
 	case ROBINHOODCHAIN:
 		return fmt.Sprintf("https://robinhoodchain.blockscout.com/address/%s", address), nil
 	case ARC:
-		return fmt.Sprintf("https://testnet.arcscan.app/address/%s", address), nil
+		return fmt.Sprintf("https://explorer.arc.io/address/%s", address), nil
 	}
 
 	return "", errors.New("no explorer for coin: " + c.Handle)

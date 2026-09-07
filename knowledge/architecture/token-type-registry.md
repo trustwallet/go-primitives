@@ -50,7 +50,7 @@ Returns `("", false)` for coin IDs that have no associated token standard.
 ## `GetTokenVersion(tokenType string) (TokenVersion, error)`
 
 Returns a monotonically increasing version integer assigned when each token type was
-introduced. The version integers (V0–V28) are part of the mobile ↔ backend wire
+introduced. The version integers (V0–V29) are part of the mobile ↔ backend wire
 contract. Consumers of `Token` must include the correct version for the mobile app to
 render the token correctly.
 

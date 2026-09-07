@@ -166,6 +166,7 @@ const (
 	TokenVersionV26       TokenVersion = 26
 	TokenVersionV27       TokenVersion = 27
 	TokenVersionV28       TokenVersion = 28
+	TokenVersionV29       TokenVersion = 29
 	TokenVersionUndefined TokenVersion = -1
 )
 
@@ -495,9 +496,10 @@ func GetTokenVersion(tokenType string) (TokenVersion, error) {
 		return TokenVersionV28, nil
 	case ROBINHOODCHAIN:
 		return TokenVersionV24, nil
+	case ARC:
+		return TokenVersionV29, nil
 	case ERC721, ERC1155, EOS, NEP5, VET, ONTOLOGY, THETA, TOMO, POA, OASIS, ALGORAND, METER, EVMOS_ERC20,
-		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, TIA, DYDX, SEIEVM,
-		ARC:
+		KIP20, STRIDE, NEUTRON, FA2, CARDANO, NATIVEEVMOS, CRYPTOORG, COSMOS, OSMOSIS, STARGAZE, TIA, DYDX, SEIEVM:
 		return TokenVersionUndefined, nil
 	default:
 		// This should not happen, as it is guarded by TestGetTokenVersionImplementEverySupportedTokenTypes
