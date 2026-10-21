@@ -46,7 +46,7 @@ func TestRemove0x(t *testing.T) {
 		input string
 		want  string
 	}{
-		{"remove 0x from addres", "0x158079ee67fce2f58472a96584a73c7ab9ac95c1", "158079ee67fce2f58472a96584a73c7ab9ac95c1"},
+		{"remove 0x from address", "0x158079ee67fce2f58472a96584a73c7ab9ac95c1", "158079ee67fce2f58472a96584a73c7ab9ac95c1"},
 		{"remove 0x from hash", "0x230798fe22abff459b004675bf827a4089326a296fa4165d0c2ad27688e03e0c", "230798fe22abff459b004675bf827a4089326a296fa4165d0c2ad27688e03e0c"},
 		{"remove 0x hex value", "0xfffdefefed", "fffdefefed"},
 		{"remove 0x hex number", "0x16345785d8a0000", "16345785d8a0000"},
